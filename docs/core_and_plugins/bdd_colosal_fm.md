@@ -1,11 +1,11 @@
 ---
 layout: default
-title: BDD
-parent: Plugins
-nav_order: 3
+title: BDD (Colosal FM) plugin 
+parent: Core and plugins
+nav_order: 5
 ---
 
-# BDD
+# BDD (Colosal FM) plugin 
 {: .no_toc }
 
 ## Table of contents

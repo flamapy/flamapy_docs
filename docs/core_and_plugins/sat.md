@@ -1,11 +1,11 @@
 ---
 layout: default
-title: FM
-parent: Plugins
-nav_order: 1
+title: SAT plugin
+parent: Core and plugins
+nav_order: 3
 ---
 
-# FM
+# SAT
 {: .no_toc }
 
 ## Table of contents

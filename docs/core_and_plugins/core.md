@@ -1,11 +1,11 @@
 ---
 layout: default
-title: SAT
-parent: Plugins
-nav_order: 2
+title: Core
+parent: Core and plugins
+nav_order: 1
 ---
 
-# SAT
+# Core
 {: .no_toc }
 
 ## Table of contents
