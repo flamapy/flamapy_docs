@@ -2,7 +2,7 @@
 layout: default
 title: Integrating with your tools
 parent: Developing
-nav_order: 1
+nav_order: 3
 ---
 
 # Integrating with your tools

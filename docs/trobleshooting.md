@@ -1,11 +1,10 @@
 ---
 layout: default
-title: SAT
-parent: Developing
-nav_order: 2
+title: Troubleshooting
+nav_order: 5
 ---
 
-# SAT
+# Troubleshooting
 {: .no_toc }
 
 ## Table of contents
@@ -13,5 +12,3 @@ nav_order: 2
 
 1. TOC
 {:toc}
-
----

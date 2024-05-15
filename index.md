@@ -17,6 +17,8 @@ Seamlessly blending into the Python ecosystem, {% include flamapy.html %} empowe
 [Get started now](docs/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub][flamapy repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
+---
+
 ### <i class="fa-solid fa-arrow-right"></i> Easily Extensible
 
 

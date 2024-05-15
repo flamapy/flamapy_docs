@@ -10,29 +10,15 @@ nav_order: 2
 
 ## Installation
 
-To analyze feature models, you can use the `flamapy-fm-dist` distribution. It requires Python >= 3.9. It's recommended to use a virtual environment (venv) for installation to avoid conflicts with other packages. Here’s how you can set it up:
+To analyze feature models, you can use the `flamapy-fm-dist` distribution. **It requires Python >= 3.9**.  
 
-1. **Create a virtual environment:**
+{: .important }
+> It's recommended to use a **virtual environment** (venv) for installation to avoid conflicts with other packages. Here’s how you can set it up:
+> ```
+> python -m venv flamapyenv && source flamapyenv/bin/activate
+> ```   
 
-   ```bash
-   python -m venv flamapy-env
-   ```
-
-2. **Activate the virtual environment (on Windows):**
-
-    Yoy can activate the virtual environment on Windows systems:
-
-    ```
-    .\flamapy-env\Scripts\activate
-    ```
-
-    or macOs and Linux systems:
-
-    ```
-    source flamapy-env/bin/activate
-    ```
-
-3. **Install the distribution:**
+Install the distribution:
 
 ```
 pip install flamapy-fm-dist
@@ -45,8 +31,6 @@ To test some basic operations, you need UVL models. Several are available at [UV
 ```
 wget -q "https://raw.githubusercontent.com/flamapy/flamapy-fm-dist/main/resources/models/valid_model.uvl" && wget -q "https://raw.githubusercontent.com/flamapy/flamapy-fm-dist/main/resources/configurations/valid_configuration.csvconf"
 ```
-
-The distribution provides a CLI specific for feature models.
 
 ### Validate the model
 
@@ -72,8 +56,3 @@ To verify if a specific configuration is valid, run:
 ```
 flamapy-fm-cli --modelPath="./valid_model.uvl" valid_configuration ./valid_configuration.csvconf
 ```
-
-
-## Subseccion
-
-Blablabla
