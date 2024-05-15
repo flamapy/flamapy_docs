@@ -7,29 +7,34 @@ permalink: /
 ---
 
 
-# Welcome to flamapy Docs
+# {% include flamapy.html %} official documentation
 {: .fs-9 }
 
-Flamapy is a Python-based Automatic Analysis of Feature Models (AAFM) tool that takes into consideration previous AAFM tool designs and enables multi-solver and multi-metamodel support for the integration of AAFM tooling on the Python ecosystem.
+Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for Automatic Analysis of Feature Models (AAFM). {% include flamapy.html %} revolutionizes feature model analysis by integrating the strengths of previous AAFM tools with advanced multi-solver and multi-metamodel capabilities. 
 
-### Easily Extensible
+Seamlessly blending into the Python ecosystem, {% include flamapy.html %} empowers developers with unparalleled flexibility and efficiency in feature model analysis, making it an indispensable asset for your software engineering toolkit. Experience the future of AAFM tooling with {% include flamapy.html %} – where innovation meets functionality.
+
+[Get started now](docs/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View it on GitHub][flamapy repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
+
+### <i class="fa-solid fa-arrow-right"></i> Easily Extensible
+
 
 * **Plugin Generator**: Simplifies the process of creating new plugins with a semi-automatic generator, making customization and expansion straightforward.
 * **Variability in Models**: Initially supports cardinality-based feature models, with the flexibility to easily incorporate other types like attributed feature models.
 
-### Robust Solver Support
+### <i class="fa-solid fa-life-ring"></i> Robust Solver Support
 
 * **PySAT Integration**: Utilizes the PySAT metasolver, offering access to more than ten distinct solvers. This diversity allows for optimal solution finding across various complex scenarios.
 
-### Comprehensive Operations
+### <i class="fa-brands fa-searchengin"></i> Comprehensive Operations
 
 * **Multi-Model Operations**: Designed with capabilities for handling complex multi-model operations similar to those in Familiar.
 * **Single-Model Focus**: Also supports operations targeted at single-model scenarios, providing versatility in usage.
 
 {: .fs-6 .fw-300 }
 
-[Get started now](docs/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View it on GitHub][flamapy repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
+
 
 ---
 
@@ -40,8 +45,6 @@ Detailed changes for each release are documented in the [release notes].
 ### Contributing
 
 When contributing to this repository, please first read [contributing].
-
-----
 
 [^1]: The [source file for this page] uses all three markup languages.
 
