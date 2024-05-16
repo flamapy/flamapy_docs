@@ -29,7 +29,8 @@ pip install flamapy-fm-dist
 To test some basic operations, you need UVL models. Several are available at [UVLHub](https://www.uvlhub.io). If you prefer, you can download a test one:
 
 ```
-wget -q "https://raw.githubusercontent.com/flamapy/flamapy-fm-dist/main/resources/models/valid_model.uvl" && wget -q "https://raw.githubusercontent.com/flamapy/flamapy-fm-dist/main/resources/configurations/valid_configuration.csvconf"
+wget -q "https://raw.githubusercontent.com/flamapy/flamapy-fm-dist/main/resources/models/valid_model.uvl"
+wget -q "https://raw.githubusercontent.com/flamapy/flamapy-fm-dist/main/resources/configurations/valid_configuration.csvconf"
 ```
 
 ### Validate the model

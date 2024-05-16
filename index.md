@@ -72,4 +72,4 @@ When contributing to this repository, please first read [contributing].
 
 [release notes]: https://github.com/flamapy/core/releases
 
-[contributing]: {%  link docs/contributing.md %}
+[contributing]: {%  link docs/contributing/contributing.md %}
