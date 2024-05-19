@@ -1,7 +1,8 @@
 ---
 layout: default
 title: BDD (Colosal FM) plugin 
-parent: Core and plugins
+parent: Lab plugins
+grand_parent: Core and plugins
 nav_order: 5
 ---
 
