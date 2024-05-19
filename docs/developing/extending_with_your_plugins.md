@@ -14,6 +14,9 @@ nav_order: 2
 1. TOC
 {:toc}
 
+{: .important }
+> In order to use the CLI, you need to [set the development environment]({{site.baseurl}}/docs/developing/setting_development_environment/)
+
 ## Create your own plugin
 
 {: .highlight }
