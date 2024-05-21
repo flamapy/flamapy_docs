@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Contributing process
+grand_parent: Developing
 parent: Contributing
+permalink: /docs/developing/contributing/contributing_process
 nav_order: 1
 ---
 

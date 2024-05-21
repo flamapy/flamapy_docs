@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Contributing
+parent: Developing
 has_children: true
+permalink: /docs/developing/contributing/
 nav_order: 6
 ---
 

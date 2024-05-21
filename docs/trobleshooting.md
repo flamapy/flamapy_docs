@@ -7,8 +7,7 @@ nav_order: 5
 # Troubleshooting
 {: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
+In this section we will describe possible problems encountered by our regular # {% include flamapy.html %} users.
+{: .fs-6 .fw-300 }
 
-1. TOC
-{:toc}
+More content coming soon.

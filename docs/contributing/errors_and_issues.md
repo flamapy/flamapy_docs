@@ -2,6 +2,8 @@
 layout: default
 title: Errors and issues
 parent: Contributing
+grand_parent: Developing
+permalink: /docs/developing/contributing/errors_and_issues
 nav_order: 3
 ---
 

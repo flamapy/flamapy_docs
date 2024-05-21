@@ -2,6 +2,8 @@
 layout: default
 title: Branch and Commit Guidelines
 parent: Contributing
+grand_parent: Developing
+permalink: /docs/developing/contributing/branch_and_commit_guidelines
 nav_order: 2
 ---
 
