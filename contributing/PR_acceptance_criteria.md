@@ -3,7 +3,7 @@ layout: default
 title: PR Acceptance criteria
 parent: Contributing
 grand_parent: Developing
-permalink: /docs/developing/contributing/PR_acceptance_criteria
+permalink: /developing/contributing/PR_acceptance_criteria
 nav_order: 4
 ---
 

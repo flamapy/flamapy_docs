@@ -3,7 +3,7 @@ layout: default
 title: Errors and issues
 parent: Contributing
 grand_parent: Developing
-permalink: /docs/developing/contributing/errors_and_issues
+permalink: /developing/contributing/errors_and_issues
 nav_order: 3
 ---
 
@@ -21,7 +21,7 @@ nav_order: 3
 ### Errors outside the scope of your work
 
 1. Make sure it is an actual error and not a bad interaction between your code and the rest of the project.
-2. [Open an issue]({{site.baseurl}}/docs/contributing/errors_and_issues/#guidelines-for-creating-issues) to keep track of the error.
+2. [Open an issue]({{site.baseurl}}/contributing/errors_and_issues/#guidelines-for-creating-issues) to keep track of the error.
 3. You can assign the issue yourself if you either want to fix the error or need to do so for your code to work. If you want to fix that new issue, you SHOULD do it from a different PR. If it is impossible or too hard to separately fix it, fix the error on your already open PR, but you MUST clarify which commits are part of this new issue so maintainers know it when squashing.
 
 ### Errors in your own code

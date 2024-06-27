@@ -2,7 +2,7 @@
 layout: default
 title: Core and plugins
 has_children: true
-permalink: /docs/core_and_plugins
+permalink: /core_and_plugins
 nav_order: 3
 ---
 

@@ -14,7 +14,7 @@ Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for A
 
 Seamlessly blending into the Python ecosystem, {% include flamapy.html %} empowers developers with unparalleled flexibility and efficiency in feature model analysis, making it an indispensable asset for your software engineering toolkit. Experience the future of AAFM tooling with {% include flamapy.html %} – where innovation meets functionality.
 
-[Get started now](docs/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get started now](getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub][flamapy repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
@@ -55,8 +55,8 @@ When contributing to this repository, please first read [contributing].
 [Jekyll]: https://jekyllrb.com
 [Markdown]: https://daringfireball.net/projects/markdown/
 [Liquid]: https://github.com/Shopify/liquid/wiki
-[Front matter]: https://jekyllrb.com/docs/front-matter/
-[Jekyll configuration]: https://jekyllrb.com/docs/configuration/
+[Front matter]: https://jekyllrb.com/front-matter/
+[Jekyll configuration]: https://jekyllrb.com/configuration/
 [source file for this page]: https://github.com/just-the-docs/just-the-docs/blob/main/index.md
 [Just the Docs Template]: https://just-the-docs.github.io/just-the-docs-template/
 [Just the Docs]: https://just-the-docs.com
@@ -68,8 +68,8 @@ When contributing to this repository, please first read [contributing].
 
 [use the template]: https://github.com/just-the-docs/just-the-docs-template/generate
 
-[getting-started]: {% link docs/getting-started.md %}
+[getting-started]: {% link getting-started.md %}
 
 [release notes]: https://github.com/flamapy/core/releases
 
-[contributing]: {%  link docs/contributing/contributing.md %}
+[contributing]: {%  link contributing/contributing.md %}

@@ -3,7 +3,7 @@ layout: default
 title: Contributing process
 grand_parent: Developing
 parent: Contributing
-permalink: /docs/developing/contributing/contributing_process
+permalink: /developing/contributing/contributing_process
 nav_order: 1
 ---
 
@@ -24,18 +24,18 @@ nav_order: 1
  
 ### Follow Development guide
 
-Follow the [Setting development environment]({{site.baseurl}}/docs/developing/setting_development_environment/) to set up the project. Consider you will have to fork the project you want to contribute to.
+Follow the [Setting development environment]({{site.baseurl}}/developing/setting_development_environment/) to set up the project. Consider you will have to fork the project you want to contribute to.
 
 ### Create a new branch
 
-Create a new [branch]({{site.baseurl}}/docs/contributing/branch_and_commit_guidelines/#branch-naming-conventions) from develop in your forked project.
+Create a new [branch]({{site.baseurl}}/contributing/branch_and_commit_guidelines/#branch-naming-conventions) from develop in your forked project.
 ```
 git branch new-branch develop
 ```
 
 ### Make an empty commit
 
-Make an [empty commit]({{site.baseurl}}/docs/contributing/branch_and_commit_guidelines/#first-commit-requirements) on this branch and push.
+Make an [empty commit]({{site.baseurl}}/contributing/branch_and_commit_guidelines/#first-commit-requirements) on this branch and push.
 ```bash
 git commit -m 'message' --allow-empty
 git push -u origin new-branch

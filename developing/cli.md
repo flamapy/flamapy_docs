@@ -17,7 +17,7 @@ nav_order: 2
 {:toc}
 
 {: .important }
-> In order to use the CLI, you need to [set the development environment]({{site.baseurl}}/docs/developing/setting_development_environment/)
+> In order to use the CLI, you need to [set the development environment]({{site.baseurl}}/developing/setting_development_environment/)
 
 ## Get availables plugins 
 

@@ -2,7 +2,7 @@
 layout: default
 title: Developing
 has_children: true
-permalink: /docs/developing
+permalink: /developing
 nav_order: 4
 ---
 
