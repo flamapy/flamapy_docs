@@ -28,7 +28,7 @@ cd ~/flamapy
 ## Clone the core 
 
 ```
-git clone https://github.com/flamapy/core.git
+git clone https://github.com/flamapy/flamapy_fw.git
 ```
 
 ## Clone plugins

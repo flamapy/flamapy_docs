@@ -70,6 +70,6 @@ When contributing to this repository, please first read [contributing].
 
 [getting-started]: {% link getting-started.md %}
 
-[release notes]: https://github.com/flamapy/core/releases
+[release notes]: https://github.com/flamapy/flamapy_fw/releases
 
 [contributing]: {%  link contributing/contributing.md %}

@@ -11,3 +11,34 @@
 .flamapy .blue {
   color: #356C99;
 }
+
+.aux-nav-list-item{
+  font-size: 130%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn-container {
+  display: inline-block;
+}
+
+.main-header {
+  justify-content: right !important;
+}
+
+.aux-nav {
+  padding-right: 0px !important;
+}
+
+.quarter-size {
+  width: 25%;
+  height: auto;
+}

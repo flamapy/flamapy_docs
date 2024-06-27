@@ -22,7 +22,7 @@ The core component is the main entry point of {% include flamapy.html %}.
 > Official repository
 >
 > ```
-> https://www.github.com/flamapy/core
+> https://www.github.com/flamapy/flamapy_fw
 > ```
 
 ## Description
