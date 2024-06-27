@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Flamapy docs
-description: A Jekyll theme for documentation
+description: Official flamapy documentation, the cutting-edge Python-based tool for Automated Analysis of Feature Models (AAFM)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://flamapy.org" # the base hostname & protocol for your site, e.g. http://example.com
 repository: just-the-docs/just-the-docs # for github-metadata
