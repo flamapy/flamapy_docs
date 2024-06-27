@@ -104,8 +104,16 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "flamapy on GitHub":
-    - "https://github.com/flamapy"
+  "Documentation":
+    - "//docs.flamapy.org"
+  "Try it":
+    - "//flamapy.org/try-it"
+  "GitHub":
+    - "//github.com/flamapy/flamapy"
+  "Teams":
+    - "/flamapy.org/teams"
+  "Contact":
+    - "/flamapy.org/contact"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
