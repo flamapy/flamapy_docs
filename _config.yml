@@ -111,9 +111,9 @@ aux_links:
   "GitHub":
     - "//github.com/flamapy/flamapy"
   "Teams":
-    - "/flamapy.org/teams"
+    - "//flamapy.org/teams"
   "Contact":
-    - "/flamapy.org/contact"
+    - "//flamapy.org/contact"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
