@@ -13,7 +13,7 @@ nav_order: 2
 1. TOC
 {:toc}
 
-## Installation
+## <i class="fa-solid fa-laptop"></i> Installation
 
 To analyze feature models, you can use the `flamapy` distribution. **It requires Python >= 3.9**.  
 
@@ -29,7 +29,7 @@ Install the distribution:
 pip install flamapy
 ```
 
-## Basic operations
+## <i class="fa-solid fa-toolbox"></i> Basic operations
 
 To test some basic operations, you need UVL models. Several are available at [UVLHub](https://www.uvlhub.io). If you prefer, you can download a test one:
 
@@ -62,8 +62,9 @@ To verify if a specific configuration is valid, run:
 ```
 flamapy-fm-cli --modelPath="./valid_model.uvl" valid_configuration ./valid_configuration.csvconf
 ```
+---
 
-## I want to use more feature models analysis operations:
+## <i class="fa-solid fa-magnifying-glass-chart"></i> I want to use more feature models analysis operations:
 
 {% include flamapy.html %} runs on a framework based on `Core / Plugins` architecture. If you are interested in more feature model operations, you have several options:
 
@@ -79,6 +80,6 @@ To set up your environment in developer mode and work directly with the plugins,
 
 You can check the rest of [operations]({{site.baseurl}}/core_and_plugins/fm/) of the plugin for feature models.
 
-## I want to use operations from other plugins:
+## <i class="fa-solid fa-puzzle-piece"></i> I want to use operations from other plugins:
 
 Of course, {% include flamapy.html %} incorporates more plugins. In [Core and plugins]({{site.baseurl}}/core_and_plugins/) you can check the rest of plugins.
