@@ -20,7 +20,7 @@ nav_order: 1
 
 To make it easier, we recommend creating the `flamapy` folder in your home directory:
 
-```
+```bash
 mkdir ~/flamapy
 cd ~/flamapy 
 ```
@@ -35,7 +35,7 @@ git clone https://github.com/flamapy/flamapy_fw.git
 
 By itself, the {% include flamapy.html %} core does not provide parsing functionality. We can clone existing plugins to have artefacts to work with and not start from scratch:
 
-```
+```bash
 git clone https://github.com/flamapy/fm_metamodel.git
 git clone https://github.com/flamapy/pysat_metamodel.git
 git clone https://github.com/flamapy/bdd_metamodel.git
@@ -43,19 +43,26 @@ git clone https://github.com/flamapy/bdd_metamodel.git
 
 ## Setting up
 
-### Plugin paths
-First, we must set the `PLUGIN_PATHS` environment variable so that the core of {% include flamapy.html %} knows where the plugins are located. Assuming both the `core` repo and the plugins are in the `flamapy` directory, run:
+### Setting plugin paths
+First, we must set the `PLUGIN_PATHS` environment variable so that the core of {% include flamapy.html %} knows where the plugins are located. Assuming both the `flamapy_fw` repo and the plugins are in the `flamapy` directory, run:
 
-```
+```bash
 export PLUGIN_PATHS=~/flamapy/fm_metamodel/:~/flamapy/pysat_metamodel/:~/flamapy/bdd_metamodel/
-echo $PLUGIN_PATHS      
 ```
 
 ### Setting developer mode 
 
-Once the variable is defined, we can start the development environment. The following command creates and activates a Python virtual environment, installs development dependencies and plugins, and configures the specified plugins:
+Once the variable is defined, we can start the development environment:
 
-```
-cd core
+```bash
+cd flamapy_fw
 make dev
 ```
+
+This command:
+
+- **Creates and activates** a Python virtual environment
+- **Installs** development dependencies
+- **Installs** the core `flamapy_fw`
+- **Installs** plugins
+- **Configures** the specified plugins

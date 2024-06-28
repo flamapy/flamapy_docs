@@ -71,7 +71,7 @@ flamapy-fm-cli --modelPath="./valid_model.uvl" valid_configuration ./valid_confi
 
 We have prepared the `flamapy` distribution which acts as an interface and is specific to feature models.
 
-### Option 2: without using the feature models distribution
+### Option 2: using the framework in development mode
 
 You can choose not to use the distribution. In that case, **you have to install the core and the corresponding plugin in developer mode**.
 
@@ -79,6 +79,6 @@ To set up your environment in developer mode and work directly with the plugins,
 
 You can check the rest of [operations]({{site.baseurl}}/core_and_plugins/fm/) of the plugin for feature models.
 
-## I want to use more operations other plugins:
+## I want to use operations from other plugins:
 
 Of course, {% include flamapy.html %} incorporates more plugins. In [Core and plugins]({{site.baseurl}}/core_and_plugins/) you can check the rest of plugins.
