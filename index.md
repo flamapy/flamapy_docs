@@ -12,7 +12,7 @@ permalink: /
 
 Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for Automated Analysis of Feature Models (AAFM). {% include flamapy.html %} revolutionizes feature model analysis by integrating the strengths of previous AAFM tools with advanced multi-solver and multi-metamodel capabilities. 
 
-Seamlessly blending into the Python ecosystem, {% include flamapy.html %} empowers developers with unparalleled flexibility and efficiency in feature model analysis, making it an indispensable asset for your software engineering toolkit. Experience the future of AAFM tooling with {% include flamapy.html %} – where innovation meets functionality.
+Seamlessly blending into the Python ecosystem, {% include flamapy.html %} empowers developers with unparalleled flexibility and efficiency in feature model analysis, making it an important asset for your software engineering toolkit. Experience the future of AAFM tooling with {% include flamapy.html %} – where innovation meets functionality.
 
 [Get started now](getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub][flamapy repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
@@ -20,19 +20,22 @@ Seamlessly blending into the Python ecosystem, {% include flamapy.html %} empowe
 ---
 
 ### <i class="fa-solid fa-arrow-right"></i> Easily Extensible
-
-
 * **Plugin Generator**: Simplifies the process of creating new plugins with a semi-automatic generator, making customization and expansion straightforward.
-* **Variability in Models**: Initially supports cardinality-based feature models, with the flexibility to easily incorporate other types like attributed feature models.
+* **Variability modelling in the wild**: Initially supports cardinality-based feature models, with the flexibility to easily incorporate other types like attributed feature models.
 
 ### <i class="fa-solid fa-life-ring"></i> Robust Solver Support
 
 * **PySAT Integration**: Utilizes the PySAT metasolver, offering access to more than ten distinct solvers. This diversity allows for optimal solution finding across various complex scenarios.
 
-### <i class="fa-brands fa-searchengin"></i> Comprehensive Operations
+* **BDD Integration**: Utilizes the CUBDD metasolver, offering efficient variability model analysis for some operations. 
 
-* **Multi-Model Operations**: Designed with capabilities for handling complex multi-model operations similar to those in Familiar.
-* **Single-Model Focus**: Also supports operations targeted at single-model scenarios, providing versatility in usage.
+### <i class="fa-brands fa-searchengin"></i> Easy to use, easy to integrate
+
+* **Easy-to-usa facade**: Designed with capabilities to analyse modes in python with just a line of code.
+* **Command line direct use**: Easy to inegrate in any ecosystem.
+* **WASM support**: Run analysis in your browser. Currently, both flamapy and pysat are wasm compatible. Enable analysis with 0 configuration process.
+* **REST/SWAGGER available**: Integrate the tool in yours by means of a robust backend Rest API.
+
 
 {: .fs-6 .fw-300 }
 
