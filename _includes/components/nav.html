@@ -1,22 +1,30 @@
 {%- comment -%}
-  Include as: {%- include components/nav.html pages=pages -%}
-  Depends on: include.pages.
-  Results in: HTML for the navigation panel.
-  Includes:
-    sorted_pages.html
-  Overwrites:
-    nav_pages, first_level_pages, second_level_pages, third_level_pages,
-    node, children_list, child, grand_children_list, grand_child.
+Include as: {%- include components/nav.html pages=pages -%}
+Depends on: include.pages.
+Results in: HTML for the navigation panel.
+Includes:
+  sorted_pages.html
+Overwrites:
+  nav_pages, first_level_pages, second_level_pages, third_level_pages,
+  node, children_list, child, grand_children_list, grand_child.
 {%- endcomment -%}
 
 {%- assign nav_pages = include.pages
     | where_exp: "item", "item.title != nil"
     | where_exp: "item", "item.nav_exclude != true" -%}
 
-{%- include sorted_pages.html pages = nav_pages -%}
+{%- assign all_collection_pages = "" | split: "" -%}
+{%- for collection in site.collections -%}
+  {%- assign collection_pages = collection.docs -%}
+  {%- assign all_collection_pages = all_collection_pages | concat: collection_pages -%}
+{%- endfor -%}
+
+{%- assign all_nav_pages = nav_pages | concat: all_collection_pages -%}
+
+{%- include sorted_pages.html pages = all_nav_pages -%}
 
 {%- comment -%}
-  It might be more efficient to sort the pages at each level separately.
+It might be more efficient to sort the pages at each level separately.
 {%- endcomment -%}
 
 {%- assign first_level_pages = sorted_pages

@@ -15,7 +15,7 @@ nav_order: 3
 {:toc}
 
 {: .important }
-> We must go to the folder of the plugin in question in order to carry out the following commands
+> We must go to the folder of the plugin in question in order to carry out the following commands. We also encourage to use [act](https://github.com/nektos/act) and use the main action in local, which will execute the three above-mentioned tools. 
 
 ### Run tests
 To run all the tests of a plugin:
