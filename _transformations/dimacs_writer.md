@@ -4,7 +4,7 @@ layout: default
 parent: Transformations
 grand_parent: flamapy as framework
 nav_order: 11
-metamodel: flamapy_pysat
+metamodel: flamapy_sat
 type: model_to_text
 ---
 
