@@ -32,7 +32,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
-result = dm.use_operation_from_file("BDDSampling", "path/to/feature/model")
+result = dm.use_operation_from_file("Sampling", "path/to/feature/model")
 print(result)
 ```
 ### Python flamapy framework **ADVANCED** usage
@@ -44,7 +44,7 @@ dm = DiscoverMetamodels()
 feature_model = dm.use_transformation_t2m(model_path, 'fm')
 # Manually call a M2M transformation to BDD
 bdd_model = dm.use_transformation_m2m(feature_model, "bdd")
-# Get the operation
+# Get the operation, in this case, the bdd version
 operation = dm.get_operation(bdd_model, 'BDDSampling')
 # Execute the operation
 operation.execute(bdd_model)
