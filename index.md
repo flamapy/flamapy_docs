@@ -17,7 +17,7 @@ Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for A
 
 ---
 
-### <i class="fa-solid fa-arrow-right"></i> Easily Extensible
+### <i class="fa-solid fa-puzzle-piece"></i> Easily Extensible
 * **Plugin Generator**: Simplifies the process of creating new plugins with a semi-automatic generator, making customization and expansion straightforward.
 * **Variability modelling in the wild**: Initially supports cardinality-based feature models, with the flexibility to easily incorporate other types like attributed feature models.
 
@@ -25,18 +25,20 @@ Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for A
 
 * **PySAT Integration**: Utilizes the PySAT metasolver, offering access to more than ten distinct solvers. This diversity allows for optimal solution finding across various complex scenarios.
 
-* **BDD Integration**: Utilizes the CUBDD metasolver, offering efficient variability model analysis for some operations. 
+* **BDD Integration**: Utilizes the CU-BDD metasolver, offering efficient variability model analysis for some operations. 
 
 ### <i class="fa-brands fa-searchengin"></i> Easy to use, easy to integrate
 
-* **Easy-to-usa facade**: Designed with capabilities to analyse modes in python with just a line of code.
+* **Easy-to-use python facade**: Designed with capabilities to analyse modes in Python with just a line of code.
 * **Command line direct use**: Easy to inegrate in any ecosystem.
-* **WASM support**: Run analysis in your browser. Currently, both flamapy and pysat are wasm compatible. Enable analysis with 0 configuration process.
-* **REST/SWAGGER available**: Integrate the tool in yours by means of a robust backend Rest API.
+* **WASM support**: Run analysis in your browser. Currently, both {% include flamapy.html %} and PySAT are WASM compatible. Enable analysis with 0 configuration process.
+* **REST / SWAGGER available**: Integrate the tool in yours by means of a robust backend Rest API.
 
+### <i class="fa-solid fa-calculator"></i> Large set of operations
+
+You can find all set operations [here](/framework/operations/)
 
 {: .fs-6 .fw-300 }
-
 
 
 ---
