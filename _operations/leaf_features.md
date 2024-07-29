@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Leaf features
+
+# Leaf features
 
 **Description**: 
 Identifies all leaf features in the feature model. Leaf features are those that do not have any child features and represent the most specific options in a product line.

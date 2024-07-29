@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Satisfiable
+
+# Satisfiable
 **Description**: 
 Checks whether a given configuration of features is valid according to the constraints defined in the feature model.
 

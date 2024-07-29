@@ -13,7 +13,8 @@ facade: true
 python: true
 rest: true
 ---
-## Conflict Detection
+
+# Conflict Detection
 **Description**: 
 Identifies conflicts within the feature model by detecting combinations of features that cannot coexist due to constraints.
 

@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Core Features
+
+# Core Features
 
 **Description**: 
 Identifies features that are present in all valid configurations of the feature model. These are mandatory features that cannot be excluded.

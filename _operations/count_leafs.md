@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Count leafs
+
+# Count leafs
 
 **Description**: 
 This operation counts the number of leaf features in a feature model. Leaf features are those that do not have any children.

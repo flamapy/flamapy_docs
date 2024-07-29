@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Configurations
+
+# Configurations
 
 **Description**: 
 Generates all possible valid configurations of a feature model. Each configuration represents a valid product that can be derived from the feature model.

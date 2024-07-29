@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Product Distribution
+
+# Product Distribution
 **Description**: 
 Analyzes the distribution of configurations within the feature model, identifying how features are grouped across valid configurations.
 

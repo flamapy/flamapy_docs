@@ -1,11 +1,13 @@
 ---
 layout: default
 title: WASM
-parent: flamapy as a tool
+parent: flamapy as tool
 nav_order: 5
 ---
 
-# flamapy and pysat are WASM compatible
+# WASM
+
+## flamapy and pysat are WASM compatible
 
 {: .warning }
 > This is a work in progress documentation page
@@ -42,6 +44,8 @@ This means that you can run {% include flamapy.html %} in your browser.
 <div class="button-container">
     <a href="#" onclick="alert('Coming soon')" class="highlight-button">Try flamapy in your browser</a>
 </div>
+
+## Example of WASM
 
 To do it so, we need to first install pyodide and {% include flamapy.html %} within the browser. Note that we manually manage the dependencies. This is to avoid installing other plugins such as BDD which are not yet available in wasm. 
 
@@ -113,7 +117,10 @@ js.document.getElementById('result').append(div)
 
 }```
 ```
-To un other operations, that could be less tested you have to take a look to the names of them in the github repositories of the  [sat plugin](/plugins/sat). However most of operations are already documented with code snippets in. 
+
+## Other operations
+
+To run other operations, that could be less tested you have to take a look to the names of them in the github repositories of the  [sat plugin](/plugins/sat). However most of operations are already documented with code snippets in. 
 
 <ul>
   {% assign fm_operations = site.operations | where: "python", true %}

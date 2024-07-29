@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## False optional features
+
+# False optional features
 **Description**: 
 Identifies features that appear to be optional but, due to constraints and dependencies in the feature model, must be included in every valid product configuration. These features are typically indicative of modeling errors.
 

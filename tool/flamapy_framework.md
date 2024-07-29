@@ -1,11 +1,13 @@
 ---
 layout: default
 title: flamapy framework
-parent: flamapy as a tool
+parent: flamapy as tool
 nav_order: 3
 ---
 
-# Using the flamapy underlying framework
+# flamapy framework
+
+## Using the flamapy underlying framework
 
 While this option required to know the underpinnings of the {% include flamapy.html %} framework. It also allows users to use any operation available in the ecosystem instead of just the most common ones. 
 
@@ -20,6 +22,8 @@ dm = DiscoverMetamodels()
 result = dm.use_operation_from_file("PySATSatisfiable","path/to/feature/model")
 print(result)
 ```
+
+## Supported operations
 
 To run other operations that could be less tested, you have to look at their names in the GitHub repositories of the [plugins](framework/plugins). However, most of the operations are already documented with code snippets.
 

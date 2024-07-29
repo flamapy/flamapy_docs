@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Feature Inclusion Probability
+
+# Feature Inclusion Probability
 **Description**: 
 Calculates the probability of each feature being included in a valid configuration.
 

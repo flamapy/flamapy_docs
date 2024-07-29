@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Estimated number of configurations
+
+# Estimated number of configurations
 **Description**: 
 Provides an estimate of the total number of different products that can be produced from a feature model by considering all possible combinations of features.
 

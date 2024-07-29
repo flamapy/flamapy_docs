@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Diagnosis
+
+# Diagnosis
 **Description**: 
 Analyzes the feature model to identify and explain inconsistencies or errors, providing insights into potential fixes.
 

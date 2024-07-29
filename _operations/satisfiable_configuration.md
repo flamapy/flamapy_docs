@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Satisfiable configuration
+
+# Satisfiable configuration
 **Description**: 
 Checks if there exists at least one valid configuration that satisfies a given set of selected and deselected features.
 

@@ -1,11 +1,13 @@
 ---
 layout: default
 title: Python facade
-parent: flamapy as a tool
+parent: flamapy as tool
 nav_order: 2
 ---
 
-# Easy to use python facade
+# Python facade
+
+## Easy to use python facade
 
 Using Python as a scripting language can be highly convenient for developing scripts and integrating our analysis into other processes. However, learning a framework as complex as {% include flamapy.html %} can initially seem overwhelming. To alleviate this, {% include flamapy.html %} provides a straightforward method for executing the most common operations in Python.
 
@@ -20,6 +22,8 @@ print(result)
 ```
 
 As you might notice, this interface is heavily inspired in the way [FAMILIAR](https://doi.org/10.1016/j.scico.2012.12.004) worked in the java 6 years 
+
+## Supported operations
 
 You can find a comprehensive list of the supported operations for the command line and code snipets if you want to run them:
 

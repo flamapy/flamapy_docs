@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Max depth
+
+# Max depth
 
 **Description**: 
 This operation finds the maximum depth of the feature tree in the model, indicating the longest path from the root to a leaf.

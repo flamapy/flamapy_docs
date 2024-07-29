@@ -15,7 +15,8 @@ python: true
 rest: true
 ---
 
-## Commonality
+# Commonality
+
 **Description**: 
 Measures how often a feature appears in the products of a product line, usually expressed as a percentage. Features with high commonality are core features.
 

@@ -15,7 +15,7 @@ python: true
 rest: true
 ---
 
-## Average Branching Factor
+# Average Branching Factor
 
 **Description**: 
 This calculates the average number of child features per parent feature in the feature model. It provides insight into the complexity of the model.

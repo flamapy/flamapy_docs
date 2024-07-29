@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Variant Features
+
+# Variant Features
 **Description**: 
 Identifies variant features in the feature model, highlighting features that change across different configurations.
 

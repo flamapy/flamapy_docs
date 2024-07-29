@@ -15,7 +15,7 @@ python: true
 rest: true
 ---
 
-## Atomic Sets
+# Atomic Sets
 
 **Description**: 
 This operation identifies atomic sets in a feature model. An atomic set is a group of features that always appear together across all configurations of the model. These sets help in simplifying and reducing the complexity of the model by grouping features that behave as a single unit.

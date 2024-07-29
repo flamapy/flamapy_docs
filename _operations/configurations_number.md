@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Number of Configurations
+
+# Number of Configurations
 
 **Description**: 
 Returns the total number of valid configurations represented by the feature model.

@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Variability
+
+# Variability
 **Description**: 
 Measures the variability of a feature model by analyzing the presence and absence of features across all valid configurations.
 

@@ -1,11 +1,13 @@
 ---
 layout: default
-title: REST/SWAGGER
-parent: flamapy as a tool
+title: REST / SWAGGER
+parent: flamapy as tool
 nav_order: 4
 ---
 
-# Using the flamapy-rest plugin
+# REST / SWAGGER
+
+## Using the flamapy-rest plugin
 
 {: .warning }
 > This is a work in progress documentation page
@@ -24,6 +26,8 @@ pip install flamapy-rest
 Later, you should run the server within. 
 
 TODO
+
+## Swagger operations
 
 Currently the SWAGGER documents the following operations
 

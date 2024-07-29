@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Command line
-parent: flamapy as a tool
+title: Command line interface
+parent: flamapy as tool
+permalink: /tool/command_line_interface
 nav_order: 1
 ---
 
@@ -17,6 +18,8 @@ All available operations could be read by running
 ```bash
 flamapy -h
 ```
+
+## Supported operations
 
 However, below, you can find a comprehensive list of the supported operations for the command line and code snipets if you want to run them:
 

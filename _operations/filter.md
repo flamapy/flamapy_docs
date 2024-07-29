@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Filter
+
+# Filter
 **Description**: 
 This operation filters and selects a subset of configurations based on specified criteria. It helps in narrowing down the possible products to those that meet certain requirements.
 

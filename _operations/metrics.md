@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Metrics
+
+# Metrics
 **Description**: 
 Calculates various metrics for a given feature model using BDDs, SATs or basic fm operations, including the number of configurations, commonality, and variability.
 

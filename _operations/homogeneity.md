@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Homogeneity
+
+# Homogeneity
 **Description**: 
 Measures the uniformity of feature distributions across all valid configurations.
 

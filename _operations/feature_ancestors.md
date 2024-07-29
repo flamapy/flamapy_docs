@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Feature ancestors
+
+# Feature ancestors
 
 **Description**: 
 Identifies all ancestor features of a given feature in the feature model. Ancestors are features that are hierarchically above the given feature.

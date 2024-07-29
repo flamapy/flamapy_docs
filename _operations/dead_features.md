@@ -14,7 +14,8 @@ facade: true
 python: true
 rest: true
 ---
-## Dead Features
+
+# Dead Features
 
 **Description**: 
 Identifies features that cannot be included in any valid product configuration due to constraints and dependencies in the model. These are typically indicative of errors in the feature model.

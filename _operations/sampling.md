@@ -14,7 +14,8 @@ facade: false
 python: true
 rest: false
 ---
-## Sampling
+
+# Sampling
 **Description**: 
 Generates a sample set of valid configurations from the feature model, providing a representative subset for analysis.
 
