@@ -10,7 +10,6 @@ nav_order: 1
 # Core plugin
 {: .no_toc }
 
-
 The core component is the main entry point of {% include flamapy.html %}.
 {: .fs-6 .fw-300 }
 

@@ -30,6 +30,8 @@ For example, an operation designed to count the number of leaf features in a fea
 
 To facilitate the execution of operations across different types of variability models, {% include flamapy.html %} employs a series of transformations. These transformations are necessary to convert models between various representations, enabling the application of operations that might require different metamodels or computational paradigms. Take a look to [transformations](/framework/transformations) for more information
 
+## Available operations
+
 Currently {% include flamapy.html %} offers the following operations implemented in the marked plugins/metamodels and available in the interfaces shown.
 
 <style>

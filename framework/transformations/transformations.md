@@ -10,13 +10,14 @@ nav_order: 3
 # Transformations
 {: .no_toc }
 
+The {% include flamapy.html %} tool relies on the flampy framework which is heavily inspired by Model-Driven Development (MDD) principles, focusing on facilitating the automated analysis of feature models through a structured and modular approach. Here’s an overview of how the architecture and model transformations work within {% include flamapy.html %}.
+{: .fs-6 .fw-300 }
+
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-
-The {% include flamapy.html %} tool relies on the flampy framework which is heavily inspired by Model-Driven Development (MDD) principles, focusing on facilitating the automated analysis of feature models through a structured and modular approach. Here’s an overview of how the architecture and model transformations work within {% include flamapy.html %}
 
 ## Core concepts
 ### Metamodels
