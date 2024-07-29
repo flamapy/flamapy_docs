@@ -21,7 +21,7 @@ rest: true
 Generates all possible valid configurations of a feature model. Each configuration represents a valid product that can be derived from the feature model.
 
 **Application**: 
-Useful for exhaustive analysis of all potential products in a product line.
+Useful for exhaustive analysis of all potential configurations in a product line.
 
 **Example**: 
 Listing all valid combinations of features that can form different product variants.

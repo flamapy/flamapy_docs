@@ -1,9 +1,9 @@
 ---
-title: Product Distribution
+title: Configuration Distribution
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
-permalink: /framework/operations/product_distribution
+permalink: /framework/operations/configuration_distribution
 nav_order: 5
 
 flamapy_sat: false
@@ -15,12 +15,13 @@ python: true
 rest: false
 ---
 
-# Product Distribution
+# Configuration distribution
+
 **Description**: 
 Analyzes the distribution of configurations within the feature model, identifying how features are grouped across valid configurations.
 
 **Application**: 
-Useful for understanding the variety and commonality of products generated from the feature model, aiding in product planning and strategy.
+Useful for understanding the variety and commonality of configurations generated from the feature model, aiding in product planning and strategy.
 
 **Example**: 
 Evaluating the distribution of various car models generated from a car feature model.

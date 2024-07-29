@@ -42,7 +42,7 @@ The `bdd_metamodel` plugin is an integral part of the {% include flamapy.html %}
    - Supports various transformations and operations to facilitate detailed analysis.
 
 3. **Operations**:
-   - Implements numerous operations such as counting the number of products, sampling configurations, and calculating feature inclusion probabilities.
+   - Implements numerous operations such as counting the number of configurations, sampling configurations, and calculating feature inclusion probabilities.
    - Supports partial configurations for more targeted analyses.
 
 4. **Transformations**:

@@ -17,7 +17,7 @@ rest: true
 
 # Unique Features
 **Description**: 
-Identifies features that are unique to specific configurations, highlighting features that differentiate products.
+Identifies features that are unique to specific configurations, highlighting features that differentiate configurations.
 
 **Application**: 
 Useful for identifying differentiating features in a product line, aiding in marketing and product development.

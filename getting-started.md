@@ -56,7 +56,7 @@ flamapy satisfiable ./valid_model.uvl
 
 ### Get all configurations depicted in a model
 
-To generate all possible products from the model, use:
+To generate all possible configurations from the model, use:
 
 ```
 flamapy configurations ./valid_model.uvl

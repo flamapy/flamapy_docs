@@ -17,7 +17,7 @@ rest: true
 
 # Filter
 **Description**: 
-This operation filters and selects a subset of configurations based on specified criteria. It helps in narrowing down the possible products to those that meet certain requirements.
+This operation filters and selects a subset of configurations based on specified criteria. It helps in narrowing down the possible configurations to those that meet certain requirements.
 
 **Application**: 
 Useful for customizing and generating specific product configurations.

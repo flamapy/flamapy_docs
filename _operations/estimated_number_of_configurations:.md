@@ -17,7 +17,7 @@ rest: true
 
 # Estimated number of configurations
 **Description**: 
-Provides an estimate of the total number of different products that can be produced from a feature model by considering all possible combinations of features.
+Provides an estimate of the total number of different configurations that can be produced from a feature model by considering all possible combinations of features.
 
 **Application**: 
 Useful for assessing the variability and potential complexity of the product line.

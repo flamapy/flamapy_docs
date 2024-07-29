@@ -18,10 +18,10 @@ rest: true
 # Commonality
 
 **Description**: 
-Measures how often a feature appears in the products of a product line, usually expressed as a percentage. Features with high commonality are core features.
+Measures how often a feature appears in the configurations of a product line, usually expressed as a percentage. Features with high commonality are core features.
 
 **Application**: 
-Useful for identifying the most important features that are common across all products.
+Useful for identifying the most important features that are common across all configurations.
 
 **Example**: If a feature appears in 80 out of 100 possible product configurations, its commonality is 80%.
 

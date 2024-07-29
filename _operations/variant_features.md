@@ -20,7 +20,7 @@ rest: false
 Identifies variant features in the feature model, highlighting features that change across different configurations.
 
 **Application**: 
-Useful for understanding which features vary between different products, aiding in customization and variability management.
+Useful for understanding which features vary between different configurations, aiding in customization and variability management.
 
 **Example**: 
 Identifying variant features in a product line of laptops to determine which features are customizable for customers.

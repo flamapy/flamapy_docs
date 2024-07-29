@@ -21,7 +21,7 @@ rest: true
 Identifies features that are present in all valid configurations of the feature model. These are mandatory features that cannot be excluded.
 
 **Application**: 
-Helps in defining the essential components of all products in the product line.
+Helps in defining the essential components of all configurations in the product line.
 
 **Example**: 
 In a mobile phone feature model, features like 'Call Functionality' might be core features as they are necessary in all phones.
