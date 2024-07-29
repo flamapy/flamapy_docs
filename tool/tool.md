@@ -3,7 +3,7 @@ layout: default
 title: flamapy as tool
 has_children: true
 permalink: /tool
-nav_order: 3
+nav_order: 2
 ---
 
 # flamapy as tool

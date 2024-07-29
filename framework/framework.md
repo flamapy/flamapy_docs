@@ -3,7 +3,7 @@ layout: default
 title: flamapy as framework
 has_children: true
 permalink: /framework
-nav_order: 4
+nav_order: 3
 ---
 
 # Flamapy as framework
