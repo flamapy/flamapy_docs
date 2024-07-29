@@ -10,9 +10,7 @@ permalink: /
 # {% include flamapy.html %} official documentation
 {: .fs-9 }
 
-Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for Automated Analysis of Feature Models (AAFM). {% include flamapy.html %} revolutionizes feature model analysis by integrating the strengths of previous AAFM tools with advanced multi-solver and multi-metamodel capabilities. 
-
-Seamlessly blending into the Python ecosystem, {% include flamapy.html %} empowers developers with unparalleled flexibility and efficiency in feature model analysis, making it an important asset for your software engineering toolkit. Experience the future of AAFM tooling with {% include flamapy.html %} – where innovation meets functionality.
+Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for Automated Analysis of Feature Models (AAFM) using UVL and more. {% include flamapy.html %} revolutionizes feature model analysis by integrating the strengths of previous AAFM tools with advanced multi-solver and multi-metamodel capabilities. 
 
 [Get started now](getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub][flamapy repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
