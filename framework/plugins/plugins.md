@@ -44,10 +44,14 @@ These plugins define the specific variability models and their associated operat
 
 {% include flamapy.html %} offers a variety of plugins, each tailored to specific analysis needs and model types. Here are some of the key plugins available. Each plugin is provided in the [Pypi](https://pypi.org/project/flamapy/) package manager:
 
-1. **flamapy_fw**: This is the main repository hosting the core components of {% include flamapy.html %}. It includes the essential infrastructure for the framework, enabling plugin management, and execution of operations and transformations. [Github](https://github.com/flamapy/flamapy_fw)
+### flamapy_fw
+This is the main repository hosting the core components of {% include flamapy.html %}. It includes the essential infrastructure for the framework, enabling plugin management, and execution of operations and transformations. [Github](https://github.com/flamapy/flamapy_fw)
 
-2. **fm_metamodel**: Hosts the concrete classes for feature models. It supports multiple feature model formats and provides various operations such as counting leaf features, estimating the number of valid configurations, and identifying core features. [Github](https://github.com/flamapy/fm_metamodel)
+### fm_metamodel
+Hosts the concrete classes for feature models. It supports multiple feature model formats and provides various operations such as counting leaf features, estimating the number of valid configurations, and identifying core features. [Github](https://github.com/flamapy/fm_metamodel)
 
-3. **pysat_metamodel**: Provides the integration with PySAT, a meta-solver that enables the analysis of feature models using various SAT solvers. This plugin is essential for performing constraint satisfaction problems and other complex analyses. [Github](https://github.com/flamapy/pysat_metamodel)
+### pysat_metamodel
+Provides the integration with PySAT, a meta-solver that enables the analysis of feature models using various SAT solvers. This plugin is essential for performing constraint satisfaction problems and other complex analyses. [Github](https://github.com/flamapy/pysat_metamodel)
 
-4. **bdd_metamodel**: Supports Binary Decision Diagrams (BDDs) for the automated analysis of feature models. This plugin is particularly useful for operations that benefit from BDD techniques, such as counting valid configurations efficiently. [Github](https://github.com/flamapy/bdd_metamodel)
+### bdd_metamodel
+Supports Binary Decision Diagrams (BDDs) for the automated analysis of feature models. This plugin is particularly useful for operations that benefit from BDD techniques, such as counting valid configurations efficiently. [Github](https://github.com/flamapy/bdd_metamodel)

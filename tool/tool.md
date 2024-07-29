@@ -1,12 +1,12 @@
 ---
 layout: default
-title: flamapy as tool
+title: Flamapy as tool
 has_children: true
 permalink: /tool
 nav_order: 2
 ---
 
-# flamapy as tool
+# Flamapy as tool
 {: .no_toc }
 
 ## Table of contents

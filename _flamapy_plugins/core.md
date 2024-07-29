@@ -32,16 +32,19 @@ The core plugin is the foundation of the {% include flamapy.html %} framework, p
 
 ### Features of the core plugin
 
-1. **Transformation Interfaces**:
+#### Transformation Interfaces
+
    - **Text-to-Model (T2M)**: Converts textual representations of feature models into in-memory objects.
    - **Model-to-Text (M2T)**: Serializes in-memory models back into text formats.
    - **Model-to-Model (M2M)**: Transforms models from one metamodel to another.
 
-2. **Operation Management**:
+#### Operation Management
+
    - Provides a mechanism to identify and execute available operations on different metamodels.
    - Ensures that operations are performed correctly by managing the required transformations.
 
-3. **Plugin Management**:
+#### Plugin Management
+
    - Facilitates the discovery and integration of plugins.
    - Manages the communication between plugins and coordinates the execution of transformations and operations.
 

@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Lab plugins
-has_children: true
 parent: Plugins
 grand_parent: flamapy as framework
 permalink: /framework/plugins/lab_plugins
@@ -38,21 +37,26 @@ Currently, this plugin enables the following operations.
 * Feature Inclusion Probability
 * Product distribution
 
-### Links
-- **GitHub Repository**: [bdd_metamodel on GitHub](https://github.com/flamapy/bdd_metamodel)
-
 ### Transformations supported
 Currently this plugins enables a set of transformations for CNF and feature models. 
 
-## SMT Metamodel Plugin of Flamapy Framework
+## SMT Metamodel plugin of flamapy framework
 
 The `smt_metamodel` plugin is a key component of the {% include flamapy.html %} framework, providing integration with SMT (Satisfiability Modulo Theories) solvers to enable advanced feature model analyses. This plugin leverages SMT solvers to perform detailed constraint-solving tasks, offering robust capabilities for handling complex feature models. More information in [this publication](https://doi.org/10.1016/j.cose.2023.103669).
 
-### Links
-- **GitHub Repository**: [smt_metamodel on GitHub](https://github.com/flamapy/smt_metamodel)
+{: .highlight }
+> Official repository
+>
+> ```
+> https://github.com/flamapy/smt_metamodel
+> ```
 
 ## Dependency network metamodel plugin of flamapy framework
 The dependency_network_metamodel plugin has been designed to manage and analyze dependency networks. This plugin provides the necessary tools to represent and manipulate dependencies among features, facilitating detailed dependency analysis. More information in [this publication](https://doi.org/10.1016/j.cose.2023.103669).
 
-### Links
-- **GitHub Repository**: [Dependency Network](https://github.com/flamapy/dependency_network_metamodel)
+{: .highlight }
+> Official repository
+>
+> ```
+> https://github.com/flamapy/dependency_network_metamodel
+> ```

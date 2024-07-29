@@ -33,15 +33,15 @@ The `fm_metamodel` plugin is a crucial component of the {% include flamapy.html 
 
 ### Features of the fm_metamodel Plugin
 
-1. **Metamodel Classes**:
+#### Metamodel Classes
    - Defines the structure and constraints of feature models.
    - Supports multiple feature model formats, ensuring compatibility and flexibility.
 
-2. **Operations**:
+#### Operations
    - Implements various operations specific to feature models, such as counting leaf features, estimating the number of valid configurations, and identifying core features.
    - Provides robust mechanisms for performing detailed analyses on feature models.
 
-3. **Transformations**:
+#### Transformations
    - Supports Text-to-Model (T2M) transformations to read feature models from various textual representations.
    - Enables Model-to-Model (M2M) transformations to convert feature models into different formats or computational paradigms for advanced analysis.
    - Facilitates Model-to-Text (M2T) transformations to serialize in-memory feature models back into text formats for storage and sharing.
@@ -57,7 +57,8 @@ To install the `fm_metamodel` plugin, follow these steps:
      ```bash
      pip install flamapy-fm
      ```
-#### Links
+     
+### Links
 
 - **PyPI**: [fm_metamodel on PyPI](https://pypi.org/project/flamapy-fm/)
 - **GitHub Repository**: [fm_metamodel on GitHub](https://github.com/flamapy/fm_metamodel)
