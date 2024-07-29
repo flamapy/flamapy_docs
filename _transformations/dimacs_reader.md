@@ -2,7 +2,7 @@
 title: DIMACS Reader
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/dimacs_reader
 nav_order: 10
 metamodel: flamapy_sat

@@ -2,7 +2,7 @@
 title: FM to BDD
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/fm_to_bdd
 nav_order: 2
 metamodel: flamapy_bdd

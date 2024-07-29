@@ -2,7 +2,7 @@
 title: CNF to PySAT
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/cnf_to_pysat
 nav_order: 9
 metamodel: flamapy_sat

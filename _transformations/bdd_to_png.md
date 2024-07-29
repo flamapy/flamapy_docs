@@ -2,7 +2,7 @@
 title: BDD to PNG Writer
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/bdd_to_png
 nav_order: 3
 metamodel: flamapy_bdd

@@ -2,7 +2,7 @@
 title: DDDMP Reader
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/dddmp_reader
 nav_order: 4
 metamodel: flamapy_bdd

@@ -2,7 +2,7 @@
 layout: default
 title: SAT plugin
 parent: Plugins
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/plugins/sat_plugin
 nav_order: 3
 ---

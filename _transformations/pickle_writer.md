@@ -2,7 +2,7 @@
 title: Pickle Writer
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/pickle_writer
 nav_order: 7
 metamodel: flamapy_bdd

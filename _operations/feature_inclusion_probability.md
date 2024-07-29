@@ -2,7 +2,7 @@
 title: Feature Inclusion Probability
 layout: default
 parent: Operations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/operations/feature_inclusion_probability
 nav_order: 2
 

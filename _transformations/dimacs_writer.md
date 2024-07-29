@@ -2,7 +2,7 @@
 title: DIMACS Writer
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/dimacs_writer
 nav_order: 11
 metamodel: flamapy_sat

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: WASM
-parent: flamapy as tool
+parent: Flamapy as tool
 nav_order: 5
 ---
 

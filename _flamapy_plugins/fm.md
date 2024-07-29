@@ -2,7 +2,7 @@
 layout: default
 title: Feature model plugin
 parent: Plugins
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/plugins/feature_model_plugin
 nav_order: 2
 ---
@@ -57,7 +57,7 @@ To install the `fm_metamodel` plugin, follow these steps:
      ```bash
      pip install flamapy-fm
      ```
-     
+
 ### Links
 
 - **PyPI**: [fm_metamodel on PyPI](https://pypi.org/project/flamapy-fm/)

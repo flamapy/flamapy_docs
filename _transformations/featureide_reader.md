@@ -2,7 +2,7 @@
 title: FeatureIDE Reader
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/featureide_reader
 nav_order: 1
 metamodel: flamapy_fm

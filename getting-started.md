@@ -73,7 +73,7 @@ flamapy satisfiable_configuration ./valid_model.uvl ./valid_configuration.csvcon
 
 ## <i class="fa-solid fa-magnifying-glass-chart"></i> I want to use more feature models analysis operations:
 
-{% include flamapy.html %} runs on a framework based on `Core / Plugins` architecture. If you are interested in more feature model operations, check the [flama as a tool](/tool)
+{% include flamapy.html %} runs on a framework based on `Core / Plugins` architecture. If you are interested in more feature model operations, check the [flamapy as a tool](/tool)
 
 ### Option 1: using the feature models distribution
 

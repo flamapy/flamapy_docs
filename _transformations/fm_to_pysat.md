@@ -2,7 +2,7 @@
 title: FM to PySAT
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/fm_to_pysat
 nav_order: 12
 metamodel: flamapy_sat

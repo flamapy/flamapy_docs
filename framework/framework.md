@@ -1,6 +1,6 @@
 ---
 layout: default
-title: flamapy as framework
+title: Flamapy as framework
 has_children: true
 permalink: /framework
 nav_order: 3
@@ -49,21 +49,18 @@ The {% include flamapy.html %} framework employs an architecture inspired by Mod
 
 ### Core Components
 
-#### Metamodels:
+#### Metamodels
    - **Definition**: Metamodels represent the abstract syntax of different variability models, defining their structure and constraints.
    - **Implementation**: Each metamodel is encapsulated in a plugin, which includes the necessary classes and operations for analysis.
 
-#### Plugins:
+#### Plugins
    - **Function**: Plugins are fundamental components of the framework, encapsulating metamodels, operations, and transformations. They can be easily added or modified to extend the framework's capabilities.
    - **Modules**:
      - **Metamodel Classes**: Contain the core definitions for the model elements.
      - **Operations**: Implement specific analysis functions using the metamodel elements.
      - **Transformations**: Handle conversions between different model representations.
 
-#### Transformations:
+#### Transformations
    - **Text-to-Model (T2M)**: Reads and parses textual representations of models into in-memory objects.
    - **Model-to-Text (M2T)**: Serializes in-memory models back into text formats.
    - **Model-to-Model (M2M)**: Transforms models from one metamodel to another, enabling different types of analysis.
-
-## Subsections
-{: .fs-6 .fw-300 }

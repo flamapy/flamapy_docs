@@ -2,7 +2,7 @@
 title: DDDMP Writer
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/dddmp_writer
 nav_order: 5
 metamodel: flamapy_bdd

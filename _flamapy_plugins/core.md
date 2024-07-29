@@ -2,7 +2,7 @@
 layout: default
 title: Core plugin
 parent: Plugins
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/plugins/core_plugin
 nav_order: 1
 ---

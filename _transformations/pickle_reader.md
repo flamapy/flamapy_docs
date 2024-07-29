@@ -2,7 +2,7 @@
 title: Pickle Reader
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/pickle_reader
 nav_order: 6
 metamodel: flamapy_bdd

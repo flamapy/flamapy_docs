@@ -2,7 +2,7 @@
 title: Configuration Distribution
 layout: default
 parent: Operations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/operations/configuration_distribution
 nav_order: 5
 

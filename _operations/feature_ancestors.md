@@ -2,7 +2,7 @@
 title: Feature Ancestors
 layout: default
 parent: Operations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/operations/feature_ancestors
 nav_order: 1
 

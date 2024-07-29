@@ -2,7 +2,7 @@
 layout: default
 title: Transformations
 has_children: true
-parent: flamapy as framework
+parent: Flamapy as framework
 permalink: /framework/transformations
 nav_order: 3
 ---

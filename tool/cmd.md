@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Command line interface
-parent: flamapy as tool
+parent: Flamapy as tool
 permalink: /tool/command_line_interface
 nav_order: 1
 ---

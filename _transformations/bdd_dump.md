@@ -2,7 +2,7 @@
 title: BDD Dump
 layout: default
 parent: Transformations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/transformations/bdd_dump
 nav_order: 8
 metamodel: flamapy_bdd

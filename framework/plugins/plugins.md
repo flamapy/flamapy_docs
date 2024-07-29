@@ -2,7 +2,7 @@
 layout: default
 title: Plugins
 has_children: true
-parent: flamapy as framework
+parent: Flamapy as framework
 permalink: /framework/plugins
 nav_order: 1
 ---

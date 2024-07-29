@@ -2,7 +2,7 @@
 title: Dead Features
 layout: default
 parent: Operations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/operations/deaf_features
 nav_order: 1
 

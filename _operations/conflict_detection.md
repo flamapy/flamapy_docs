@@ -2,7 +2,7 @@
 title: Conflict Detection
 layout: default
 parent: Operations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 nav_order: 1
 
 flamapy_sat: true

@@ -2,7 +2,7 @@
 layout: default
 title: Operations
 has_children: true
-parent: flamapy as framework
+parent: Flamapy as framework
 permalink: /framework/operations
 nav_order: 1
 ---

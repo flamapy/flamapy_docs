@@ -2,7 +2,7 @@
 layout: default
 title: Lab plugins
 parent: Plugins
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/plugins/lab_plugins
 nav_order: 5
 ---

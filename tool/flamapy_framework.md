@@ -1,7 +1,7 @@
 ---
 layout: default
 title: flamapy framework
-parent: flamapy as tool
+parent: Flamapy as tool
 nav_order: 3
 ---
 

@@ -2,7 +2,7 @@
 title: Count Leafs
 layout: default
 parent: Operations
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/operations/count_leafs
 nav_order: 1
 

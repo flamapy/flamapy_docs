@@ -2,7 +2,7 @@
 layout: default
 title: BDD plugin
 parent: Plugins
-grand_parent: flamapy as framework
+grand_parent: Flamapy as framework
 permalink: /framework/plugins/bdd_plugin
 nav_order: 4
 ---
@@ -33,19 +33,19 @@ The `bdd_metamodel` plugin is an integral part of the {% include flamapy.html %}
 
 ### Features of the BDD Metamodel Plugin
 
-1. **BDD Integration**:
+1. **BDD Integration**
    - Utilizes the `dd` library to manipulate BDDs.
    - Efficiently represents and processes feature models using BDDs, which can handle large and complex models effectively.
 
-2. **Metamodel Classes**:
+2. **Metamodel Classes**
    - Provides necessary classes to represent BDD-based feature models.
    - Supports various transformations and operations to facilitate detailed analysis.
 
-3. **Operations**:
+3. **Operations**
    - Implements numerous operations such as counting the number of configurations, sampling configurations, and calculating feature inclusion probabilities.
    - Supports partial configurations for more targeted analyses.
 
-4. **Transformations**:
+4. **Transformations**
    - **Text-to-Model (T2M)**: Reads feature models from textual representations.
    - **Model-to-Model (M2M)**: Transforms feature models into BDD representations for analysis.
    - **Model-to-Text (M2T)**: Serializes BDD representations into different formats, including PNG, SVG, and DDDMP.
