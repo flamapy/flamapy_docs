@@ -3,6 +3,7 @@ title: Average Branching Factor
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/average_branching_factor
 nav_order: 1
 
 flamapy_sat: false

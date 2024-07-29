@@ -6,21 +6,31 @@ parent: flamapy as framework
 permalink: /framework/operations
 nav_order: 1
 ---
-### Concept of Operations in Flamapy
 
-The concept of operations in the Flamapy framework is a central component that defines the specific tasks or analyses that can be performed on feature models. Each operation is designed to extract useful information or metrics from the feature models, thereby aiding in various aspects of software product line engineering.
+# Operations
+{: .no_toc }
 
-#### Tied to a Metamodel
+## Table of contents
+{: .no_toc .text-delta }
 
-In Flamapy, operations are intrinsically tied to the metamodel they are designed for. A metamodel provides the abstract syntax and semantic rules of the variability model, essentially defining the structure and constraints of the feature models it represents. Operations leverage these definitions to perform analyses that are specific to the type of variability model they are applied to. This ensures that the operations are context-aware and can handle the specific intricacies and rules of the underlying model.
+1. TOC
+{:toc}
+
+## Concept of operations in flamapy
+
+The concept of operations in the {% include flamapy.html %} framework is a central component that defines the specific tasks or analyses that can be performed on feature models. Each operation is designed to extract useful information or metrics from the feature models, thereby aiding in various aspects of software product line engineering.
+
+### Tied to a metamodel
+
+In {% include flamapy.html %}, operations are intrinsically tied to the metamodel they are designed for. A metamodel provides the abstract syntax and semantic rules of the variability model, essentially defining the structure and constraints of the feature models it represents. Operations leverage these definitions to perform analyses that are specific to the type of variability model they are applied to. This ensures that the operations are context-aware and can handle the specific intricacies and rules of the underlying model.
 
 For example, an operation designed to count the number of leaf features in a feature model must understand the hierarchical structure defined by the metamodel. Similarly, an operation to check the satisfiability of a configuration needs to interpret the constraints and dependencies specified by the metamodel.
 
-#### Transformations for Operations
+### Transformations for operations
 
-To facilitate the execution of operations across different types of variability models, Flamapy employs a series of transformations. These transformations are necessary to convert models between various representations, enabling the application of operations that might require different metamodels or computational paradigms. Take a look to [transformations](/framework/transformations) for more information
+To facilitate the execution of operations across different types of variability models, {% include flamapy.html %} employs a series of transformations. These transformations are necessary to convert models between various representations, enabling the application of operations that might require different metamodels or computational paradigms. Take a look to [transformations](/framework/transformations) for more information
 
-Currently flamapy offers the following operations implemented in the marked plugins/metamodels and available in the interfaces shown.
+Currently {% include flamapy.html %} offers the following operations implemented in the marked plugins/metamodels and available in the interfaces shown.
 
 <style>
   table {

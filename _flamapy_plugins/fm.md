@@ -3,6 +3,7 @@ layout: default
 title: Feature model plugin
 parent: Plugins
 grand_parent: flamapy as framework
+permalink: /framework/plugins/feature_model_plugin
 nav_order: 2
 ---
 
@@ -25,11 +26,12 @@ The feature model plugin provides the metaclases required to work with feature m
 > ```
 > https://www.github.com/flamapy/fm_metamodel
 > ```
-### fm_metamodel Plugin of Flamapy Framework
 
-The `fm_metamodel` plugin is a crucial component of the Flamapy framework, providing the concrete classes and operations necessary for working with feature models. This plugin encapsulates the core functionalities required for defining, transforming, and analyzing feature models, making it a fundamental part of the Flamapy ecosystem.
+## fm_metamodel plugin of flamapy framework
 
-#### Features of the fm_metamodel Plugin
+The `fm_metamodel` plugin is a crucial component of the {% include flamapy.html %} framework, providing the concrete classes and operations necessary for working with feature models. This plugin encapsulates the core functionalities required for defining, transforming, and analyzing feature models, making it a fundamental part of the {% include flamapy.html %} ecosystem.
+
+### Features of the fm_metamodel Plugin
 
 1. **Metamodel Classes**:
    - Defines the structure and constraints of feature models.
@@ -44,7 +46,7 @@ The `fm_metamodel` plugin is a crucial component of the Flamapy framework, provi
    - Enables Model-to-Model (M2M) transformations to convert feature models into different formats or computational paradigms for advanced analysis.
    - Facilitates Model-to-Text (M2T) transformations to serialize in-memory feature models back into text formats for storage and sharing.
 
-#### Installation Instructions
+### Installation instructions
 
 To install the `fm_metamodel` plugin, follow these steps:
 
@@ -72,11 +74,11 @@ Currently, this plugin enables the following operations. Note that these operati
 </ul>
 
 
-# Transformations supported
+## Transformations supported
 
 Currently this plugins enables a set of TextToModel transformations (a.k.a Parsers) and ModelToText transformations (a.k.a serializations) for the most common variability serializations found in the literatures. Concretely we support:
 
-**Model to text transformations**
+### Model to text transformations
 <ul>
   {% assign transformations = site.transformations | where: "metamodel", "flamapy_fm" %}
   {% assign m2t_transformations = transformations | where: "type", "model_to_text" %}
@@ -85,7 +87,7 @@ Currently this plugins enables a set of TextToModel transformations (a.k.a Parse
   {% endfor %}
 </ul>
 
-**Text to model transformations**
+### Text to model transformations
 <ul>
   {% assign transformations = site.transformations | where: "metamodel", "flamapy_fm" %}
   {% assign t2m_transformations = transformations | where: "type", "text_to_model" %}
@@ -94,7 +96,7 @@ Currently this plugins enables a set of TextToModel transformations (a.k.a Parse
   {% endfor %}
 </ul>
 
-**Model to model transformations**
+### Model to model transformations
 <ul>
   {% assign transformations = site.transformations | where: "metamodel", "flamapy_fm" %}
   {% assign m2m_transformations = transformations | where: "type", "model_to_model" %}

@@ -3,6 +3,7 @@ title: Max Depth
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/max_depth
 nav_order: 1
 
 flamapy_sat: false

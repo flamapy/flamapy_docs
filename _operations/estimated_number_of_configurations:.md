@@ -3,6 +3,7 @@ title: Estimated Number of Configurations
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/estimated_number_of_configurations
 nav_order: 1
 
 flamapy_sat: false

@@ -3,6 +3,7 @@ title: Metrics
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/metrics
 nav_order: 4
 
 flamapy_sat: true

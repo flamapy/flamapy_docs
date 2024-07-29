@@ -3,6 +3,7 @@ title: Variant Features
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/variant_features
 nav_order: 9
 
 flamapy_sat: false

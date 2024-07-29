@@ -3,6 +3,7 @@ title: Sampling
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/sampling
 nav_order: 6
 
 flamapy_sat: true

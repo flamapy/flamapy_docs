@@ -3,12 +3,12 @@ layout: default
 title: BDD plugin
 parent: Plugins
 grand_parent: flamapy as framework
+permalink: /framework/plugins/bdd_plugin
 nav_order: 4
 ---
 
 # BDD plugin
 {: .no_toc }
-
 
 The BDD model plugin provides the metaclases required to work with 
 SAT models and to transform feature models into BDD.
@@ -26,11 +26,12 @@ SAT models and to transform feature models into BDD.
 > ```
 > https://www.github.com/flamapy/bdd_metamodel
 > ```
-### BDD Metamodel Plugin of Flamapy Framework
 
-The `bdd_metamodel` plugin is an integral part of the Flamapy framework, designed to support Binary Decision Diagrams (BDDs) representations for feature models. This plugin enhances the framework's capability to handle complex feature model analyses using BDDs, which are efficient for various computational tasks.
+## BDD metamodel plugin of flamapy framework
 
-#### Features of the BDD Metamodel Plugin
+The `bdd_metamodel` plugin is an integral part of the {% include flamapy.html %} framework, designed to support Binary Decision Diagrams (BDDs) representations for feature models. This plugin enhances the framework's capability to handle complex feature model analyses using BDDs, which are efficient for various computational tasks.
+
+### Features of the BDD Metamodel Plugin
 
 1. **BDD Integration**:
    - Utilizes the `dd` library to manipulate BDDs.
@@ -57,7 +58,7 @@ The `bdd_metamodel` plugin is an integral part of the Flamapy framework, designe
 > https://www.github.com/flamapy/bdd_metamodel, uned branch
 > ```
 
-#### Installation Instructions
+### Installation instructions
 
 To install the `bdd_metamodel` plugin, follow these steps:
 
@@ -69,7 +70,7 @@ To install the `bdd_metamodel` plugin, follow these steps:
      pip install flamapy-bdd
      ```
 
-#### Links
+### Links
 
 - **PyPI**: [bdd_metamodel on PyPI](https://pypi.org/project/flamapy-bdd/)
 - **GitHub Repository**: [bdd_metamodel on GitHub](https://github.com/flamapy/bdd_metamodel)
@@ -87,11 +88,11 @@ Currently, this plugin enables the following operations. Note that these operati
 </ul>
 
 
-# Transformations supported
+## Transformations supported
 
 Currently this plugins enables a set of TextToModel transformations (a.k.a Parsers) and ModelToText transformations (a.k.a serializations) for the most common variability serializations found in the literatures. Concretely we support:
 
-**Model to text transformations**
+### Model to text transformations
 <ul>
   {% assign transformations = site.transformations | where: "metamodel", "flamapy_bdd" %}
   {% assign m2t_transformations = transformations | where: "type", "model_to_text" %}
@@ -100,7 +101,7 @@ Currently this plugins enables a set of TextToModel transformations (a.k.a Parse
   {% endfor %}
 </ul>
 
-**Text to model transformations**
+### Text to model transformations
 <ul>
   {% assign transformations = site.transformations | where: "metamodel", "flamapy_bdd" %}
   {% assign t2m_transformations = transformations | where: "type", "text_to_model" %}
@@ -109,7 +110,7 @@ Currently this plugins enables a set of TextToModel transformations (a.k.a Parse
   {% endfor %}
 </ul>
 
-**Model to model transformations**
+### Model to model transformations
 <ul>
   {% assign transformations = site.transformations | where: "metamodel", "flamapy_bdd" %}
   {% assign m2m_transformations = transformations | where: "type", "model_to_model" %}

@@ -3,6 +3,7 @@ layout: default
 title: SAT plugin
 parent: Plugins
 grand_parent: flamapy as framework
+permalink: /framework/plugins/sat_plugin
 nav_order: 3
 ---
 
@@ -30,7 +31,7 @@ The pysat model plugin provides the metaclases required to work with SAT models 
 
 This plugin implements the classes to perform AAFM using the [PySAT](https://pysathq.github.io/) metasolver. It encompasses the set of variables and constraints objects to execute the analysis operations using PySAT as the backend. This allows us to rely on more than ten SAT solvers. This plugin offers the following functionality:
 
-#### Features of the PySAT Metamodel Plugin
+### Features of the PySAT Metamodel Plugin
 
 1. **SAT Solver Integration**:
    - Integrates with the PySAT toolkit, which supports a wide range of SAT solvers.
@@ -48,7 +49,7 @@ This plugin implements the classes to perform AAFM using the [PySAT](https://pys
    - Enables Model-to-Model (M2M) transformations to translate feature models into different formats for SAT-based analysis.
    - Facilitates Model-to-Text (M2T) transformations to serialize SAT results back into human-readable formats.
 
-#### Installation Instructions
+### Installation Instructions
 
 To install the `pysat_metamodel` plugin, follow these steps:
 
@@ -60,7 +61,7 @@ To install the `pysat_metamodel` plugin, follow these steps:
      pip install flamapy-sat
      ```
 
-#### Links
+### Links
 
 - **PyPI**: [pysat_metamodel on PyPI](https://pypi.org/project/flamapy-sat/)
 - **GitHub Repository**: [pysat_metamodel on GitHub](https://github.com/flamapy/pysat_metamodel)
@@ -79,7 +80,7 @@ Currently, this plugin enables the following operations. Note that these operati
 </ul>
 
 
-# Transformations supported
+## Transformations supported
 
 Currently this plugins enables a set of TextToModel transformations (a.k.a Parsers) and ModelToText transformations (a.k.a serializations) for the most common variability serializations found in the literatures. Concretely we support:
 

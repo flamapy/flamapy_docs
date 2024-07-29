@@ -3,6 +3,7 @@ title: Commonality
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/commonality
 nav_order: 1
 
 flamapy_sat: true

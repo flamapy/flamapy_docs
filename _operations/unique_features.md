@@ -3,6 +3,7 @@ title: Unique Features
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/unique_features
 nav_order: 7
 
 flamapy_sat: false

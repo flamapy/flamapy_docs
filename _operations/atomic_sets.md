@@ -2,8 +2,10 @@
 title: Atomic Sets
 layout: default
 parent: Operations
-grand_parent: Flamapy as Framework
+grand_parent: flamapy as framework
+permalink: /framework/operations/atomic_sets
 nav_order: 1
+
 flamapy_sat: false
 flamapy_bdd: false
 flamapy_fm: true

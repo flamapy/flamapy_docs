@@ -3,6 +3,7 @@ title: Product Distribution
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/product_distribution
 nav_order: 5
 
 flamapy_sat: false

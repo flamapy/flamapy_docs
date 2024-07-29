@@ -3,6 +3,7 @@ title: Satisfiable
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/satisfiable
 nav_order: 1
 
 flamapy_sat: true

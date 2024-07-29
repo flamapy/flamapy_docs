@@ -3,6 +3,7 @@ title: Feature Inclusion Probability
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/feature_inclusion_probability
 nav_order: 2
 
 flamapy_sat: false

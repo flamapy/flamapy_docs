@@ -3,6 +3,7 @@ title: Variability
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/variability
 nav_order: 8
 
 flamapy_sat: false

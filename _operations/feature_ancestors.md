@@ -3,6 +3,7 @@ title: Feature Ancestors
 layout: default
 parent: Operations
 grand_parent: flamapy as framework
+permalink: /framework/operations/feature_ancestors
 nav_order: 1
 
 flamapy_sat: false
@@ -17,8 +18,10 @@ rest: true
 
 **Description**: 
 Identifies all ancestor features of a given feature in the feature model. Ancestors are features that are hierarchically above the given feature.
+
 **Application**: 
 Helps in understanding the hierarchical structure and dependencies of features.
+
 **Example**: 
 For a given feature, listing all parent features up to the root.
 

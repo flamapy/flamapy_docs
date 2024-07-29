@@ -3,10 +3,11 @@ layout: default
 title: Core plugin
 parent: Plugins
 grand_parent: flamapy as framework
+permalink: /framework/plugins/core_plugin
 nav_order: 1
 ---
 
-# Core
+# Core plugin
 {: .no_toc }
 
 
@@ -26,11 +27,11 @@ The core component is the main entry point of {% include flamapy.html %}.
 > https://www.github.com/flamapy/flamapy_fw
 > ```
 
-### Core Plugin of Flamapy Framework
+## Core plugin of flamapy framework
 
-The core plugin is the foundation of the Flamapy framework, providing essential functionalities and interfaces that support the integration and operation of various metamodels and plugins. It ensures the cohesive functioning of the framework, enabling seamless interaction between different components.
+The core plugin is the foundation of the {% include flamapy.html %} framework, providing essential functionalities and interfaces that support the integration and operation of various metamodels and plugins. It ensures the cohesive functioning of the framework, enabling seamless interaction between different components.
 
-#### Features of the Core Plugin
+### Features of the core plugin
 
 1. **Transformation Interfaces**:
    - **Text-to-Model (T2M)**: Converts textual representations of feature models into in-memory objects.
@@ -45,9 +46,9 @@ The core plugin is the foundation of the Flamapy framework, providing essential 
    - Facilitates the discovery and integration of plugins.
    - Manages the communication between plugins and coordinates the execution of transformations and operations.
 
-#### Installation Instructions
+### Installation instructions
 
-To install the core plugin of Flamapy, follow these steps:
+To install the core plugin of {% include flamapy.html %}, follow these steps:
 
 1. **Install Python**: Ensure that Python 3.9 or later is installed on your system.
 
@@ -57,7 +58,7 @@ To install the core plugin of Flamapy, follow these steps:
      pip install flamapy_fw
      ```
 
-#### Links
+### Links
 
 - **PyPI**: [Flamapy on PyPI](https://pypi.org/project/flamapy/)
 - **GitHub Repository**: [Flamapy Core on GitHub](https://github.com/flamapy/flamapy_fw)
