@@ -44,7 +44,7 @@ configurations = fm.configurations()
 print(configurations)
 ```
 
-### Python falampy framework usage
+### Python flamapy framework usage
 ```python
 from flamapy.core.discover import DiscoverMetamodels
 # Initiallize the dicover metamodel
