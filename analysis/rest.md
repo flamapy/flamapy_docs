@@ -15,7 +15,7 @@ REST (Representational State Transfer) is an architectural style for designing n
 
 Swagger, now part of the OpenAPI Initiative, is a powerful toolset for developing and documenting RESTful APIs. It provides a standard way to describe the structure of your APIs, enabling both humans and computers to understand the capabilities of the service without direct access to the source code or documentation. Swagger includes an intuitive user interface that allows developers to interact with the API endpoints, try out various requests, and visualize responses. This makes it an invaluable resource for both creating and consuming APIs, ensuring consistency, and improving the overall developer experience.
 
-flamapy offers a package that enable REST/SWAGGET access to the flamapy facade. To use it, it is mandatoy to install this plugin appart. Take into account that it will add several dependencies. 
+{% include flamapy.html %} offers a package that enable REST/SWAGGER access to the {% include flamapy.html %} facade. To use it, it is mandatoy to install this plugin appart. Take into account that it will add several dependencies. 
 
 ```bash
 pip install flamapy-rest

@@ -15,7 +15,7 @@ WebAssembly (WASM) is a binary instruction format designed to be executed in web
 
 Pyodide is an exciting project that brings the Python runtime to the browser via WebAssembly. By compiling the Python interpreter and scientific libraries to WebAssembly, Pyodide allows developers to run Python code directly in the web browser. This opens up new possibilities for web applications, enabling the use of Python's rich ecosystem of data science and machine learning libraries without requiring a backend server. Pyodide facilitates the integration of Python with JavaScript, allowing seamless interaction between the two languages and providing a powerful tool for developing interactive, high-performance web applications.
 
-This means that you can run flamapy in your browser. 
+This means that you can run {% include flamapy.html %} in your browser. 
 <style>
         .button-container {
             display: flex;
@@ -43,7 +43,7 @@ This means that you can run flamapy in your browser.
     <a href="#" onclick="alert('Coming soon')" class="highlight-button">Try flamapy in your browser</a>
 </div>
 
-To do it so, we need to first install pyodide and flamapy within the browser. Note that we manually manage the dependencies. This is to avoid installing other plugins such as BDD which are not yet available in wasm. 
+To do it so, we need to first install pyodide and {% include flamapy.html %} within the browser. Note that we manually manage the dependencies. This is to avoid installing other plugins such as BDD which are not yet available in wasm. 
 
 ```javascript
 async function preparare_WASM(){
@@ -58,11 +58,10 @@ async function preparare_WASM(){
         await micropip.install("flamapy-fm==2.0.0.dev2")
         await micropip.install("flamapy-sat==2.0.0.dev2")
         `)
-     
 }
 ```
 
-Then we can call python, and flamapy code within the browser using a javascript with python method.
+Then we can call python, and {% include flamapy.html %} code within the browser using a javascript with python method.
 Note that this method, first, check if the default execution relyis on bdd to force it, using the easy-to-use facade, to use pysat. In the following code, param is the operation of the facade to use. Nonetheless, any operation within the facade or implemented in pysat is available. 
 
 

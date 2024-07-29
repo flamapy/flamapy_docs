@@ -7,8 +7,7 @@ nav_order: 1
 
 # Command line interface
 
-
-Nonetheless, as mentioned above, flamapy as a tool aims at being easily ussable, therefore it provides a simple command line interface that do not require to learn the framework and enable the most common feature modelling operations. For example, if you want to execute the satisfiable operation just run:
+Nonetheless, as mentioned above, {% include flamapy.html %} as a tool aims at being easily usable; therefore, it provides a simple command line interface that does not require learning the framework and enables the most common feature modelling operations. For example, if you want to execute a satisfiable operation just run:
 
 ```bash
 flamapy satisfiable "path/to/feature/model"

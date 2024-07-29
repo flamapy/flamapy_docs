@@ -7,9 +7,9 @@ nav_order: 2
 
 # Easy to use python facade
 
-Using Python as a scripting language can be highly convenient for developing scripts and integrating our analysis into other processes. However, learning a framework as complex as Flamapy can initially seem overwhelming. To alleviate this, Flamapy provides a straightforward method for executing the most common operations in Python.
+Using Python as a scripting language can be highly convenient for developing scripts and integrating our analysis into other processes. However, learning a framework as complex as {% include flamapy.html %} can initially seem overwhelming. To alleviate this, {% include flamapy.html %} provides a straightforward method for executing the most common operations in Python.
 
-After installing flamapy we can use the tool as easy as 
+After installing {% include flamapy.html %} we can use the tool as easy as 
 ```python
 from flamapy.interfaces.python.flama_feature_model import FLAMAFeatureModel
 # Load the feature model

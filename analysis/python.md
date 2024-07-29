@@ -7,9 +7,9 @@ nav_order: 3
 
 # Using the flamapy underlying framework
 
-While this opetion required to know the udnerpinnings of the flamapy framework. It also allows users to use ny operation available in the ecosystem instead of just the most common ones. 
+While this option required to know the underpinnings of the {% include flamapy.html %} framework. It also allows users to use any operation available in the ecosystem instead of just the most common ones. 
 
-This interface would require to use python, for example like this:
+This interface would require to use Python, for example like this:
 
 ```python
 from flamapy.core.discover import DiscoverMetamodels
@@ -17,11 +17,11 @@ from flamapy.core.discover import DiscoverMetamodels
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
 # Use BDDConfigurations if you want to rely on BDD solver
-result=dm.use_operation_from_file("PySATSatisfiable","path/to/feature/model")
+result = dm.use_operation_from_file("PySATSatisfiable","path/to/feature/model")
 print(result)
 ```
 
-To un other operations, that could be less tested you have to take a look to the names of them in the github repositories of the [plugins](framework/plugins). However most of operations are already documented with code snippets in. 
+To run other operations that could be less tested, you have to look at their names in the GitHub repositories of the [plugins](framework/plugins). However, most of the operations are already documented with code snippets.
 
 <ul>
   {% assign fm_operations = site.operations | where: "python", true %}
