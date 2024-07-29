@@ -17,11 +17,11 @@ Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for A
 
 ---
 
-### <i class="fa-solid fa-puzzle-piece"></i> Easily Extensible
+### <i class="fa-solid fa-puzzle-piece"></i> Easily extensible
 * **Plugin Generator**: Simplifies the process of creating new plugins with a semi-automatic generator, making customization and expansion straightforward.
 * **Variability modelling in the wild**: Initially supports cardinality-based feature models, with the flexibility to easily incorporate other types like attributed feature models.
 
-### <i class="fa-solid fa-life-ring"></i> Robust Solver Support
+### <i class="fa-solid fa-life-ring"></i> Robust solver support
 
 * **PySAT Integration**: Utilizes the PySAT metasolver, offering access to more than ten distinct solvers. This diversity allows for optimal solution finding across various complex scenarios.
 
