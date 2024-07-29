@@ -9,10 +9,6 @@ nav_order: 5
 
 ## flamapy and pysat are WASM compatible
 
-{: .warning }
-> This is a work in progress documentation page
-
-
 WebAssembly (WASM) is a binary instruction format designed to be executed in web browsers at near-native speed. It provides a compact and efficient way to run code written in multiple languages, including C, C++, and Rust, on the web. WASM aims to improve web performance and enable more complex and resource-intensive applications to run in the browser. It is a critical technology for modern web development, allowing for high-performance applications without relying on JavaScript alone.
 
 Pyodide is an exciting project that brings the Python runtime to the browser via WebAssembly. By compiling the Python interpreter and scientific libraries to WebAssembly, Pyodide allows developers to run Python code directly in the web browser. This opens up new possibilities for web applications, enabling the use of Python's rich ecosystem of data science and machine learning libraries without requiring a backend server. Pyodide facilitates the integration of Python with JavaScript, allowing seamless interaction between the two languages and providing a powerful tool for developing interactive, high-performance web applications.
@@ -47,7 +43,7 @@ This means that you can run {% include flamapy.html %} in your browser.
 
 ## Example of WASM
 
-To do it so, we need to first install pyodide and {% include flamapy.html %} within the browser. Note that we manually manage the dependencies. This is to avoid installing other plugins such as BDD which are not yet available in wasm. 
+To do it so, we need to first install pyodide and {% include flamapy.html %} within the browser. Note that we manually manage the dependencies. This is to avoid installing other plugins such as BDD which are not yet available in wasm. Nonetheless, you can access a working version [HERE](https://www.flamapy.org/try-it/wasm-uvl-analysis)
 
 ```javascript
 async function preparare_WASM(){
