@@ -3,16 +3,18 @@ title: Glencoe Reader
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/glencoe_reader
 nav_order: 1
 metamodel: flamapy_fm
 type: text_to_model
 ---
 
-## Glencoe Reader
+# Glencoe Reader
 
 Glencoe is an easy to use web application which enables you to visualize, analyze and configure multivariant product lines. It is backed by well-known and industry approved concepts as well as state-of-the-art approaches based on current research.
 
-flamapy relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .gfm.json**
+{% include flamapy.html %} relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .gfm.json**
+
 ---
 ## Code Examples
 ```python

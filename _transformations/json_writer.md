@@ -1,17 +1,18 @@
 ---
-title: Json Writer
+title: JSON Writer
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/json_writer
 nav_order: 1
 metamodel: flamapy_fm
 type: text_to_model
 ---
 
-## Json Writer
+# JSON Writer
 JSON (JavaScript Object Notation) is a lightweight data interchange format that's easy for humans to read and write, and easy for machines to parse and generate. It is commonly used to transmit data between a server and web application as text.
 
-flamapy relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .json**
+{% include flamapy.html %} relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .json**
 
 ---
 ## Code Examples

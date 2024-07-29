@@ -3,16 +3,18 @@ title: BDD to PNG Writer
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/bdd_to_png
 nav_order: 3
 metamodel: flamapy_bdd
 type: model_to_text
 ---
 
-## BDD to PNG Writer
+# BDD to PNG Writer
 
 This transformation serializes a BDD representation of a feature model into a PNG image. This is useful for visualizing the structure of the BDD.
 
-### Code Examples
+---
+## Code Examples
 
 ```python
 from flamapy.metamodels.bdd_metamodel.transformations.bdd_writer import BDDWriter, BDDDumpFormat

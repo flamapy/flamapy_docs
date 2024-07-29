@@ -3,16 +3,18 @@ title: FM to PySAT
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/fm_to_pysat
 nav_order: 12
 metamodel: flamapy_sat
 type: model_to_model
 ---
 
-## FM to PySAT
+# FM to PySAT
 
 This transformation converts a feature model into a PySAT representation, enabling advanced SAT-based analysis of the feature model.
 
-### Code Examples
+---
+## Code Examples
 
 ```python
 from flamapy.metamodels.fm_metamodel.transformations.featureide_reader import FeatureIDEReader

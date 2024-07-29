@@ -4,45 +4,64 @@ title: Transformations
 has_children: true
 parent: flamapy as framework
 permalink: /framework/transformations
-nav_order: 1
+nav_order: 3
 ---
 
-### Flamapy Framework Architecture and Model Transformations
+# Transformations
+{: .no_toc }
 
-The flamapy tool relies on the flampy framework which is heavily inspired by Model-Driven Development (MDD) principles, focusing on facilitating the automated analysis of feature models through a structured and modular approach. Here’s an overview of how the architecture and model transformations work within Flamapy:
+## Table of contents
+{: .no_toc .text-delta }
 
-**Core Concepts**:
-1. **Metamodels**: Represent the abstract syntax of different variability models (e.g., feature models). Each metamodel defines the structure and constraints of the models it represents.
-2. **Plugins**: Encapsulate metamodels, transformations, and operations. Plugins allow the framework to be extended and customized for various analysis tasks.
-3. **Transformations**: Divided into three main types:
+1. TOC
+{:toc}
+
+The {% include flamapy.html %} tool relies on the flampy framework which is heavily inspired by Model-Driven Development (MDD) principles, focusing on facilitating the automated analysis of feature models through a structured and modular approach. Here’s an overview of how the architecture and model transformations work within {% include flamapy.html %}:
+
+## Core concepts
+### Metamodels
+Represent the abstract syntax of different variability models (e.g., feature models). Each metamodel defines the structure and constraints of the models it represents.
+
+### Plugins
+Encapsulate metamodels, transformations, and operations. Plugins allow the framework to be extended and customized for various analysis tasks.
+
+### Transformations
+Divided into three main types:
    - **Text-to-Model (T2M)**: Converts textual representations of models into in-memory objects.
    - **Model-to-Text (M2T)**: Serializes in-memory models back into text formats.
    - **Model-to-Model (M2M)**: Transforms models from one metamodel to another, facilitating different types of analysis.
 
-#### Model Transformations
+## Model transformations
 
-**1. Text-to-Model (T2M) Transformations**:
+### Text-to-Model (T2M) transformations
    - **Purpose**: To read and parse the textual representation of feature models into their corresponding in-memory objects.
    - **Example**: Reading a UVL (Universal Variability Language) file and converting it into an internal feature model representation.
 
-**2. Model-to-Text (M2T) Transformations**:
+### Model-to-Text (M2T) transformations
    - **Purpose**: To serialize the in-memory model objects into a specific textual format, enabling storage, sharing, and further processing.
    - **Example**: Converting an internal feature model representation back into a UVL file or other supported formats like XML.
 
-**3. Model-to-Model (M2M) Transformations**:
+### Model-to-Model (M2M) transformations
    - **Purpose**: To translate models between different metamodels, often required for leveraging various analysis tools and techniques.
    - **Example**: Transforming a feature model into a SAT (Boolean satisfiability problem) representation to perform complex constraint analysis.
 
-#### Example Scenario
+## Example scenario
 
-1. **Loading a Model**: Use T2M transformation to read a UVL file and create an in-memory feature model.
-2. **Basic Operations**: Perform operations such as counting the number of leaf features directly on the feature model.
-3. **Complex Analysis**: Transform the feature model into a SAT metamodel using M2M transformation to leverage SAT solvers for deeper analysis, such as checking satisfiability or identifying dead features.
-4. **Serialization**: Use M2T transformation to convert the SAT results back into a human-readable format for reporting.
+### Loading a model
+Use T2M transformation to read a UVL file and create an in-memory feature model.
 
-#### Using Flamapy Framework
+### Basic operations
+Perform operations such as counting the number of leaf features directly on the feature model.
 
-Here’s an example of how these transformations and operations might be used in the Flamapy framework:
+### Complex analysis
+Transform the feature model into a SAT metamodel using M2M transformation to leverage SAT solvers for deeper analysis, such as checking satisfiability or identifying dead features.
+
+### Serialization
+Use M2T transformation to convert the SAT results back into a human-readable format for reporting.
+
+## Using flamapy framework
+
+Here’s an example of how these transformations and operations might be used in the {% include flamapy.html %} framework:
 
 ```python
 from flamapy.core.discover import DiscoverMetamodels

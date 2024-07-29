@@ -3,16 +3,18 @@ title: XML Reader
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/xml_reader
 nav_order: 1
 metamodel: flamapy_fm
 type: text_to_model
 ---
 
-## XML Reader
+# XML Reader
 
 This transformation is used to manipulate AFM serializations of feature models. It was used in the [fama](isa.us.es/fama) tool. FaMa-FW is a Framework for automated analyses of feature models integrating some of the most commonly used logic representations and solvers proposed in the literature (BDD, SAT and CSP solvers are implemented). FaMa is the first tool integrating different solvers for the automated analyses of feature models. It was implemented in Java and no longer maintained. 
 
-### This is an example of the serialization used by then
+## Example of serialization
+This is an example of the serialization used by then
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <feature-model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.tdg-seville.info/benavides/featuremodelling/feature-model.xsd">

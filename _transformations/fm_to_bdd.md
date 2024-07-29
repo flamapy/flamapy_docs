@@ -3,18 +3,20 @@ title: FM to BDD
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/fm_to_bdd
 nav_order: 2
 metamodel: flamapy_bdd
 type: model_to_model
 ---
 
-## FM to BDD
+# FM to BDD
 
 This transformation converts a feature model into a Binary Decision Diagram (BDD) representation. BDDs are efficient for representing and manipulating logical functions, making them ideal for feature model analysis.
 
-Flamapy relies on file extensions to identify the required transformation. Ensure you specify the correct file extension for this transformation.
+{% include flamapy.html %} relies on file extensions to identify the required transformation. Ensure you specify the correct file extension for this transformation.
 
-### Code Examples
+---
+## Code Examples
 
 ```python
 from flamapy.metamodels.fm_metamodel.transformations.featureide_reader import FeatureIDEReader

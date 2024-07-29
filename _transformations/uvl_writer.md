@@ -3,27 +3,35 @@ title: UVL Writer
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/uvl_writer
 nav_order: 1
 metamodel: flamapy_fm
 type: model_to_text
 ---
 
-## UVL Writer
+# UVL Writer
 
 The Universal Variability Language (UVL) is a language designed to specify variability in software product lines (SPLs). It aims to provide a standardized way to describe the features and variations within a product line, facilitating the management of different configurations and enabling tool interoperability.
 
-Key Features of [Universal Variability Language (UVL)](https://universal-variability-language.github.io/):
-* Standardization: UVL provides a common, standardized way to represent variability, making it easier to share and reuse models across different tools and organizations.
+## Key features
 
-* Expressiveness: It is designed to be expressive enough to capture complex variability, including hierarchical features, constraints, and dependencies between features.
+Key features of [Universal Variability Language (UVL)](https://universal-variability-language.github.io/):
+### Standardization
+UVL provides a common, standardized way to represent variability, making it easier to share and reuse models across different tools and organizations.
 
-* Simplicity and Usability: UVL aims to be simple to use, with a syntax that is easy to understand for both humans and machines. This makes it accessible to a wide range of stakeholders, including developers, product managers, and other domain experts.
+### Expressiveness
+It is designed to be expressive enough to capture complex variability, including hierarchical features, constraints, and dependencies between features.
 
-* Tool Support: There is growing support for UVL in various SPL tools, which can interpret and manipulate UVL models. This includes tools for feature modeling, configuration, analysis, and visualization.
+### Simplicity and Usability
+UVL aims to be simple to use, with a syntax that is easy to understand for both humans and machines. This makes it accessible to a wide range of stakeholders, including developers, product managers, and other domain experts.
 
-* Interoperability: By using a common language like UVL, different tools and platforms can more easily interoperate, enabling a more integrated and efficient SPL engineering process.
+### Tool Support
+There is growing support for UVL in various SPL tools, which can interpret and manipulate UVL models. This includes tools for feature modeling, configuration, analysis, and visualization.
 
-flamapy relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .uvl**
+### Interoperability
+By using a common language like UVL, different tools and platforms can more easily interoperate, enabling a more integrated and efficient SPL engineering process.
+
+{% include flamapy.html %} relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .uvl**
 
 A snipet of how it looks like 
 ```

@@ -3,16 +3,18 @@ title: FeatureIDE Reader
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/featureide_reader
 nav_order: 1
 metamodel: flamapy_fm
 type: text_to_model
 ---
 
-## FeatureIDE Reader
+# FeatureIDE Reader
 
-FeatureIDE is An extensible framework for feature-oriented software development. Currently you can find the latest version in their [website](https://github.com/FeatureIDE/FeatureIDE)
+FeatureIDE is an extensible framework for feature-oriented software development. Currently you can find the latest version in their [website](https://github.com/FeatureIDE/FeatureIDE)
 
-flamapy relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .fide**
+{% include flamapy.html %} relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .fide**
+
 ---
 ## Code Examples
 ```python

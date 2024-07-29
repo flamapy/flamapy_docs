@@ -3,18 +3,21 @@ title: AFM Writer
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/afm_writer
 nav_order: 1
 metamodel: flamapy_fm
 type: model_to_text
 ---
 
-## AFM reader
+# AFM writer
 
 This transformation is used to manipulate AFM serializations of feature models. It was used in the [fama](isa.us.es/fama) tool. FaMa-FW is a Framework for automated analyses of feature models integrating some of the most commonly used logic representations and solvers proposed in the literature (BDD, SAT and CSP solvers are implemented). FaMa is the first tool integrating different solvers for the automated analyses of feature models. It was implemented in Java and no longer maintained. 
 
-flamapy relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .afm**
+{% include flamapy.html %} relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .afm**
 
-### This is an example of the serialization used by then
+## Example of serialization
+
+This is an example of the serialization used by then
 ```
 %Relationships
 root : [F1]  F2  F3  F4  F5 [1,3] {F6 F7 F8 }[1,2] {F9 F10 };

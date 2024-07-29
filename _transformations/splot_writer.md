@@ -3,16 +3,17 @@ title: SPLOT Writer
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/splot_writer
 nav_order: 1
 metamodel: flamapy_fm
 type: model_to_text
 ---
 
-## SPLOT Writer
+# SPLOT Writer
 
 "SPLot" (Software Product Line online tools) refers to a suite of tools designed to assist with the management and configuration of software product lines (SPLs). SPLs are sets of software-intensive systems that share a common set of features but also exhibit variations to meet different customer needs or market demands.
 
-flamapy relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .sxfm**
+{% include flamapy.html %} relies on file extensions to identify which transformation is required. If you are not an expert we recommend to specify the correct extension for this file type. **The file extension for this file is .sxfm**
 
 ---
 ## Code Examples

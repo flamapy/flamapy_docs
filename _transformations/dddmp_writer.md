@@ -3,16 +3,18 @@ title: DDDMP Writer
 layout: default
 parent: Transformations
 grand_parent: flamapy as framework
+permalink: /framework/transformations/dddmp_writer
 nav_order: 5
 metamodel: flamapy_bdd
 type: model_to_text
 ---
 
-## DDDMP Writer
+# DDDMP Writer
 
 This transformation serializes an in-memory BDD representation into a DDDMP file. This is useful for saving and sharing BDDs.
 
-### Code Examples
+---
+## Code Examples
 
 ```python
 from flamapy.metamodels.bdd_metamodel.transformations.dddmp_writer import DDDMPWriter
