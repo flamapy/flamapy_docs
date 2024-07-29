@@ -30,7 +30,7 @@ Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for A
 ### <i class="fa-brands fa-searchengin"></i> Easy to use, easy to integrate
 
 * **Easy-to-use python facade**: Designed with capabilities to analyse modes in Python with just a line of code.
-* **Command line direct use**: Easy to inegrate in any ecosystem.
+* **Command line direct use**: Easy to integrate in any ecosystem.
 * **WASM support**: Run analysis in your browser. Currently, both {% include flamapy.html %} and PySAT are WASM compatible. Enable analysis with 0 configuration process.
 * **REST / SWAGGER available**: Integrate the tool in yours by means of a robust backend Rest API.
 
