@@ -93,9 +93,9 @@ with open("uvlfile.uvl", "w") as text_file:
 fm = FLAMAFeatureModel("uvlfile.uvl")
 
 if requires_with_sat(fm.${param}):
-    result=fm.${param}(with_sat=True)
+    result = fm.${param}(with_sat=True)
 else:
-    result=fm.${param}()
+    result = fm.${param}()
 
 if isinstance(result, Iterable):
     result = "<br>".join([f'P({i}): {p}' for i, p in enumerate(result, 1)])

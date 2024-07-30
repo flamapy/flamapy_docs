@@ -52,7 +52,7 @@ from flamapy.core.discover import DiscoverMetamodels
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
 # Use BDDConfigurations if you want to rely on BDD solver
-result=dm.use_operation_from_file("PySATConfigurationsNumber","path/to/feature/model")
+result = dm.use_operation_from_file("PySATConfigurationsNumber","path/to/feature/model")
 print(result)
 ```
 ### Python flamapy framework **ADVANCED** usage
@@ -62,13 +62,13 @@ from flamapy.core.discover import DiscoverMetamodels
 dm = DiscoverMetamodels()
 # Get the fm metamodel representation using the transformation 
 # required to get to the fm metamodel
-feature_model = dm.use_transformation_t2m(model_path,'fm') 
-# Manuelly call a M2M transformation to Pysat
+feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm') 
+# Manually call a M2M transformation to Pysat
 sat_model = dm.use_transformation_m2m(feature_model,"pysat")
 # Get the operation
 operation = dm.get_operation(sat_model,'PySATConfigurationsNumber')
 # Execute the operation
-operation.execute(self.sat_model)
+operation.execute(sat_model)
 # Get and print the result
 result = operation.get_result()
 print(result)
@@ -80,13 +80,13 @@ from flamapy.core.discover import DiscoverMetamodels
 dm = DiscoverMetamodels()
 # Get the fm metamodel representation using the transformation 
 # required to get to the fm metamodel
-feature_model = dm.use_transformation_t2m(model_path,'fm') 
-# Manuelly call a M2M transformation to BDD
-bdd_model = dm.use_transformation_m2m(feature_model,"BDD")
+feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm') 
+# Manually call a M2M transformation to BDD
+bdd_model = dm.use_transformation_m2m(feature_model,"bdd")
 # Get the operation
-operation = dm.get_operation(sat_model,'BDDConfigurationsNumber')
+operation = dm.get_operation(bdd_model,'BDDConfigurationsNumber')
 # Execute the operation
-operation.execute(self.bdd_model)
+operation.execute(bdd_model)
 # Get and print the result
 result = operation.get_result()
 print(result)

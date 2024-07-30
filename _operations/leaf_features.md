@@ -50,7 +50,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initiallize the dicover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
-result=dm.use_operation_from_file("FMLeafFeatures","path/to/feature/model")
+result = dm.use_operation_from_file("FMLeafFeatures","path/to/feature/model")
 print(result)
 ```
 ### Python flamapy framework **ADVANCED** usage
@@ -60,7 +60,7 @@ from flamapy.core.discover import DiscoverMetamodels
 dm = DiscoverMetamodels()
 # Get the fm metamodel representation using the transformation 
 # required to get to the fm metamodel
-feature_model = dm.use_transformation_t2m(model_path,'fm') 
+feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm') 
 # Call the operation, no automatic transformations will be needed
 result = dm.use_operation(feature_model,'FMLeafFeatures').get_result()
 print(result)

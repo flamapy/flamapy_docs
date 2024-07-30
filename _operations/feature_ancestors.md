@@ -51,7 +51,7 @@ from flamapy.core.discover import DiscoverMetamodels
 dm = DiscoverMetamodels()
 # Get the fm metamodel representation using the transformation 
 # required to get to the fm metamodel
-feature_model = dm.use_transformation_t2m(model_path,'fm') 
+feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm') 
 # Get the operation, no automatic transformations will be needed
 operation = dm.get_operation(feature_model,'FMFeatureAncestors')
 # Set the feature in which we want to get the ancestors

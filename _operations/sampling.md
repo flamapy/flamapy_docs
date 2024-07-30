@@ -43,7 +43,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
 dm = DiscoverMetamodels()
 # Get the fm metamodel representation using the transformation required to get to the fm metamodel
-feature_model = dm.use_transformation_t2m(model_path, 'fm')
+feature_model = dm.use_transformation_t2m("path/to/feature/model", 'fm')
 # Manually call a M2M transformation to BDD
 bdd_model = dm.use_transformation_m2m(feature_model, "bdd")
 # Get the operation, in this case, the bdd version

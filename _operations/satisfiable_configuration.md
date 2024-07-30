@@ -49,7 +49,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initiallize the dicover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed; 
-result=dm.use_operation_from_file(operation_name="PySATSatisfiableConfiguration",
+result = dm.use_operation_from_file(operation_name="PySATSatisfiableConfiguration",
                                   file="path/to/feature/model", 
                                   configuration_file='path/to/configuration')
 print(result)
@@ -61,18 +61,18 @@ from flamapy.core.discover import DiscoverMetamodels
 dm = DiscoverMetamodels()
 # Get the fm metamodel representation using the transformation 
 # required to get to the fm metamodel
-feature_model = dm.use_transformation_t2m(model_path,'fm') 
+feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm') 
 # Get the configuration representation using the transformation 
 # required to get to the configuration metamodel
 configuration = dm.use_transformation_t2m('path/to/configuration','configuration')
-# Manuelly call a M2M transformation to Pysat
+# Manually call a M2M transformation to Pysat
 sat_model = dm.use_transformation_m2m(feature_model,"pysat")
 # Get the operation
 operation = dm.get_operation(sat_model,'PySATSatisfiableConfiguration')
 # Set the configuration within the operation
 operation.set_configuration(configuration)
 # Execute the operation
-operation.execute(self.sat_model)
+operation.execute(sat_model)
 # Get and print the result
 result = operation.get_result()
 print(result)

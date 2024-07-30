@@ -57,7 +57,7 @@ dm = DiscoverMetamodels()
 # Get the fm metamodel representation using the transformation 
 # required to get to the fm metamodel
 # the transformation is identified by file extension
-feature_model = dm.use_transformation_t2m(model_path,'fm') 
+feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm') 
 # write to file
 dm.use_transformation_m2t(feature_model,'path/to/feature/model.uvl')
 ```
