@@ -38,8 +38,8 @@ flamapy satisfiable_configuration "path/to/feature/model" "path/to/configuration
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
-# Identify atomic sets
-operation = fm.satisfiable_configuration(('path/to/configuration'))
+# Identify if it is a satisfiable configuration
+operation = fm.satisfiable_configuration(("path/to/configuration"))
 print(operation)
 ```
 

@@ -38,8 +38,8 @@ flamapy commonality "path/to/feature/model" "path/to/configuration"
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
-# Identify atomic sets
-commonality = fm.commonality(('path/to/configuration'))
+# Commonality
+commonality = fm.commonality(("path/to/configuration"))
 print(commonality)
 ```
 

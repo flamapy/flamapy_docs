@@ -40,7 +40,7 @@ flamapy average_branching_factor "path/to/feature/model"
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
-# Identify atomic sets
+# Average Branching Factor
 avbf = fm.average_branching_factor()
 print(avbf)
 ```

@@ -38,8 +38,8 @@ flamapy filter "path/to/feature/model" "path/to/configuration"
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
-# Identify atomic sets
-operation = fm.filter(('path/to/configuration'))
+# Filter
+operation = fm.filter(("path/to/configuration"))
 print(operation)
 ```
 
