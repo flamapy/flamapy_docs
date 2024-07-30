@@ -35,7 +35,7 @@ flamapy satisfiable_configuration "path/to/feature/model" "path/to/configuration
 
 ### Python easy to use facade usage
 ```python
-from flamapy.interfaces.python.flama_feature_model import FLAMAFeatureModel
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
 # Identify atomic sets

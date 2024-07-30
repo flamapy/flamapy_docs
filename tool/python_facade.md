@@ -13,7 +13,7 @@ Using Python as a scripting language can be highly convenient for developing scr
 
 After installing {% include flamapy.html %} we can use the tool as easy as 
 ```python
-from flamapy.interfaces.python.flama_feature_model import FLAMAFeatureModel
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
 # This method could be called with the param  with_sat: bool = True if you want to force pysat (useful for WASM enviroments) 

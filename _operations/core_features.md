@@ -37,7 +37,7 @@ flamapy core_features "path/to/feature/model"
 
 ### Python easy to use facade usage
 ```python
-from flamapy.interfaces.python.flama_feature_model import FLAMAFeatureModel
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
 # This method could be called with the param  with_sat: bool = True if you want to force pysat (useful for WASM enviroments) 

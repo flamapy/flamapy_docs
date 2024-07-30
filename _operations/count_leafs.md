@@ -36,7 +36,7 @@ flamapy count_leafs "path/to/feature/model"
 
 ### Python easy to use facade usage
 ```python
-from flamapy.interfaces.python.flama_feature_model import FLAMAFeatureModel
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
 # Identify atomic sets
