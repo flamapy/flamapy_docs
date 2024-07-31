@@ -29,6 +29,9 @@ Generating metrics to understand the overall complexity and commonality of featu
 ## Code Examples
 
 ### Python flamapy framework usage
+
+#### BDD Metrics
+
 ```python
 from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
@@ -36,11 +39,21 @@ dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed. 
 # This is if only BDD metrics are desired
 result = dm.use_operation_from_file("BDDMetrics", "path/to/feature/model")
+print(result)
+```
+
+#### Metrics
+
+```python
+from flamapy.core.discover import DiscoverMetamodels
+# Initialize the discover metamodel
+dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed. 
 # This is if allmetrics are desired
 result = dm.use_operation_from_file("Metrics", "path/to/feature/model")
 print(result)
 ```
+
 ### Python flamapy framework **ADVANCED** usage
 ```python
 from flamapy.core.discover import DiscoverMetamodels

@@ -70,7 +70,7 @@ sat_model = dm.use_transformation_m2m(feature_model,"pysat")
 # Get the operation
 operation = dm.get_operation(sat_model,'PySATSatisfiableConfiguration')
 # Set the configuration within the operation
-operation.set_configuration(configuration)
+operation.set_configuration(configuration, is_full=False)
 # Execute the operation
 operation.execute(sat_model)
 # Get and print the result
