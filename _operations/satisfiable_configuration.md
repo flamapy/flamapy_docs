@@ -39,7 +39,7 @@ from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
 # Identify if it is a satisfiable configuration
-operation = fm.satisfiable_configuration(("path/to/configuration"))
+operation = fm.satisfiable_configuration(("path/to/configuration"), full_configuration=False)
 print(operation)
 ```
 
@@ -51,7 +51,8 @@ dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed; 
 result = dm.use_operation_from_file(operation_name="PySATSatisfiableConfiguration",
                                   file="path/to/feature/model", 
-                                  configuration_file='path/to/configuration')
+                                  configuration_file='path/to/configuration',
+                                  is_full=False)
 print(result)
 ```
 ### Python flamapy framework **ADVANCED** usage
@@ -70,7 +71,8 @@ sat_model = dm.use_transformation_m2m(feature_model,"pysat")
 # Get the operation
 operation = dm.get_operation(sat_model,'PySATSatisfiableConfiguration')
 # Set the configuration within the operation
-operation.set_configuration(configuration, is_full=False)
+configuration.is_full==False
+operation.set_configuration(configuration)
 # Execute the operation
 operation.execute(sat_model)
 # Get and print the result
