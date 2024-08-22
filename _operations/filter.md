@@ -51,7 +51,8 @@ dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed; 
 result = dm.use_operation_from_file(operation_name="PySATFilter",
                                   file="path/to/feature/model", 
-                                  configuration_file='path/to/configuration')
+                                  configuration_file='path/to/configuration',
+                                  full_configuration=False)
 print(result)
 ```
 ### Python flamapy framework **ADVANCED** usage
@@ -70,6 +71,7 @@ sat_model = dm.use_transformation_m2m(feature_model,"pysat")
 # Get the operation
 operation = dm.get_operation(sat_model,'PySATFilter')
 # Set the configuration within the operation
+configuration.is_full=False
 operation.set_configuration(configuration)
 # Execute the operation
 operation.execute(sat_model)
