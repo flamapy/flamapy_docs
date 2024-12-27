@@ -58,9 +58,9 @@ Also, to be easily used {% include flamapy.html %} offers different interfaces.
     </style>
 
 <div class="button-container">
-    <a href="/analysis/cmd/" class="highlight-button">Command Line Interface</a>
-    <a href="/analysis/python_facade/" class="highlight-button">Easy-to-Use Python Interface</a>
-    <a href="/analysis/python/" class="highlight-button">Using the underlying framework</a>
+    <a href="/tool/cmd/" class="highlight-button">Command Line Interface</a>
+    <a href="/tool/python_facade/" class="highlight-button">Easy-to-Use Python Interface</a>
+    <a href="/tool/python/" class="highlight-button">Using the underlying framework</a>
 </div>
 
 ### Command-line interface
@@ -79,8 +79,8 @@ After those off-the-shelf options, there are other mechanisms to run or integrat
 > These ways of running {% include flamapy.html %}, require some more knowledge of those ecosystems.
 
 <div class="button-container">
-    <a href="analysis/rest/" class="highlight-button">REST Interface</a>
-    <a href="analysis/wasm/" class="highlight-button">WASM Interface</a>
+    <a href="tool/rest/" class="highlight-button">REST Interface</a>
+    <a href="tool/wasm/" class="highlight-button">WASM Interface</a>
 </div>
 
 ### REST Interface
