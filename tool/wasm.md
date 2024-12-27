@@ -43,7 +43,7 @@ This means that you can run {% include flamapy.html %} in your browser.
 
 ## Example of WASM
 
-To do it so, we need to first install pyodide and {% include flamapy.html %} within the browser. Note that we manually manage the dependencies. This is to avoid installing other plugins such as BDD which are not yet available in wasm. Nonetheless, you can access a working version [HERE](https://www.flamapy.org/try-it/wasm-uvl-analysis)
+To do it so, we need to first install pyodide and {% include flamapy.html %} within the browser. Note that we manually manage the dependencies. This is to avoid installing other plugins such as BDD which are not yet straigforward in wasm. Nonetheless, you can access a working version [HERE](https://www.flamapy.org/try-it/wasm-uvl-analysis)
 
 ```javascript
 async function preparare_WASM(){
