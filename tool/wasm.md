@@ -38,7 +38,7 @@ This means that you can run {% include flamapy.html %} in your browser.
     </style>
 
 <div class="button-container">
-    <a href="#" onclick="alert('Coming soon')" class="highlight-button">Try flamapy in your browser</a>
+    <a href="https://ide.flamapy.org" class="highlight-button">Try flamapy.ide in your browser</a>
 </div>
 
 ## Example of WASM
