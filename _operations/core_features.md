@@ -7,7 +7,7 @@ permalink: /framework/operations/core_features
 nav_order: 1
 
 flamapy_sat: true
-flampy_bdd: true
+flamapy_bdd: true
 flamapy_fm: true
 cmd: true
 facade: true

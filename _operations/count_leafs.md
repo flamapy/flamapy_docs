@@ -7,7 +7,7 @@ permalink: /framework/operations/count_leafs
 nav_order: 1
 
 flamapy_sat: false
-flampy_bdd: false
+flamapy_bdd: false
 flamapy_fm: true
 cmd: true
 facade: true
