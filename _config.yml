@@ -108,6 +108,8 @@ aux_links:
     - "//docs.flamapy.org"
   "Try it":
     - "//flamapy.org/try-it"
+  "Community":
+    - "/community"
   "GitHub":
     - "//github.com/flamapy/flamapy"
   "Contact":
