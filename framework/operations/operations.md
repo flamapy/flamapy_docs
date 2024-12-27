@@ -86,7 +86,7 @@ Currently {% include flamapy.html %} offers the following operations implemented
       <td><a href="{{ operation.url }}">{{ operation.title }}</a></td>
       <td>{% if operation.flamapy_fm %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.flamapy_sat %}✔{% else %}✘{% endif %}</td>
-      <td>{% if operation.flampy_bdd %}✔{% else %}✘{% endif %}</td>
+      <td>{% if operation.flamapy_bdd %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.cmd %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.facade %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.python %}✔{% else %}✘{% endif %}</td>

@@ -7,7 +7,7 @@ permalink: /framework/operations/filter
 nav_order: 1
 
 flamapy_sat: true
-flampy_bdd: false
+flamapy_bdd: false
 flamapy_fm: false
 cmd: true
 facade: true
