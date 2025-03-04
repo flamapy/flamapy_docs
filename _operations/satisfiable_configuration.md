@@ -7,7 +7,7 @@ permalink: /framework/operations/satisfiable_configuration
 nav_order: 1
 
 flamapy_sat: true
-flamapy_bdd: false
+flamapy_bdd: true
 flamapy_fm: false
 cmd: true
 facade: true
@@ -71,7 +71,7 @@ sat_model = dm.use_transformation_m2m(feature_model,"pysat")
 # Get the operation
 operation = dm.get_operation(sat_model,'PySATSatisfiableConfiguration')
 # Set the configuration within the operation
-configuration.is_full==False
+configuration.is_full=False
 operation.set_configuration(configuration)
 # Execute the operation
 operation.execute(sat_model)

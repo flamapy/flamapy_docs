@@ -17,13 +17,13 @@ rest: true
 
 # Satisfiable
 **Description**: 
-Checks whether a given configuration of features is valid according to the constraints defined in the feature model.
+Checks whether a given model is valid according to the constraints defined in the feature model.
 
 **Application**: 
-Ensures that the selected combination of features can form a valid product.
+Ensures that there is at least a combination of features that can form a valid product.
 
 **Example**: 
-Validating a configuration where all required features are included, and no constraints are violated.
+Validating a feature model to see if there are violated constraints.
 
 ---
 ## Code Examples
