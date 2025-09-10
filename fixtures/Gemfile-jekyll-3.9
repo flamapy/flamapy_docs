@@ -9,7 +9,11 @@ gem "jekyll-include-cache", group: :jekyll_plugins
 
 # required for Jekyll 3
 gem "webrick", "~> 1.7"
-gem "kramdown-parser-gfm", '~> 1.1'
+gem "kramdown-parser-gfm", "~> 1.1"
 
 # docs-only
 gem "jekyll-github-metadata", ">= 2.15"
+
+# Necesarias en Ruby 3.1+ porque ya no están en stdlib
+gem "csv"
+gem "logger"
