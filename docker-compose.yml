@@ -3,10 +3,13 @@ services:
     build:
       context: ./
     ports:
-      - 4001:4000
+      - "4001:4000"
     volumes:
-      - .:/usr/src/app
+      - .:/usr/src/app          # tu código
+      - bundle_cache:/usr/local/bundle  # cache de gems
     stdin_open: true
     tty: true
     command: bundle exec jekyll serve -H 0.0.0.0 -t
 
+volumes:
+  bundle_cache:
