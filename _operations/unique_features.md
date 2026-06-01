@@ -9,6 +9,8 @@ nav_order: 7
 flamapy_sat: false
 flamapy_bdd: true
 flamapy_fm: false
+flamapy_z3: false
+flamapy_diagnosis: false
 cmd: true
 facade: true
 python: true
@@ -27,6 +29,15 @@ Finding features that are unique to high-end smartphone models within a product 
 
 ---
 ## Code Examples
+
+### Python easy to use facade usage
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+# Load the feature model
+fm = FLAMAFeatureModel("path/to/feature/model")
+result = fm.unique_features()
+print(result)
+```
 
 ### Python flamapy framework usage
 ```python

@@ -9,8 +9,10 @@ nav_order: 5
 flamapy_sat: false
 flamapy_bdd: true
 flamapy_fm: false
+flamapy_z3: false
+flamapy_diagnosis: false
 cmd: false
-facade: false
+facade: true
 python: true
 rest: false
 ---
@@ -28,6 +30,15 @@ Evaluating the distribution of various car models generated from a car feature m
 
 ---
 ## Code Examples
+
+### Python easy to use facade usage
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+# Load the feature model
+fm = FLAMAFeatureModel("path/to/feature/model")
+result = fm.product_distribution()
+print(result)
+```
 
 ### Python flamapy framework usage
 ```python

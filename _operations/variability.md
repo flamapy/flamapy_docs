@@ -9,8 +9,10 @@ nav_order: 8
 flamapy_sat: false
 flamapy_bdd: true
 flamapy_fm: false
+flamapy_z3: false
+flamapy_diagnosis: false
 cmd: false
-facade: false
+facade: true
 python: true
 rest: false
 ---
@@ -27,6 +29,16 @@ Evaluating the variability of features in a home automation system to identify w
 
 ---
 ## Code Examples
+
+### Python easy to use facade usage
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+# Load the feature model
+fm = FLAMAFeatureModel("path/to/feature/model")
+# Returns (total_variability, partial_variability)
+result = fm.variability()
+print(result)
+```
 
 ### Python flamapy framework usage
 ```python

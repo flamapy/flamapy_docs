@@ -9,6 +9,8 @@ nav_order: 1
 flamapy_sat: true
 flamapy_bdd: false
 flamapy_fm: false
+flamapy_z3: false
+flamapy_diagnosis: false
 cmd: true
 facade: true
 python: true

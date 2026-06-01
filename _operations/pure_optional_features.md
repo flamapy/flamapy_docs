@@ -1,10 +1,10 @@
 ---
-title: Homogeneity
+title: Pure Optional Features
 layout: default
 parent: Operations
 grand_parent: Flamapy as framework
-permalink: /framework/operations/homogeneity
-nav_order: 3
+permalink: /framework/operations/pure_optional_features
+nav_order: 23
 
 flamapy_sat: false
 flamapy_bdd: true
@@ -17,15 +17,16 @@ python: true
 rest: false
 ---
 
-# Homogeneity
-**Description**: 
-Measures the uniformity of feature distributions across all valid configurations.
+# Pure Optional Features
 
-**Application**: 
-Useful for assessing whether certain features are consistently included or excluded in configurations, indicating stability or variability within the product line.
+**Description**:
+Returns the features with a feature inclusion probability of exactly 0.5, meaning they appear in exactly half of all valid configurations. These are the most unconstrained optional features — neither preferred nor avoided by the model's constraints.
 
-**Example**: 
-Evaluating if certain features are consistently present in all configurations of a software product line.
+**Application**:
+Useful for identifying features that are freely optional without any structural bias, which can inform testing strategies and configuration design.
+
+**Example**:
+Finding features in a home automation product line that are included in exactly half of all valid products.
 
 ---
 ## Code Examples
@@ -35,7 +36,7 @@ Evaluating if certain features are consistently present in all configurations of
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
-result = fm.homogeneity()
+result = fm.pure_optional_features()
 print(result)
 ```
 
@@ -45,7 +46,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
-result = dm.use_operation_from_file("BDDHomogeneity", "path/to/feature/model")
+result = dm.use_operation_from_file("BDDPureOptionalFeatures", "path/to/feature/model")
 print(result)
 ```
 ### Python flamapy framework **ADVANCED** usage
@@ -53,12 +54,12 @@ print(result)
 from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
 dm = DiscoverMetamodels()
-# Get the fm metamodel representation using the transformation required to get to the fm metamodel
+# Get the fm metamodel representation
 feature_model = dm.use_transformation_t2m("path/to/feature/model", 'fm')
 # Manually call a M2M transformation to BDD
 bdd_model = dm.use_transformation_m2m(feature_model, "bdd")
 # Get the operation
-operation = dm.get_operation(bdd_model, 'BDDHomogeneity')
+operation = dm.get_operation(bdd_model, 'BDDPureOptionalFeatures')
 # Execute the operation
 operation.execute(bdd_model)
 # Get and print the result

@@ -9,8 +9,10 @@ nav_order: 6
 flamapy_sat: true
 flamapy_bdd: true
 flamapy_fm: false
+flamapy_z3: false
+flamapy_diagnosis: false
 cmd: false
-facade: false
+facade: true
 python: true
 rest: false
 ---
@@ -27,6 +29,16 @@ Generating a sample set of valid smartphone configurations for testing purposes.
 
 ---
 ## Code Examples
+
+### Python easy to use facade usage
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+# Load the feature model
+fm = FLAMAFeatureModel("path/to/feature/model")
+# size: number of configurations to sample; with_replacement defaults to False
+result = fm.sampling(size=10)
+print(result)
+```
 
 ### Python flamapy framework usage
 ```python

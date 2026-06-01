@@ -9,8 +9,10 @@ nav_order: 9
 flamapy_sat: false
 flamapy_bdd: true
 flamapy_fm: false
+flamapy_z3: false
+flamapy_diagnosis: false
 cmd: false
-facade: false
+facade: true
 python: true
 rest: false
 ---
@@ -27,6 +29,15 @@ Identifying variant features in a product line of laptops to determine which fea
 
 ---
 ## Code Examples
+
+### Python easy to use facade usage
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+# Load the feature model
+fm = FLAMAFeatureModel("path/to/feature/model")
+result = fm.variant_features()
+print(result)
+```
 
 ### Python flamapy framework usage
 ```python

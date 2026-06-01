@@ -55,3 +55,9 @@ Provides the integration with PySAT, a meta-solver that enables the analysis of 
 
 ### bdd_metamodel
 Supports Binary Decision Diagrams (BDDs) for the automated analysis of feature models. This plugin is particularly useful for operations that benefit from BDD techniques, such as counting valid configurations efficiently. [Github](https://github.com/flamapy/bdd_metamodel)
+
+### z3_metamodel
+Integrates the Z3 SMT solver to enable analysis of feature models with typed attributes (Integer, Real, String). Supports satisfiability checking, configuration enumeration, attribute bound computation, and attribute optimization beyond Boolean logic. [Github](https://github.com/flamapy/z3_metamodel)
+
+### pysat_diagnosis_metamodel
+Extends the PySAT plugin with diagnosis capabilities. Given a configuration and a test case, it computes conflict sets (minimal inconsistent subsets of constraints) and diagnoses (minimal corrections). Built on the QuickXPlain and FastDiag algorithms. [Github](https://github.com/flamapy/pysat_metamodel)
