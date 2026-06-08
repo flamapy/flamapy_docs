@@ -50,7 +50,7 @@ The `pysat_diagnosis_metamodel` plugin builds on top of the PySAT metamodel to s
 
 The diagnosis metamodel is distributed together with the PySAT plugin:
 
-1. **Install Python**: Ensure that Python 3.9 or later is installed on your system.
+1. **Install Python**: Ensure that Python 3.11 or later is installed on your system.
 
 2. **Install the PySAT Metamodel Plugin** (which includes the diagnosis metamodel):
    ```bash

@@ -62,7 +62,7 @@ The `bdd_metamodel` plugin is an integral part of the {% include flamapy.html %}
 
 To install the `bdd_metamodel` plugin, follow these steps:
 
-1. **Install Python**: Ensure that Python 3.9 or later is installed on your system.
+1. **Install Python**: Ensure that Python 3.11 or later is installed on your system.
 
 2. **Install the BDD Metamodel Plugin**:
    - Using pip, the Python package manager, you can install the `bdd_metamodel` plugin directly from PyPI:

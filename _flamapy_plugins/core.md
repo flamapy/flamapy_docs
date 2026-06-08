@@ -52,7 +52,7 @@ The core plugin is the foundation of the {% include flamapy.html %} framework, p
 
 To install the core plugin of {% include flamapy.html %}, follow these steps:
 
-1. **Install Python**: Ensure that Python 3.9 or later is installed on your system.
+1. **Install Python**: Ensure that Python 3.11 or later is installed on your system.
 
 2. **Install the Core Plugin**:
    - Using pip, the Python package manager, you can install the core plugin directly from PyPI:

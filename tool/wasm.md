@@ -78,11 +78,11 @@ from collections.abc import Iterable
 from flamapy.interfaces.python.FLAMAFeatureModel import FLAMAFeatureModel
 import inspect
 
-def requires_with_sat(method):
+def supports_backend(method):
     # Get the signature of the method
     signature = inspect.signature(method)
-    # Check if 'with_sat' is a parameter
-    return 'with_sat' in signature.parameters
+    # Check if 'backend' is a parameter
+    return 'backend' in signature.parameters
 
 file_content = js.document.getElementById('uvlfile').value
 div = js.document.createElement("result")
@@ -92,8 +92,9 @@ with open("uvlfile.uvl", "w") as text_file:
 
 fm = FLAMAFeatureModel("uvlfile.uvl")
 
-if requires_with_sat(fm.${param}):
-    result = fm.${param}(with_sat=True)
+# Force the sat backend: the bdd backend (dd) does not run under Pyodide/WASM.
+if supports_backend(fm.${param}):
+    result = fm.${param}(backend="sat")
 else:
     result = fm.${param}()
 

@@ -41,7 +41,7 @@ flamapy false_optional_features "path/to/feature/model"
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 # Load the feature model
 fm = FLAMAFeatureModel("path/to/feature/model")
-# This method could be called with the param  with_sat: bool = True if you want to force pysat (useful for WASM enviroments) 
+# Pass backend="sat" | "bdd" | "z3" to choose the analysis plugin (use "sat" to force pysat in WASM environments)
 result = fm.false_optional_features() 
 print(result)
 ```

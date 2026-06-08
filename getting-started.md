@@ -17,7 +17,7 @@ nav_order: 2
 {% include flamapy.html %} provides an ecosystem to build up automated analysis tools [AAFM](https://doi.org/10.1145/3336294.3342373). While the framework support any kind of variability model, it provides easy use and extensibility in the case of feature models. 
 
 ## <i class="fa-solid fa-laptop"></i> Installation
-To analyze feature models, you can rely on the `flamapy` distribution. **It requires Python >= 3.9**.  
+To analyze feature models, you can rely on the `flamapy` distribution. **It requires Python >= 3.11**.  
 
 {: .important }
 > It's recommended to use a **virtual environment** (venv) for installation to avoid conflicts with other packages. Here’s how you can set it up:

@@ -50,7 +50,7 @@ The `fm_metamodel` plugin is a crucial component of the {% include flamapy.html 
 
 To install the `fm_metamodel` plugin, follow these steps:
 
-1. **Install Python**: Ensure that Python 3.9 or later is installed on your system.
+1. **Install Python**: Ensure that Python 3.11 or later is installed on your system.
 
 2. **Install the fm_metamodel Plugin**:
    - Using pip, the Python package manager, you can install the `fm_metamodel` plugin directly from PyPI:

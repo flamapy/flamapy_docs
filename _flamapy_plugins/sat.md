@@ -53,7 +53,7 @@ This plugin implements the classes to perform AAFM using the [PySAT](https://pys
 
 To install the `pysat_metamodel` plugin, follow these steps:
 
-1. **Install Python**: Ensure that Python 3.9 or later is installed on your system.
+1. **Install Python**: Ensure that Python 3.11 or later is installed on your system.
 
 2. **Install the PySAT Metamodel Plugin**:
    - Using pip, the Python package manager, you can install the `flamapy-sat` plugin directly from PyPI:
