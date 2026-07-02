@@ -110,3 +110,10 @@ Currently this plugins enables a set of TextToModel transformations (a.k.a Parse
     <li><a href="{{ transformation.url }}">{{ transformation.title }}</a></li>
   {% endfor %}
 </ul>
+
+## CNF encodings
+
+The transformation of a feature model into SAT converts cross-tree constraints into CNF. Besides the
+default distributive encoding, the framework offers an opt-in **Tseytin** encoding
+(`FmToPysat(fm, cnf_method='tseytin')`) that keeps complex constraints (e.g. long `XOR` chains) compact.
+See [CNF encodings (Tseytin)]({{ site.baseurl }}/framework/cnf_encodings) for details.
