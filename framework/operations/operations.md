@@ -55,9 +55,9 @@ Currently {% include flamapy.html %} offers the following operations implemented
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  th:nth-child(4),
-  td:nth-child(4) {
-    border-right: 2px solid black; /* Add extra line after the third column */
+  th:nth-child(7),
+  td:nth-child(7) {
+    border-right: 2px solid black; /* Separator after the last plugin column */
   }
   
 </style>
@@ -66,7 +66,7 @@ Currently {% include flamapy.html %} offers the following operations implemented
   <thead>
     <tr>
       <th rowspan="1"></th>
-      <th colspan="3">Plugin</th>
+      <th colspan="6">Plugin</th>
       <th colspan="4">Interface</th>
     </tr>
     <tr>
@@ -74,6 +74,9 @@ Currently {% include flamapy.html %} offers the following operations implemented
       <th>FM</th>
       <th>SAT</th>
       <th>BDD</th>
+      <th>Z3</th>
+      <th>SharpSAT</th>
+      <th>Diagnosis</th>
       <th>CMD</th>
       <th>Facade</th>
       <th>Python</th>
@@ -87,6 +90,9 @@ Currently {% include flamapy.html %} offers the following operations implemented
       <td>{% if operation.flamapy_fm %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.flamapy_sat %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.flamapy_bdd %}✔{% else %}✘{% endif %}</td>
+      <td>{% if operation.flamapy_z3 %}✔{% else %}✘{% endif %}</td>
+      <td>{% if operation.flamapy_sharpsat %}✔{% else %}✘{% endif %}</td>
+      <td>{% if operation.flamapy_diagnosis %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.cmd %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.facade %}✔{% else %}✘{% endif %}</td>
       <td>{% if operation.python %}✔{% else %}✘{% endif %}</td>
