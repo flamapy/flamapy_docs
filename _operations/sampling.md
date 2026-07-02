@@ -10,6 +10,7 @@ flamapy_sat: true
 flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: false
+flamapy_sharpsat: true
 flamapy_diagnosis: false
 cmd: false
 facade: true

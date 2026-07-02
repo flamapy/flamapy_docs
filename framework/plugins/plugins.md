@@ -61,3 +61,6 @@ Integrates the Z3 SMT solver to enable analysis of feature models with typed att
 
 ### pysat_diagnosis_metamodel
 Extends the PySAT plugin with diagnosis capabilities. Given a configuration and a test case, it computes conflict sets (minimal inconsistent subsets of constraints) and diagnoses (minimal corrections). Built on the QuickXPlain and FastDiag algorithms. [Github](https://github.com/flamapy/pysat_metamodel)
+
+### sharpsat_metamodel
+Provides scalable approximate model counting and almost-uniform sampling of configurations. It reuses the SAT CNF and relies on ApproxMC (`pyapproxmc`) and UniGen (`pyunigen`), scaling beyond the exact enumeration of the SAT/Z3 backends and the memory-bound BDD backend. [Github](https://github.com/flamapy/sharpsat_metamodel)
