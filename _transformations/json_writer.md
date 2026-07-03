@@ -6,7 +6,7 @@ grand_parent: Flamapy as framework
 permalink: /framework/transformations/json_writer
 nav_order: 1
 metamodel: flamapy_fm
-type: text_to_model
+type: model_to_text
 ---
 
 # JSON Writer

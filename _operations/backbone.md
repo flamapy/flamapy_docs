@@ -9,7 +9,7 @@ nav_order: 22
 flamapy_sat: true
 flamapy_bdd: false
 flamapy_fm: false
-flamapy_z3: false
+flamapy_z3: true
 flamapy_diagnosis: false
 cmd: false
 facade: true

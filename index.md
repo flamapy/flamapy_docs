@@ -27,6 +27,8 @@ Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for A
 
 * **BDD Integration**: Utilizes the CU-BDD metasolver, offering efficient variability model analysis for some operations. 
 
+* **Scalable counting and sampling**: Utilizes the ApproxMC and UniGen hashing-based tools to approximately count and almost-uniformly sample configurations, scaling to models beyond exact enumeration. 
+
 ### <i class="fa-brands fa-searchengin"></i> Easy to use, easy to integrate
 
 * **Easy-to-use python facade**: Designed with capabilities to analyse modes in Python with just a line of code.
