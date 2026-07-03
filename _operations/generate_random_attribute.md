@@ -12,7 +12,7 @@ flamapy_fm: true
 flamapy_z3: false
 flamapy_diagnosis: false
 cmd: false
-facade: false
+facade: true
 python: true
 rest: false
 ---
@@ -33,4 +33,13 @@ from flamapy.metamodels.fm_metamodel.operations import GenerateRandomAttribute
 
 feature_model = UVLReader('model.uvl').transform()
 model_with_attribute = GenerateRandomAttribute().execute(feature_model).get_result()
+```
+
+Or, more simply, through the facade (values are drawn from the ``[min_value, max_value]`` range):
+
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+
+fm = FLAMAFeatureModel('model.uvl')
+model_with_attribute = fm.generate_random_attribute('cost', min_value=0, max_value=100)
 ```
