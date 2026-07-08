@@ -44,3 +44,19 @@ from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 
 result = FLAMAFeatureModel('model.uvl').language_level()
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `language_level(self)`
+
+**Default backend**: none (runs on the feature model)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| fm_metamodel | yes | — |
+
+<!-- END GENERATED -->

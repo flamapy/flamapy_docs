@@ -68,3 +68,19 @@ feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm')
 result = dm.use_operation(feature_model,'FMAverageBranchingFactor').get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `average_branching_factor(self)`
+
+**Default backend**: none (runs on the feature model)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| fm_metamodel | yes | — |
+
+<!-- END GENERATED -->

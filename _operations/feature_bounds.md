@@ -59,3 +59,25 @@ operation.execute(z3_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `feature_bounds(self, variable_name: str)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `variable_name` | str | yes | — |
+
+**Default backend**: z3
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| z3_metamodel | yes | — |
+
+<!-- END GENERATED -->

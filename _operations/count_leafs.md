@@ -68,4 +68,18 @@ result = dm.use_operation(feature_model,'FMCountLeafs').get_result()
 print(result)
 ```
 
+---
 
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `count_leafs(self)`
+
+**Default backend**: none (runs on the feature model)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| fm_metamodel | yes | — |
+
+<!-- END GENERATED -->

@@ -74,3 +74,21 @@ operation.execute(sat_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `false_optional_features(self, backend: Optional[str] = None)`
+
+**Default backend**: sat (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_metamodel | yes | — |
+| bdd_metamodel | yes | — |
+| z3_metamodel | yes | — |
+
+<!-- END GENERATED -->

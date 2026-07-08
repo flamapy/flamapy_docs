@@ -63,3 +63,25 @@ operation.execute(feature_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `feature_ancestors(self, feature_name: str)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `feature_name` | str | yes | — |
+
+**Default backend**: none (runs on the feature model)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| fm_metamodel | yes | — |
+
+<!-- END GENERATED -->

@@ -81,3 +81,28 @@ operation.execute(sat_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `satisfiable_configuration(self, configuration_path: str, full_configuration: bool = False, backend: Optional[str] = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `configuration_path` | str | yes | — |
+| `full_configuration` | bool | no | False |
+
+**Default backend**: sat (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_metamodel | yes | — |
+| bdd_metamodel | yes | — |
+| z3_metamodel | yes | — |
+
+<!-- END GENERATED -->

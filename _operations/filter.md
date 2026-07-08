@@ -81,3 +81,25 @@ operation.execute(sat_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `filter(self, configuration_path: str)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `configuration_path` | str | yes | — |
+
+**Default backend**: sat
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_metamodel | yes | — |
+
+<!-- END GENERATED -->

@@ -67,3 +67,28 @@ operation.execute(bdd_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `sampling(self, size: int, with_replacement: bool = False, backend: Optional[str] = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `size` | int | yes | — |
+| `with_replacement` | bool | no | False |
+
+**Default backend**: bdd (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_metamodel | yes | — |
+| bdd_metamodel | yes | — |
+| sharpsat_metamodel | approximate | — |
+
+<!-- END GENERATED -->

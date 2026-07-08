@@ -66,3 +66,19 @@ operation.execute(bdd_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `variability(self)`
+
+**Default backend**: bdd
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| bdd_metamodel | yes | — |
+
+<!-- END GENERATED -->

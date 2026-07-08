@@ -59,3 +59,25 @@ operation.execute(bdd_model)
 result = list(operation.get_result())
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `configurations_with_n_features(self, n: int)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `n` | int | yes | — |
+
+**Default backend**: bdd
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| bdd_metamodel | yes | — |
+
+<!-- END GENERATED -->

@@ -51,3 +51,26 @@ operation.execute(z3_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `attribute_optimization(self, objectives: Any, backend: Optional[str] = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `objectives` | Any | yes | — |
+
+**Default backend**: sat (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_metamodel | yes | — |
+| z3_metamodel | yes | — |
+
+<!-- END GENERATED -->

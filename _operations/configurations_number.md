@@ -94,3 +94,24 @@ operation.execute(bdd_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `configurations_number(self, backend: Optional[str] = None)`
+
+**Default backend**: bdd (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_metamodel | yes | — |
+| bdd_metamodel | yes | 300 |
+| z3_metamodel | yes | — |
+| sharpsat_metamodel | approximate | — |
+| dnnf_metamodel | yes | — |
+| sdd_metamodel | yes | — |
+
+<!-- END GENERATED -->

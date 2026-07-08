@@ -75,3 +75,27 @@ operation.execute(sat_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `diagnosis(self, configuration_path: str, test_case_path: str = None, max_diagnoses: int = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `configuration_path` | str | yes | — |
+| `test_case_path` | str | no | None |
+| `max_diagnoses` | int | no | None |
+
+**Default backend**: pysat_diagnosis
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_diagnosis_metamodel | yes | — |
+
+<!-- END GENERATED -->
