@@ -63,7 +63,7 @@ myplugin = "flamapy.metamodels.myplugin_metamodel"
 ```
 
 Plugins found only through the legacy `flamapy.metamodels` namespace scan still work in 2.7
-(with a `DeprecationWarning`); the scan is removed in 3.1.
+(with a `DeprecationWarning`); the scan is removed in 3.0.
 
 ## New, non-breaking machinery you can adopt today
 
