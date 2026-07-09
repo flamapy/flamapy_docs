@@ -47,7 +47,7 @@ Released together, in lock-step versions.
 | `gnn_metamodel` | `flamapy-gnn` | GNN-based learned analyses | experimental (dev releases) |
 | `semantic_comparison_flamapy_metamodel` | `flamapy-semantic` | Semantic coherence/similarity (sentence-transformers) | experimental |
 | `configurator_metamodel` | `flamapy-configurator` | Guided configurator engine | active; convergence planned for 3.0 |
-| `dependency_network_metamodel` | `flamapy-dn` | Variability over dependency networks | dormant (pins flamapy 1.x); revival planned for 3.1 |
+| `dependency_network_metamodel` | `flamapy-dn` | Variability over dependency networks | ported to the 2.9 core (entry point, tests; new operations remain 3.2 research scope) |
 | `smt_metamodel` | `flamapy-smt` | Generic SMT backend (dependency-network line) | separate domain from `flamapy-z3` (decided v3 Track D): FM analysis lives in flamapy-z3; port planned for 3.2 |
 | `bdd_metamodel_colosal` | — | UNED bdd4va engine for colossal models | to be absorbed as `flamapy-bdd[colosal]` in 3.1 |
 | `flamapy-mcp` | — | MCP server for AI agents | early development; descriptor-driven rewrite planned for 3.0 |
