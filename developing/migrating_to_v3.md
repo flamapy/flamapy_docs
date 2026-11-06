@@ -65,6 +65,16 @@ myplugin = "flamapy.metamodels.myplugin_metamodel"
 Plugins found only through the legacy `flamapy.metamodels` namespace scan still work in 2.7
 (with a `DeprecationWarning`); the scan is removed in 3.0.
 
+### Cross-tree constraints are encoded with `cnf_method='auto'`
+
+Since 2.9 the CNF builders (`FmToPysat`, `FmToDiagPysat`, `FmToSDD`, `FmToSharpSAT`, `FmToDNNF`)
+default to `cnf_method='auto'`: a constraint is expanded distributively unless the expansion would be
+larger than its Tseytin encoding, which then gets auxiliary variables. Results are identical and the
+auxiliaries never appear in them; the clauses only differ on models with constraints that blow up
+(129 of the 1,538 benchmark models). Code that reads the raw CNF and assumes every variable is a
+feature should pass `cnf_method='distributive'` or use `PySATModel.feature_variables()`. See
+[CNF encodings](/framework/cnf_encodings).
+
 ## New, non-breaking machinery you can adopt today
 
 - **Capability manifests** — plugins declare a `MANIFEST` (`PluginManifest`) in their

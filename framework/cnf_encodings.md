@@ -1,12 +1,12 @@
 ---
 layout: default
-title: CNF encodings (Tseytin)
+title: CNF encodings (auto, distributive, Tseytin)
 parent: Flamapy as framework
 permalink: /framework/cnf_encodings
 nav_order: 4
 ---
 
-# CNF encodings: distributive and Tseytin
+# CNF encodings: auto, distributive and Tseytin
 {: .no_toc }
 
 ## Table of contents
@@ -24,19 +24,26 @@ into Conjunctive Normal Form (CNF) before being handed to the solver. {% include
 stores each constraint as an Abstract Syntax Tree (`AST`, in
 `flamapy.core.models.ast`) and offers two ways to turn that tree into clauses:
 
-- **Distributive** (the default): repeatedly applies the distributive law. It is simple and returns
-  clauses over the constraint's own variables, but its size can grow **exponentially** for formulas
-  such as long `XOR` chains or wide equivalences.
+- **Distributive**: repeatedly applies the distributive law. It is simple and returns clauses over the
+  constraint's own variables, but its size can grow **exponentially** for formulas such as long `XOR`
+  chains or wide equivalences.
 - **Tseytin**: the [Tseytin transformation](https://en.wikipedia.org/wiki/Tseytin_transformation)
   introduces one auxiliary variable per logical gate, producing an **equisatisfiable** CNF whose size
   is **linear** in the formula.
+- **Auto** (the default since 2.9): decides **per constraint**. A constraint is expanded distributively
+  unless that expansion would be larger than its Tseytin encoding (the clause count is computed without
+  building it), in which case that constraint alone gets auxiliary variables.
 
 For example, the distributive CNF of a 5-variable `XOR` chain already expands to thousands of clauses,
 while the Tseytin encoding of the same constraint stays in the low tens.
 
 {: .note }
-> Tseytin is a **framework-only, opt-in** feature. It is **not** exposed through the Python facade
-> (`FLAMAFeatureModel`) or the CLI; the default encoding everywhere remains the distributive one.
+> `auto` is the default of every CNF consumer (`FmToPysat`, `FmToDiagPysat`, `FmToSDD`, `FmToSharpSAT`,
+> `FmToDNNF`), so it is what the Python facade and the CLI use. On typical models it produces exactly the
+> distributive clauses: on the 1,538 models of the SoSyM benchmark it introduces auxiliary variables in
+> 129 (eCos and Linux style models with disjunctions of conjunctions), where it yields 12% fewer clauses
+> than the expansion, encodes 2.5 times faster and answers every operation identically. The two models
+> whose expansion never finished now encode in under a second.
 
 ## Semantics: model-count preserving
 
@@ -66,8 +73,8 @@ clauses, aux_names = ast.get_clauses_with_aux(method='tseytin')
 
 ## Using it from the transformations
 
-The SAT-oriented transformations accept a `cnf_method` argument. Pass `'tseytin'` to encode the
-cross-tree constraints with the Tseytin transformation:
+The SAT-oriented transformations accept a `cnf_method` argument: `'auto'` (the default),
+`'distributive'` or `'tseytin'`:
 
 ```python
 from flamapy.metamodels.fm_metamodel.transformations import UVLReader
@@ -75,17 +82,22 @@ from flamapy.metamodels.pysat_metamodel.transformations import FmToPysat
 
 fm = UVLReader('model.uvl').transform()
 
-# Default (distributive)
+# Default (auto: distributive unless a constraint's expansion blows up)
 sat_model = FmToPysat(fm).transform()
+sat_model.cnf_method           # 'auto'
+sat_model.auxiliary_variables  # empty on typical models
 
-# Opt in to Tseytin
+# Force one encoding for every constraint
+sat_model = FmToPysat(fm, cnf_method='distributive').transform()
 sat_model = FmToPysat(fm, cnf_method='tseytin').transform()
 ```
 
-The same `cnf_method='tseytin'` option is available on:
+The same `cnf_method` option is available on:
 
 - `FmToPysat` (`flamapy-sat`) and `FmToDiagPysat` (`flamapy-sat` diagnosis metamodel).
-- `FmToZ3` (`flamapy-z3`) — see the caveat below.
+- `FmToSDD` (`flamapy-sdd`), `FmToSharpSAT` (`flamapy-sharpsat`) and `FmToDNNF` (`flamapy-dnnf`), which
+  build their compilers from the same `ClauseSet`.
+- `FmToZ3` (`flamapy-z3`) — see the caveat below; its default is its own direct translation.
 
 ## Z3 caveat: propositional constraints only
 
@@ -97,8 +109,12 @@ Z3 translation.
 
 ## When to use which
 
-- Keep the **default distributive** encoding for typical models — it is simplest and adds no auxiliary
-  variables.
-- Switch to **Tseytin** when a model contains constraints that make the distributive expansion explode
-  (long `XOR`/`⇔` chains, deeply nested disjunctions of conjunctions) and the SAT translation becomes slow
-  or memory-hungry.
+- Keep the **default `auto`**: it is the distributive encoding wherever that is small, and only the
+  constraints that would explode (long `XOR`/`⇔` chains, deeply nested disjunctions of conjunctions) get
+  auxiliary variables.
+- Force **`distributive`** when you need a CNF over the feature variables only (for example to feed a tool
+  that does not project out auxiliary variables); the SAT translation of some large models may then
+  become slow or memory-hungry.
+- Force **`tseytin`** to experiment with a linear-size encoding for every constraint; on the benchmark
+  models it doubles the clause count and slows SAT queries by about 1.7–2x, which is why `auto` only
+  applies it where it pays off.
