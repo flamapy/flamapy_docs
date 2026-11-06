@@ -21,6 +21,11 @@ result = fm.satisfiable()
 print(result)
 ```
 
+Every operation that more than one plugin implements accepts `backend=`: a plugin name, or
+`"auto"` to let the query planner pick the cheapest plugin that can handle the model. After a
+call, `fm.last_result` tells which plugin ran it. See
+[Choosing the backend (query planner)](/tool/choosing_backend).
+
 As you might notice, this interface is heavily inspired in the way [FAMILIAR](https://doi.org/10.1016/j.scico.2012.12.004) worked in the java 6 years 
 
 ## Supported operations

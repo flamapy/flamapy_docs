@@ -19,6 +19,11 @@ All available operations could be read by running
 flamapy -h
 ```
 
+Operations implemented by several plugins take `--backend sat|bdd|z3|auto` (`auto` lets the
+query planner choose), `-v` prints which plugin produced the result, and `flamapy plan
+<operation> <model>` shows the planner's choice without running the operation. See
+[Choosing the backend (query planner)](/tool/choosing_backend).
+
 ## Supported operations
 
 However, below, you can find a comprehensive list of the supported operations for the command line and code snipets if you want to run them:
