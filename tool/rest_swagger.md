@@ -26,6 +26,43 @@ gunicorn --bind 0.0.0.0:8000 app:app
 ```
 
 Also a working version is available on onRender [HERE](https://flamapy-rest.onrender.com)
+
+## The same operations as the Python facade
+
+Every operation of the [Python facade](/tool/python_facade) is a `POST` endpoint under
+`/api/v1/operations/<operation>`, with the same parameters as the Python method sent as
+multipart form fields: the model as the `model` file, files for the parameters that take a
+path (`configuration`, `test_case`), JSON text for the structured ones (`objectives`,
+`configurations`), plain values for the rest. The operations that return a feature model
+(`generate_random_feature_model`, which needs no upload, and `generate_random_attribute`)
+answer with UVL text.
+
+```bash
+curl -X POST http://localhost:8000/api/v1/operations/configurations_number \
+  -F "model=@valid_model.uvl"
+```
+
+### Choosing the backend over REST
+
+The `backend` field works like the Python argument: a plugin name, or `auto` to let the
+[query planner](/tool/choosing_backend) choose; `allow_approximate=true` also admits approximate
+implementations. The response body is the bare value, and the provenance the facade keeps in
+`last_result` comes back in headers: `X-Flamapy-Plugin`, `X-Flamapy-Backend`, `X-Flamapy-Exact`,
+`X-Flamapy-Planner` (the planner's choice and reasons under `auto`) and `X-Flamapy-Wall-Time`.
+
+```bash
+curl -i -X POST http://localhost:8000/api/v1/operations/configurations_number \
+  -F "model=@valid_model.uvl" -F "backend=auto"
+# X-Flamapy-Backend: bdd
+# X-Flamapy-Planner: auto: bdd: estimated 12 ms (transformation 11, operation 1), historical default backend
+# 816
+```
+
+`POST /api/v1/operations/<operation>/plan` returns the planner's decision without running the
+operation (the facade's `plan()`), and a call that no installed plugin can run answers `422` with
+the reason. Setting `FLAMAPY_BACKEND=auto` in the server's environment makes `auto` the default
+for every call that does not name a backend.
+
 ## Swagger operations
 
 Currently the SWAGGER documents the following operations
