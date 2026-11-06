@@ -67,10 +67,25 @@ Plugins found only through the legacy `flamapy.metamodels` namespace scan still 
 
 ## New, non-breaking machinery you can adopt today
 
-- **Capability manifests** — plugins can declare a `MANIFEST` (`PluginManifest`) in their
-  package `__init__` describing supported language level, exactness and scale per
-  operation. Plugins without one get a conservative default. The 3.0 query planner routes
-  on these.
+- **Capability manifests** — plugins declare a `MANIFEST` (`PluginManifest`) in their
+  package `__init__`: the language level they support (major level and minor levels such as
+  group cardinalities or string constraints), whether the plugin is available at all (e.g.
+  the d-DNNF plugin needs the `d4` binary), a plugin-wide `max_features` ceiling, the
+  estimated cost of building its model (`transformation_cost`, constant or per size bin),
+  and per operation the exactness, scale ceiling and cost (`cost` or a `cost_curve` of
+  estimated milliseconds per size bin, measured on the calibration models). Plugins without
+  one get a conservative default.
+- **Query planner** — `backend='auto'` (per model, per call, or `FLAMAPY_BACKEND=auto`)
+  picks the backend per operation from the manifests: candidates are filtered by
+  availability, language level, scale and exactness, then ranked by the estimated cost of
+  building the backend model (free for the models the facade already built or has cached
+  as artifacts) plus the operation's cost at the model's size. Approximate implementations
+  (sharpSAT counting and sampling, the structural `core_features` of the fm plugin) are only
+  candidates with `allow_approximate=True` (per call, per model, or
+  `FLAMAPY_ALLOW_APPROXIMATE=1`). In 2.9 the operation's historical default backend still
+  gets a bonus so that `auto` reproduces today's routing on plain Boolean models; 3.0 drops
+  the bonus and routes purely on the estimates. `last_result.planner` records the choice and
+  its rationale.
 - **`OperationResult` / `run_and_wrap`** — `flamapy.core.execution.run_and_wrap` executes
   any operation and returns the envelope; useful for benchmarking and services.
 - **Optional solver extras** — `pip install "flamapy[sharpsat]"`, `[dnnf]`, `[sdd]`, or
