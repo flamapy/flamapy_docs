@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Community plugins
+title: Community and lab plugins
 parent: Plugins
 grand_parent: Flamapy as framework
 permalink: /framework/plugins/community_plugins
-nav_order: 9
+nav_order: 10
 ---
 
-# Community plugins
+# Community and lab plugins
 {: .no_toc }
 
-Newer, community-contributed backends that extend {% include flamapy.html %} with additional
-knowledge-compilation and machine-learning capabilities.
+Plugins that extend {% include flamapy.html %} beyond its core distribution: community-contributed
+knowledge-compilation backends and research prototypes from the flamapy team.
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -84,42 +84,47 @@ environment variable.
 pip install flamapy-dnnf
 ```
 
-## GNN metamodel plugin
+## BDD for colosal feature models
 
-The `gnn_metamodel` plugin (`flamapy-gnn`) represents feature models as **graphs** and applies
-**Graph Neural Networks** (via [PyTorch Geometric](https://pyg.org)). A feature model is encoded
-as an attributed graph — one node per feature with a structural feature vector, plus parent-child
-and cross-tree-constraint edges — and GNN operations run over it.
+The BDD model plugin provides the metaclases required to work with 
+colosal feature models and transform them to BDD.
 
-The *learned* operations are self-supervised: their labels come from the SAT/BDD backends, so no
-hand-labelling is needed. They are **inference-first** (load a checkpoint and predict, no solver),
-falling back to on-the-fly training that needs the optional `learning` extra
-(`pip install "flamapy-gnn[learning]"`). Large-scale training over a corpus of models (for
-example, LLM-generated feature models) lives in the companion
-[flamapy-gnn-experiments](https://github.com/jagalindo/flamapy-gnn-experiments) package, which
-reuses the plugin's training code and produces checkpoints the plugin loads directly.
+However, this implementation relies on the optimizations performed in the paper by Ruben Heradio, David Fernández-Amorós, José A. Galindo, David Benavides, and Don S. Batory: "Uniform and scalable sampling of highly configurable systems" (*Empirical Software Engineering*, 27(2): 44, 2022), which enables better scalability of the analysis.
 
 {: .highlight }
 > Official repository
 >
 > ```
-> https://github.com/flamapy/gnn_metamodel
+> https://www.github.com/flamapy/bdd_metamodel
 > ```
 
 ### Operations
+Currently, this plugin enables the following operations. 
 
-*Representation (pure GNN, no solver):* feature embeddings, feature clustering, link prediction
-(constraint suggestion), configuration recommendation, whole-model embedding + retrieval, and a
-structural graph summary.
+* Sampling
+* Feature Inclusion Probability
+* Product distribution
 
-*Learned (self-supervised; inference from a checkpoint or training with the `learning` extra):*
-per-feature analysis prediction (core/dead), feature importance, prediction explanation,
-redundant-constraint prediction, configuration validity prediction and completion, model-count
-regression, backend/hardness prediction, and void-model classification.
+### Transformations supported
+Currently this plugins enables a set of transformations for CNF and feature models. 
 
-### Installation
+## SMT Metamodel plugin of flamapy framework
 
-```
-pip install flamapy-gnn              # core: no solver dependencies
-pip install "flamapy-gnn[learning]"  # add SAT/BDD to train the learned operations
-```
+The `smt_metamodel` plugin is a key component of the {% include flamapy.html %} framework, providing integration with SMT (Satisfiability Modulo Theories) solvers to enable advanced feature model analyses. This plugin leverages SMT solvers to perform detailed constraint-solving tasks, offering robust capabilities for handling complex feature models. More information in [this publication](https://doi.org/10.1016/j.cose.2023.103669).
+
+{: .highlight }
+> Official repository
+>
+> ```
+> https://github.com/flamapy/smt_metamodel
+> ```
+
+## Dependency network metamodel plugin of flamapy framework
+The dependency_network_metamodel plugin has been designed to manage and analyze dependency networks. This plugin provides the necessary tools to represent and manipulate dependencies among features, facilitating detailed dependency analysis. More information in [this publication](https://doi.org/10.1016/j.cose.2023.103669).
+
+{: .highlight }
+> Official repository
+>
+> ```
+> https://github.com/flamapy/dependency_network_metamodel
+> ```

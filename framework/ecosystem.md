@@ -44,7 +44,6 @@ Released together, in lock-step versions.
 
 | Repository | PyPI package | Role | Status |
 |---|---|---|---|
-| `gnn_metamodel` | `flamapy-gnn` | GNN-based learned analyses | experimental (dev releases) |
 | `semantic_comparison_flamapy_metamodel` | `flamapy-semantic` | Semantic coherence/similarity (sentence-transformers) | experimental |
 | `configurator_metamodel` | `flamapy-configurator` | Guided configurator engine | active; convergence planned for 3.0 |
 | `dependency_network_metamodel` | `flamapy-dn` | Variability over dependency networks | ported to the 2.9 core (entry point, tests; new operations remain 3.2 research scope) |

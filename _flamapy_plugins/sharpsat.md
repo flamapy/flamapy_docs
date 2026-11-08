@@ -4,7 +4,7 @@ title: SharpSAT plugin
 parent: Plugins
 grand_parent: Flamapy as framework
 permalink: /framework/plugins/sharpsat_plugin
-nav_order: 8
+nav_order: 7
 ---
 
 # SharpSAT plugin
