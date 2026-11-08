@@ -12,6 +12,12 @@ permalink: /
 
 Introducing {% include flamapy.html %}, the cutting-edge Python-based tool for Automated Analysis of Feature Models (AAFM) using UVL and more. {% include flamapy.html %} revolutionizes feature model analysis by integrating the strengths of previous AAFM tools with advanced multi-solver and multi-metamodel capabilities. 
 
+{: .note }
+> This documentation describes {% include flamapy.html %} **{{ site.flamapy_version }}**, a
+> development release: `pip install flamapy` still installs the stable 2.6.0, so install this one
+> with `pip install --pre flamapy` (or `pip install flamapy=={{ site.flamapy_version }}`). The
+> changes since 2.6.0 are listed in [Migrating to 3.0](developing/migrating_to_v3).
+
 [Get started now](getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub][flamapy repo]{: .btn .fs-5 .mb-4 .mb-md-0 }
 
