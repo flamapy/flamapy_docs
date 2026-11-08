@@ -173,8 +173,9 @@ simply tries, as it always did.
 
 ## Measured limits per plugin (2.9)
 
-The numbers behind the manifests, measured on 2026-11-06 with pure-Python `dd` (the BDD engine
-2.9 ships), z3 4.14, PySDD and ApproxMC/UniGen. Times are the worst of the two constraint
+The numbers behind the manifests, measured on 2026-11-06 on macOS with `dd`'s pure-Python engine
+(what `dd` installs on macOS, Windows and Pyodide; its Linux x86_64 wheels include CUDD, which
+is faster, so on Linux the BDD figures are pessimistic), z3 4.14, PySDD and ApproxMC/UniGen. Times are the worst of the two constraint
 densities at that size, in milliseconds; a dash means the size was not measured because a
 smaller model already hit the cap.
 
@@ -197,9 +198,9 @@ smaller model already hit the cap.
 
 Two values in a cell are the sparse and the dense model of that size: compiling a BDD or an SDD
 depends on the constraints far more than on the number of features, which is why the limits
-are conservative and the estimates are worst cases. The BDD limit matches the SoSyM benchmark
-on real models with the same engine (29 of 41 models between 501 and 1,000 features compiled
-within 300 s; 2 of 120 beyond).
+are conservative and the estimates are worst cases. The SoSyM benchmark, run on Linux and
+therefore with `dd`'s CUDD engine, confirms the BDD limit on real models (29 of 41 models
+between 501 and 1,000 features compiled within 300 s; 2 of 120 beyond).
 
 ## For plugin authors
 
