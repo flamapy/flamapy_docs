@@ -11,6 +11,9 @@ flamapy_bdd: false
 flamapy_fm: false
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
@@ -54,7 +57,7 @@ dm = DiscoverMetamodels()
 result = dm.use_operation_from_file(operation_name="PySATFilter",
                                   file="path/to/feature/model", 
                                   configuration_file='path/to/configuration',
-                                  full_configuration=False)
+                                  is_full=False)
 print(result)
 ```
 ### Python flamapy framework **ADVANCED** usage

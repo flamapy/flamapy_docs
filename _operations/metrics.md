@@ -11,10 +11,13 @@ flamapy_bdd: true
 flamapy_fm: true
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Metrics
@@ -46,6 +49,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
+# FMMetrics also runs the SAT and BDD metrics (PySATMetrics, BDDMetrics) and aggregates them
 result = dm.use_operation_from_file("FMMetrics", "path/to/feature/model")
 print(result)
 ```

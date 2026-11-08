@@ -38,15 +38,43 @@ library.
 
 ### Operations
 
-* Configurations number (exact model counting)
-* Satisfiable (non-void check)
-* Core features
-* Dead features
+<ul>
+  {% assign sdd_operations = site.operations | where: "flamapy_sdd", true %}
+  {% for operation in sdd_operations %}
+    <li><a href="{{ operation.url }}">{{ operation.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ### Installation
 
 ```
 pip install flamapy-sdd
+```
+
+or, together with the distribution, `pip install "flamapy[sdd]"`.
+
+### Usage
+
+Through the Python facade, pick the backend with `backend="sdd"`:
+
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+
+fm = FLAMAFeatureModel("path/to/feature/model")
+print(fm.configurations_number(backend="sdd"))
+```
+
+Or through the framework, with the `sdd` model extension:
+
+```python
+from flamapy.core.discover import DiscoverMetamodels
+
+dm = DiscoverMetamodels()
+feature_model = dm.use_transformation_t2m("path/to/feature/model", 'fm')
+sdd_model = dm.use_transformation_m2m(feature_model, "sdd")
+operation = dm.get_operation(sdd_model, 'SDDConfigurationsNumber')
+operation.execute(sdd_model)
+print(operation.get_result())
 ```
 
 ## d-DNNF metamodel plugin
@@ -67,21 +95,68 @@ models, and `flamapy-dnnf` gives an **exact** count at scale.
 > https://github.com/flamapy/dnnf_metamodel
 > ```
 
-### Requirements
+### Requirements: install the d4 compiler
 
-d4 is a native binary with no PyPI package — install it from
-<https://github.com/crillab/d4> and expose it as `d4` on `PATH` or via the `FLAMAPY_D4_PATH`
-environment variable.
+{: .important }
+> `pip install flamapy-dnnf` is **not enough on its own**: the plugin calls the
+> [d4](https://github.com/crillab/d4) knowledge compiler, a native C++ binary that has **no PyPI
+> package** and must be installed separately.
+
+1. Build d4 from source by following the instructions in its repository,
+   <https://github.com/crillab/d4>.
+2. Make the binary available to flamapy in one of two ways:
+   - put it on your `PATH` under the name `d4`, or
+   - point the `FLAMAPY_D4_PATH` environment variable at the binary:
+     ```bash
+     export FLAMAPY_D4_PATH=/path/to/d4
+     ```
+3. Check that it is found, e.g. with `which d4` (or `ls "$FLAMAPY_D4_PATH"`).
+
+If d4 cannot be found, every d-DNNF operation fails with
+`The d4 compiler was not found. Install d4 (https://github.com/crillab/d4) and expose it as "d4"
+on PATH or via the FLAMAPY_D4_PATH environment variable.` (the Python facade logs this error and
+returns `None`).
 
 ### Operations
 
-* Configurations number (exact model counting)
-* Satisfiable (non-void check)
+<ul>
+  {% assign dnnf_operations = site.operations | where: "flamapy_dnnf", true %}
+  {% for operation in dnnf_operations %}
+    <li><a href="{{ operation.url }}">{{ operation.title }}</a></li>
+  {% endfor %}
+</ul>
 
 ### Installation
 
 ```
 pip install flamapy-dnnf
+```
+
+or, together with the distribution, `pip install "flamapy[dnnf]"`. Remember to also install d4
+(see the requirements above).
+
+### Usage
+
+Through the Python facade, pick the backend with `backend="dnnf"`:
+
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+
+fm = FLAMAFeatureModel("path/to/feature/model")
+print(fm.configurations_number(backend="dnnf"))
+```
+
+Or through the framework, with the `dnnf` model extension:
+
+```python
+from flamapy.core.discover import DiscoverMetamodels
+
+dm = DiscoverMetamodels()
+feature_model = dm.use_transformation_t2m("path/to/feature/model", 'fm')
+dnnf_model = dm.use_transformation_m2m(feature_model, "dnnf")
+operation = dm.get_operation(dnnf_model, 'DDNNFConfigurationsNumber')
+operation.execute(dnnf_model)
+print(operation.get_result())
 ```
 
 ## BDD for colosal feature models

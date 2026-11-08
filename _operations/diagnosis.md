@@ -6,15 +6,18 @@ grand_parent: Flamapy as framework
 permalink: /framework/operations/diagnosis
 nav_order: 11
 
-flamapy_sat: true
+flamapy_sat: false
 flamapy_bdd: false
 flamapy_fm: false
 flamapy_z3: false
 flamapy_diagnosis: true
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Diagnosis

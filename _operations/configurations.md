@@ -11,6 +11,9 @@ flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: true
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
@@ -52,7 +55,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initiallize the dicover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
-# Use BDDConfigurations if you want to rely on BDD solver
+# Use BDDConfigurations or Z3Configurations to rely on other solvers
 result = dm.use_operation_from_file("PySATConfigurations","path/to/feature/model")
 print(result)
 ```
@@ -97,7 +100,7 @@ print(result)
 
 <!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
 
-**Facade signature**: `configurations(self, backend: Optional[str] = None)`
+**Facade signature**: `configurations(self, backend: Optional[str] = None, *, allow_approximate: Optional[bool] = None)`
 
 **Default backend**: bdd (selectable via `backend=`)
 
@@ -105,8 +108,8 @@ print(result)
 
 | plugin | exact | scale limit |
 |--------|-------|-------------|
-| pysat_metamodel | yes | — |
-| bdd_metamodel | yes | 300 |
-| z3_metamodel | yes | — |
+| z3_metamodel | yes | 30 |
+| pysat_metamodel | yes | 30 |
+| bdd_metamodel | yes | 50 |
 
 <!-- END GENERATED -->

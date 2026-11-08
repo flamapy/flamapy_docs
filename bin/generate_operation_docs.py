@@ -28,6 +28,9 @@ PLUGIN_FLAGS = {
     'fm_metamodel': 'flamapy_fm',
     'z3_metamodel': 'flamapy_z3',
     'pysat_diagnosis_metamodel': 'flamapy_diagnosis',
+    'sharpsat_metamodel': 'flamapy_sharpsat',
+    'sdd_metamodel': 'flamapy_sdd',
+    'dnnf_metamodel': 'flamapy_dnnf',
 }
 
 

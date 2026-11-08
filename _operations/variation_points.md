@@ -11,10 +11,13 @@ flamapy_bdd: false
 flamapy_fm: true
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Variation Points

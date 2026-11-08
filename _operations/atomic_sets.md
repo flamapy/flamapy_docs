@@ -6,11 +6,14 @@ grand_parent: Flamapy as framework
 permalink: /framework/operations/atomic_sets
 nav_order: 1
 
-flamapy_sat: false
+flamapy_sat: true
 flamapy_bdd: false
 flamapy_fm: true
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
@@ -72,14 +75,15 @@ print(result)
 
 <!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
 
-**Facade signature**: `atomic_sets(self)`
+**Facade signature**: `atomic_sets(self, backend: Optional[str] = None, *, allow_approximate: Optional[bool] = None)`
 
-**Default backend**: none (runs on the feature model)
+**Default backend**: none (runs on the feature model) (selectable via `backend=`)
 
 **Implemented by**:
 
 | plugin | exact | scale limit |
 |--------|-------|-------------|
-| fm_metamodel | yes | — |
+| pysat_metamodel | yes | — |
+| fm_metamodel | approximate | — |
 
 <!-- END GENERATED -->

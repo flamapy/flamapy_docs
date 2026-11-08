@@ -7,14 +7,17 @@ permalink: /framework/operations/backbone
 nav_order: 22
 
 flamapy_sat: true
-flamapy_bdd: false
+flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: true
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Backbone
@@ -30,6 +33,11 @@ Obtaining all features that are mandatory or impossible in a smartphone product 
 
 ---
 ## Code Examples
+
+### Command line usage
+```bash
+flamapy backbone "path/to/feature/model"
+```
 
 ### Python easy to use facade usage
 ```python
@@ -47,6 +55,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
+# Use Z3Backbone to rely on the Z3 solver
 result = dm.use_operation_from_file("PySATBackbone", "path/to/feature/model")
 print(result)
 ```

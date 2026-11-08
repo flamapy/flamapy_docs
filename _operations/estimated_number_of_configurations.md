@@ -10,6 +10,9 @@ flamapy_bdd: false
 flamapy_fm: true
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
@@ -17,10 +20,54 @@ rest: true
 ---
 
 # Estimated number of configurations
-**Description**:
-This is an estimate of the total number of different products that can be produced from a feature model.
+**Description**: 
+Provides an estimate of the total number of different configurations that can be produced from a feature model by considering all possible combinations of features.
 
-TODO: application and example prose.
+**Application**: 
+Useful for assessing the variability and potential complexity of the product line.
+
+**Example**: 
+A feature model with numerous optional and alternative features will have a high estimated number of configurations.
+
+
+---
+## Code Examples
+
+### Command line usage
+```bash
+flamapy estimated_number_of_configurations "path/to/feature/model"
+```
+
+### Python easy to use facade usage
+```python
+from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
+# Load the feature model
+fm = FLAMAFeatureModel("path/to/feature/model")
+operation = fm.estimated_number_of_configurations()
+print(operation)
+```
+
+### Python flamapy framework usage
+```python
+from flamapy.core.discover import DiscoverMetamodels
+# Initialize the discover metamodel
+dm = DiscoverMetamodels()
+# Call the operation. Transformations will be automatically executed
+result = dm.use_operation_from_file("FMEstimatedConfigurationsNumber","path/to/feature/model")
+print(result)
+```
+### Python flamapy framework **ADVANCED** usage
+```python
+from flamapy.core.discover import DiscoverMetamodels
+# Initialize the discover metamodel
+dm = DiscoverMetamodels()
+# Get the fm metamodel representation using the transformation 
+# required to get to the fm metamodel
+feature_model = dm.use_transformation_t2m("path/to/feature/model",'fm') 
+# Call the operation, no automatic transformations will be needed
+result = dm.use_operation(feature_model,'FMEstimatedConfigurationsNumber').get_result()
+print(result)
+```
 
 ---
 
@@ -34,6 +81,6 @@ TODO: application and example prose.
 
 | plugin | exact | scale limit |
 |--------|-------|-------------|
-| fm_metamodel | yes | — |
+| fm_metamodel | approximate | — |
 
 <!-- END GENERATED -->

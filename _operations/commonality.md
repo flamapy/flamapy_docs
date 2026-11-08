@@ -11,6 +11,9 @@ flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
@@ -51,6 +54,8 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initiallize the dicover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed; 
+# The BDD plugin provides the related BDDCommonalityFactor: the fraction of products
+# that include the given configuration
 result = dm.use_operation_from_file(operation_name="PySATCommonality",
                                   file="path/to/feature/model", 
                                   configuration_file='path/to/configuration')
@@ -84,7 +89,7 @@ print(result)
 
 <!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
 
-**Facade signature**: `commonality(self, configuration_path: str)`
+**Facade signature**: `commonality(self, configuration_path: str, backend: Optional[str] = None, *, allow_approximate: Optional[bool] = None)`
 
 **Inputs**:
 
@@ -92,12 +97,13 @@ print(result)
 |------|------|----------|---------|
 | `configuration_path` | str | yes | — |
 
-**Default backend**: sat
+**Default backend**: sat (selectable via `backend=`)
 
 **Implemented by**:
 
 | plugin | exact | scale limit |
 |--------|-------|-------------|
-| pysat_metamodel | yes | — |
+| pysat_metamodel | yes | 30 |
+| bdd_metamodel | yes | 1000 |
 
 <!-- END GENERATED -->

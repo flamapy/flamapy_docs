@@ -11,6 +11,9 @@ flamapy_bdd: false
 flamapy_fm: false
 flamapy_z3: true
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: false
 python: true
