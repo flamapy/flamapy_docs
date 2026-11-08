@@ -14,7 +14,7 @@ flamapy_diagnosis: true
 flamapy_sharpsat: false
 flamapy_sdd: false
 flamapy_dnnf: false
-cmd: false
+cmd: true
 facade: true
 python: true
 rest: true

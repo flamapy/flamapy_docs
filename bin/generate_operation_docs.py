@@ -9,9 +9,15 @@ operation it rewrites only the region between the BEGIN/END GENERATED markers of
 missing the markers get them appended; descriptors with no page at all get a stub page
 with a TODO prose section, so new operations cannot silently ship undocumented.
 
+The ``facade``, ``cmd`` and ``rest`` front-matter flags are also set from the code on every
+run: every facade method is in the Python facade, the analysis operations are CLI commands
+(the CLI is generated from them), and every facade method, including the ones that return a
+model, is a REST endpoint. They are never hand-maintained, so they cannot drift.
+
 The script is idempotent: running it twice produces a no-op diff.
 """
 import inspect
+import re
 import sys
 from pathlib import Path
 
@@ -91,6 +97,29 @@ def _first_sentence(doc):
     return collapsed[:end + 1] if end != -1 else collapsed
 
 
+def interface_flags(name):
+    """Which interfaces expose an operation, read from the generated facade method."""
+    kind = getattr(getattr(FLAMAFeatureModel, name, None), '_facade_kind', None)
+    return {
+        'facade': kind is not None,
+        'cmd': kind == 'operation',          # the CLI exposes the analysis operations
+        'rest': kind in ('operation', 'producer', 'transformer'),
+    }
+
+
+def sync_flags(text, flags):
+    """Set the interface flags in a page's front matter, adding any that are missing."""
+    _, front, body = text.split('---\n', 2)
+    for key, value in flags.items():
+        line = f'{key}: {"true" if value else "false"}'
+        pattern = re.compile(rf'^{key}:[^\n]*$', re.MULTILINE)
+        if pattern.search(front):
+            front = pattern.sub(line, front, count=1)
+        else:
+            front = front.rstrip('\n') + f'\n{line}\n'
+    return f'---\n{front}---\n{body}'
+
+
 def stub_page(name, descriptor, plugins, block):
     flags = {flag: 'false' for flag in PLUGIN_FLAGS.values()}
     for plugin in plugins:
@@ -98,6 +127,8 @@ def stub_page(name, descriptor, plugins, block):
         if flag:
             flags[flag] = 'true'
     flag_lines = '\n'.join(f'{flag}: {value}' for flag, value in flags.items())
+    interface_lines = '\n'.join(f'{key}: {"true" if value else "false"}'
+                                for key, value in interface_flags(name).items())
     title = name.replace('_', ' ').capitalize()
     return f"""---
 title: {title}
@@ -107,10 +138,8 @@ grand_parent: Flamapy as framework
 permalink: /framework/operations/{name}
 
 {flag_lines}
-cmd: true
-facade: true
+{interface_lines}
 python: true
-rest: true
 ---
 
 # {title}
@@ -144,6 +173,7 @@ def main():
             new_text = head + block + tail
         else:
             new_text = text.rstrip('\n') + '\n\n---\n\n' + block + '\n'
+        new_text = sync_flags(new_text, interface_flags(name))
         if new_text != text:
             page.write_text(new_text, encoding='utf-8')
             written += 1

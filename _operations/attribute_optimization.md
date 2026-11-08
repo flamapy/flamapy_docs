@@ -14,10 +14,10 @@ flamapy_diagnosis: false
 flamapy_sharpsat: false
 flamapy_sdd: false
 flamapy_dnnf: false
-cmd: false
-facade: false
+cmd: true
+facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Attribute Optimization
