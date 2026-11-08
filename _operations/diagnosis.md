@@ -6,15 +6,18 @@ grand_parent: Flamapy as framework
 permalink: /framework/operations/diagnosis
 nav_order: 11
 
-flamapy_sat: true
+flamapy_sat: false
 flamapy_bdd: false
 flamapy_fm: false
 flamapy_z3: false
 flamapy_diagnosis: true
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Diagnosis
@@ -75,3 +78,27 @@ operation.execute(sat_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `diagnosis(self, configuration_path: str, test_case_path: str = None, max_diagnoses: int = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `configuration_path` | str | yes | — |
+| `test_case_path` | str | no | None |
+| `max_diagnoses` | int | no | None |
+
+**Default backend**: pysat_diagnosis
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_diagnosis_metamodel | yes | — |
+
+<!-- END GENERATED -->

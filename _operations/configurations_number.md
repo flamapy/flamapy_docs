@@ -10,8 +10,10 @@ flamapy_sat: true
 flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: true
-flamapy_sharpsat: true
 flamapy_diagnosis: false
+flamapy_sharpsat: true
+flamapy_sdd: true
+flamapy_dnnf: true
 cmd: true
 facade: true
 python: true
@@ -54,7 +56,8 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initiallize the dicover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed
-# Use BDDConfigurations if you want to rely on BDD solver
+# Use BDDConfigurationsNumber, Z3ConfigurationsNumber, SDDConfigurationsNumber or DDNNFConfigurationsNumber (needs the d4 compiler) for an exact count with other solvers,
+# or SharpSATConfigurationsNumber for an approximate count on very large models
 result = dm.use_operation_from_file("PySATConfigurationsNumber","path/to/feature/model")
 print(result)
 ```
@@ -94,3 +97,24 @@ operation.execute(bdd_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `configurations_number(self, backend: Optional[str] = None, *, allow_approximate: Optional[bool] = None)`
+
+**Default backend**: bdd (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| z3_metamodel | yes | 30 |
+| sdd_metamodel | yes | 2000 |
+| sharpsat_metamodel | approximate | 2000 |
+| pysat_metamodel | yes | 30 |
+| dnnf_metamodel | yes | — |
+| bdd_metamodel | yes | 1000 |
+
+<!-- END GENERATED -->

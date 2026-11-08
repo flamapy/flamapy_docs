@@ -1,22 +1,25 @@
 ---
-title: Conflict Detection
+title: Conflict
 layout: default
 parent: Operations
 grand_parent: Flamapy as framework
-nav_order: 1
+permalink: /framework/operations/conflict
 
-flamapy_sat: true
+flamapy_sat: false
 flamapy_bdd: false
 flamapy_fm: false
 flamapy_z3: false
 flamapy_diagnosis: true
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
 rest: true
 ---
 
-# Conflict Detection
+# Conflict
 **Description**: 
 Identifies conflicts within the feature model by detecting combinations of features that cannot coexist due to constraints.
 
@@ -28,6 +31,11 @@ Detecting conflicts in a car feature model where certain features like 'Sunroof'
 
 ---
 ## Code Examples
+
+### Command line usage
+```bash
+flamapy conflict "path/to/feature/model" "path/to/configuration" --test_case_path "path/to/test_case"
+```
 
 ### Python easy to use facade usage
 ```python
@@ -44,6 +52,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initialize the discover metamodel
 dm = DiscoverMetamodels()
 # Conflict detection requires a configuration; pass it with configuration_file.
+# The test case can only be set with the ADVANCED usage below.
 # Transformations will be automatically executed.
 result = dm.use_operation_from_file(
     "PySATConflict",
@@ -74,3 +83,27 @@ operation.execute(sat_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `conflict(self, configuration_path: str, test_case_path: str = None, max_conflicts: int = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `configuration_path` | str | yes | — |
+| `test_case_path` | str | no | None |
+| `max_conflicts` | int | no | None |
+
+**Default backend**: pysat_diagnosis
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| pysat_diagnosis_metamodel | yes | — |
+
+<!-- END GENERATED -->

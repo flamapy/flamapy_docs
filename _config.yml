@@ -14,6 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Flamapy docs
+# The flamapy version these pages describe; shown in the header, the footer and on the home page.
+# Update it with every release of the docs (the docs site has no version of its own).
+flamapy_version: "2.9.0.dev0"
 description: Official flamapy documentation, the cutting-edge Python-based tool for Automated Analysis of Feature Models (AAFM)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://flamapy.org" # the base hostname & protocol for your site, e.g. http://example.com

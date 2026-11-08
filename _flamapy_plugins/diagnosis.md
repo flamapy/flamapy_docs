@@ -4,7 +4,7 @@ title: Diagnosis plugin
 parent: Plugins
 grand_parent: Flamapy as framework
 permalink: /framework/plugins/diagnosis_plugin
-nav_order: 7
+nav_order: 6
 ---
 
 # Diagnosis plugin

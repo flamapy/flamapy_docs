@@ -6,11 +6,14 @@ grand_parent: Flamapy as framework
 permalink: /framework/operations/attribute_optimization
 nav_order: 27
 
-flamapy_sat: false
+flamapy_sat: true
 flamapy_bdd: false
 flamapy_fm: false
 flamapy_z3: true
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: false
 python: true
@@ -42,6 +45,7 @@ feature_model = dm.use_transformation_t2m("path/to/feature/model", 'fm')
 # Manually call a M2M transformation to Z3
 z3_model = dm.use_transformation_m2m(feature_model, "z3")
 # Get the operation
+# Alternatively, transform the model to "pysat" and use PySATAttributeOptimization
 operation = dm.get_operation(z3_model, 'Z3AttributeOptimization')
 # Provide the attributes to optimize and the goal for each one
 operation.set_attributes({"price": OptimizationGoal.MINIMIZE})
@@ -51,3 +55,26 @@ operation.execute(z3_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `attribute_optimization(self, objectives: Any, backend: Optional[str] = None, *, allow_approximate: Optional[bool] = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `objectives` | Any | yes | — |
+
+**Default backend**: sat (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| z3_metamodel | yes | — |
+| pysat_metamodel | yes | — |
+
+<!-- END GENERATED -->

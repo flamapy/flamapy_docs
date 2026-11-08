@@ -30,3 +30,26 @@ bdd_model = FmToBDD(feature_model).transform()
 
 print(bdd_model)
 ```
+
+---
+## Building large BDDs
+
+The size of a BDD, and the cost of building it, depend on the order of its variables.
+`FmToBDD` builds the BDD clause by clause over a feature-tree variable order. With `dd`
+built against CUDD it also reorders variables dynamically. A native builder (Logic2BDD on
+CUDD, by D. Fernández-Amorós, UNED) is in preparation and not part of 2.9. These options can
+be passed to `FmToBDD(...)` or set with environment variables:
+
+| Option | Environment variable | Values (default first) |
+|--------|----------------------|------------------------|
+| `builder` | `FLAMAPY_BDD_BUILDER` | `python`; `native` and `auto` are experimental |
+| `var_order` | `FLAMAPY_BDD_VAR_ORDER` | `tree`, `force`, `model` |
+| `build` | `FLAMAPY_BDD_BUILD` | `incremental`, `monolithic` (Python builder) |
+| `clause_order` | `FLAMAPY_BDD_CLAUSE_ORDER` | `minspan`, `minmax`, `model` (Python builder) |
+| `reorder` | `FLAMAPY_BDD_REORDER` | `auto`, `1`, `0` (Python builder) |
+
+```python
+bdd_model = FmToBDD(feature_model, builder="python", var_order="force").transform()
+```
+
+The options change how the BDD is built, never the configurations it represents.

@@ -69,6 +69,17 @@ To verify if a specific configuration is valid, run:
 ```
 flamapy satisfiable_configuration ./valid_model.uvl ./valid_configuration.csvconf
 ```
+
+### Choose the solver, or let flamapy choose
+
+Each operation runs on a default analysis plugin (SAT for the queries above, BDD for counting
+and sampling). Add `--backend bdd` (or `sat`, `z3`) to pick one yourself, or `--backend auto` to
+let the query planner pick the best installed plugin for that model; `-v` shows which one ran.
+Details in [Choosing the backend (query planner)](/tool/choosing_backend).
+
+```
+flamapy configurations_number ./valid_model.uvl --backend auto -v
+```
 ---
 
 ## <i class="fa-solid fa-magnifying-glass-chart"></i> I want to use more feature models analysis operations:

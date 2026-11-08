@@ -50,14 +50,6 @@ The `bdd_metamodel` plugin is an integral part of the {% include flamapy.html %}
    - **Model-to-Model (M2M)**: Transforms feature models into BDD representations for analysis.
    - **Model-to-Text (M2T)**: Serializes BDD representations into different formats, including PNG, SVG, and DDDMP.
 
-
-{: .highlight }
-> This plugin could be installed in a different version that enables the analysis of [colosal feature models](https://doi.org/10.1007/s10664-021-10102-5). **Use at your own risk** (pip install flamapy-bdd==2.0.0.colosal) by taking a look to the pypi repo and choosing the most appropiaded version
->
-> ```
-> https://www.github.com/flamapy/bdd_metamodel, uned branch
-> ```
-
 ### Installation instructions
 
 To install the `bdd_metamodel` plugin, follow these steps:

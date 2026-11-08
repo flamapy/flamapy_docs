@@ -11,10 +11,13 @@ flamapy_bdd: false
 flamapy_fm: true
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Language Level
@@ -27,6 +30,11 @@ without a backend solver.
 
 ---
 ## Code Examples
+
+### Command line usage
+```bash
+flamapy language_level "path/to/feature/model"
+```
 
 ```python
 from flamapy.metamodels.fm_metamodel.transformations import UVLReader
@@ -43,4 +51,21 @@ Using the Python facade:
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 
 result = FLAMAFeatureModel('model.uvl').language_level()
+print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `language_level(self)`
+
+**Default backend**: none (runs on the feature model)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| fm_metamodel | yes | — |
+
+<!-- END GENERATED -->

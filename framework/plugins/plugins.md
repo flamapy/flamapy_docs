@@ -64,3 +64,10 @@ Extends the PySAT plugin with diagnosis capabilities. Given a configuration and 
 
 ### sharpsat_metamodel
 Provides scalable approximate model counting and almost-uniform sampling of configurations. It reuses the SAT CNF and relies on ApproxMC (`pyapproxmc`) and UniGen (`pyunigen`), scaling beyond the exact enumeration of the SAT/Z3 backends and the memory-bound BDD backend. [Github](https://github.com/flamapy/sharpsat_metamodel)
+
+### sdd_metamodel
+Compiles a feature model into a Sentential Decision Diagram (SDD) for exact analysis (configurations number, satisfiable, core and dead features). SDDs are more succinct than OBDDs in some cases and are built on top of the SAT CNF with [PySDD](https://github.com/wannesm/PySDD). Optional extra `flamapy[sdd]`; see the [community plugins]({{site.baseurl}}/framework/plugins/community_plugins) page. [Github](https://github.com/flamapy/sdd_metamodel)
+
+### dnnf_metamodel
+Exact analysis via d-DNNF knowledge compilation (configurations number, satisfiable) that scales to large industrial models. It relies on the [d4](https://github.com/crillab/d4) compiler, a native binary that **must be installed separately** (it has no PyPI package) and exposed as `d4` on `PATH` or via `FLAMAPY_D4_PATH`. Optional extra `flamapy[dnnf]`; see the [community plugins]({{site.baseurl}}/framework/plugins/community_plugins) page. [Github](https://github.com/flamapy/dnnf_metamodel)
+

@@ -11,6 +11,9 @@ flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: true
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: true
 facade: true
 python: true
@@ -51,6 +54,7 @@ from flamapy.core.discover import DiscoverMetamodels
 # Initiallize the dicover metamodel
 dm = DiscoverMetamodels()
 # Call the operation. Transformations will be automatically executed; 
+# Use BDDSatisfiableConfiguration or Z3SatisfiableConfiguration to rely on other solvers
 result = dm.use_operation_from_file(operation_name="PySATSatisfiableConfiguration",
                                   file="path/to/feature/model", 
                                   configuration_file='path/to/configuration',
@@ -81,3 +85,28 @@ operation.execute(sat_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `satisfiable_configuration(self, configuration_path: str, full_configuration: bool = False, backend: Optional[str] = None, *, allow_approximate: Optional[bool] = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `configuration_path` | str | yes | — |
+| `full_configuration` | bool | no | False |
+
+**Default backend**: sat (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| z3_metamodel | yes | — |
+| pysat_metamodel | yes | — |
+| bdd_metamodel | yes | 1000 |
+
+<!-- END GENERATED -->

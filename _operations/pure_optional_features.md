@@ -11,10 +11,13 @@ flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: false
 flamapy_diagnosis: false
+flamapy_sharpsat: false
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Pure Optional Features
@@ -66,3 +69,19 @@ operation.execute(bdd_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `pure_optional_features(self)`
+
+**Default backend**: bdd
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| bdd_metamodel | yes | 1000 |
+
+<!-- END GENERATED -->

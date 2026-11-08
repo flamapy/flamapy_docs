@@ -10,12 +10,14 @@ flamapy_sat: true
 flamapy_bdd: true
 flamapy_fm: false
 flamapy_z3: false
-flamapy_sharpsat: true
 flamapy_diagnosis: false
+flamapy_sharpsat: true
+flamapy_sdd: false
+flamapy_dnnf: false
 cmd: false
 facade: true
 python: true
-rest: false
+rest: true
 ---
 
 # Sampling
@@ -30,6 +32,11 @@ Generating a sample set of valid smartphone configurations for testing purposes.
 
 ---
 ## Code Examples
+
+### Command line usage
+```bash
+flamapy sampling "path/to/feature/model" 10
+```
 
 ### Python easy to use facade usage
 ```python
@@ -67,3 +74,28 @@ operation.execute(bdd_model)
 result = operation.get_result()
 print(result)
 ```
+
+---
+
+<!-- BEGIN GENERATED: operation reference (bin/generate_operation_docs.py) -->
+
+**Facade signature**: `sampling(self, size: int, with_replacement: bool = False, backend: Optional[str] = None, *, allow_approximate: Optional[bool] = None)`
+
+**Inputs**:
+
+| name | type | required | default |
+|------|------|----------|---------|
+| `size` | int | yes | — |
+| `with_replacement` | bool | no | False |
+
+**Default backend**: bdd (selectable via `backend=`)
+
+**Implemented by**:
+
+| plugin | exact | scale limit |
+|--------|-------|-------------|
+| sharpsat_metamodel | approximate | 2000 |
+| pysat_metamodel | approximate | — |
+| bdd_metamodel | yes | 1000 |
+
+<!-- END GENERATED -->
