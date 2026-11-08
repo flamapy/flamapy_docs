@@ -7,9 +7,71 @@ nav_order: 5
 
 # Migrating to flamapy 3.0
 
-Flamapy 2.7 is a **bridge release**: it is fully backward compatible with 2.6, and it ships
-the groundwork for the 3.0 major release behind non-breaking seams. This page collects the
-changes 3.0 will make, so you can prepare while still on 2.7. It is updated as 3.0 lands.
+Flamapy 2.7 opened the **bridge releases**: every 2.x release keeps the calls of the previous
+one working and ships the groundwork for the 3.0 major release behind non-breaking seams. This
+page collects the changes 3.0 will make, so you can prepare while still on 2.x, and the results
+that 2.9 changes on purpose (bug fixes and one encoding default). It is updated as 3.0 lands.
+
+## Behaviour changes in 2.9
+
+No call that worked in 2.8 stops working, but these results or outputs differ:
+
+### Cross-tree constraints are encoded with `cnf_method='auto'`
+
+The CNF builders (`FmToPysat`, `FmToDiagPysat`, `FmToSDD`, `FmToSharpSAT`, `FmToDDNNF`) default to
+`cnf_method='auto'`: a constraint is expanded distributively unless the expansion would be larger
+than its Tseytin encoding, which then gets auxiliary variables. Operation results are identical
+and the auxiliaries never appear in them; the clauses only differ on models with constraints that
+blow up (129 of the 1,538 benchmark models). What this changes for code that reads the raw CNF:
+
+- The CNF can hold variables that are not features. Use `PySATModel.feature_variables()` and
+  `top_variable()` (new variables must start above it) instead of `len(variables) + 1`, or pass
+  `cnf_method='distributive'` to get the 2.8 clauses.
+- `DimacsWriter` counts every variable in the `p cnf` header and names only the features;
+  `DimacsReader` marks the unnamed variables of such a file as auxiliary.
+- `PysatToFM` refuses a SAT model with auxiliary variables and says how to build one it can
+  convert.
+- `PySATModel.cnf_method` is `None` for models flamapy did not encode (e.g. read from DIMACS).
+
+### Analysis results
+
+- **Commonality** of a configuration with several features is the fraction of products that
+  include all of them (the FLAME definition); 2.8 used the first feature only. A feature that is
+  not in the model is now an error.
+- **Diagnoses and conflicts** (HSDAG) follow the reference algorithm: 2.8 took different label
+  sets with the same sum for the same node, so it missed some diagnoses, and it reported some
+  non-minimal ones.
+- **Covering arrays** for a given `seed` differ from 2.8; seeds are reproducible within a version.
+- **BDD build defaults** change the variable order (feature-tree pre-order, clause by clause, with
+  reordering on CUDD). The set of configurations is the same, but the order of
+  `BDDConfigurations`, seeded samples, the DDDMP/JSON/graph exports and `get_expression()` differ,
+  and cached BDD artifacts are rebuilt. `FmToBDD(fm, build="monolithic", var_order="model",
+  reorder=False)` is the closest to 2.8. Invalid build options raise a `FlamaException` (still a
+  `ValueError`). `PLModel.variables` is a list in feature-tree pre-order instead of a set.
+- **Metrics** from a backend model report the metrics of every metamodel the model can reach, and
+  skip (recording the reason in `Metrics.get_skipped()`) a metamodel whose plugin is unavailable
+  or whose `max_features` the model exceeds, instead of raising.
+- **AFM writer**: XOR is written as `NOT (A IFF B)`, `read_relation` is an instance method and
+  `read_attribute` returns `None` for attributes AFM cannot hold.
+
+### Planner and facade
+
+- Manifest costs are estimated milliseconds (2.8: relative weights), and a manifest names its
+  `calibration` run; the planner ranks manifests without one after the calibrated ones.
+  `exact=False` implementations are only chosen with `allow_approximate`. `PlannerPolicy`'s
+  `artifact_bonus` is accepted but ignored (a cached artifact now waives the transformation cost)
+  and `Plan` gains `estimated_cost` (a heuristic from the calibration machine) as its last field.
+- `atomic_sets` and `commonality` accept `backend=`; in 2.x only a per-call `backend=` changes
+  them, not the model's default or `FLAMAPY_BACKEND`.
+- `allow_approximate` and `raise_errors` are keyword-only; `None` falls back to
+  `FLAMAPY_ALLOW_APPROXIMATE` and to the new `FLAMAPY_RAISE_ERRORS`, which the producers honour
+  too.
+
+### REST API
+
+A failing operation still answers `404`, now with its reason instead of "Not valid result"; an
+unexpected error inside a plugin answers `500`. Responses carry the provenance of the result in
+`X-Flamapy-*` headers.
 
 ## Announced breaking changes (3.0)
 
@@ -32,6 +94,15 @@ result = fm.satisfiable().value
 You can already see the envelope in 2.7: after any operation it is available as
 `fm.last_result`, and the CLI prints it with `flamapy -v <operation> <model>` (well,
 `flamapy <operation> <model> -v`).
+
+### Default backends apply to every selectable operation
+
+The model's default backend and `FLAMAPY_BACKEND` will also apply to `atomic_sets` and
+`commonality`, which follow only a per-call `backend=` in 2.x.
+
+### The REST API answers 422 when an operation cannot run
+
+2.x answers `404` with the reason; 3.0 uses `422`, in line with the raising facade.
 
 ### Operation errors raise instead of returning None
 
@@ -65,16 +136,6 @@ myplugin = "flamapy.metamodels.myplugin_metamodel"
 Plugins found only through the legacy `flamapy.metamodels` namespace scan still work in 2.7
 (with a `DeprecationWarning`); the scan is removed in 3.0.
 
-### Cross-tree constraints are encoded with `cnf_method='auto'`
-
-Since 2.9 the CNF builders (`FmToPysat`, `FmToDiagPysat`, `FmToSDD`, `FmToSharpSAT`, `FmToDNNF`)
-default to `cnf_method='auto'`: a constraint is expanded distributively unless the expansion would be
-larger than its Tseytin encoding, which then gets auxiliary variables. Results are identical and the
-auxiliaries never appear in them; the clauses only differ on models with constraints that blow up
-(129 of the 1,538 benchmark models). Code that reads the raw CNF and assumes every variable is a
-feature should pass `cnf_method='distributive'` or use `PySATModel.feature_variables()`. See
-[CNF encodings](/framework/cnf_encodings).
-
 ## New, non-breaking machinery you can adopt today
 
 - **Capability manifests** — plugins declare a `MANIFEST` (`PluginManifest`) in their
@@ -83,8 +144,8 @@ feature should pass `cnf_method='distributive'` or use `PySATModel.feature_varia
   the d-DNNF plugin needs the `d4` binary), a plugin-wide `max_features` ceiling, the
   estimated cost of building its model (`transformation_cost`, constant or per size bin),
   and per operation the exactness, scale ceiling and cost (`cost` or a `cost_curve` of
-  estimated milliseconds per size bin, measured on the calibration models). Plugins without
-  one get a conservative default.
+  estimated milliseconds per size bin, measured on the calibration models, named in
+  `calibration`). Plugins without one get a default that the planner ranks last.
 - **Query planner** — `backend='auto'` (per model, per call, or `FLAMAPY_BACKEND=auto`)
   picks the backend per operation from the manifests: candidates are filtered by
   availability, language level, scale and exactness, then ranked by the estimated cost of
@@ -92,7 +153,8 @@ feature should pass `cnf_method='distributive'` or use `PySATModel.feature_varia
   as artifacts) plus the operation's cost at the model's size. Approximate implementations
   (sharpSAT counting and sampling, the structural `core_features` of the fm plugin) are only
   candidates with `allow_approximate=True` (per call, per model, or
-  `FLAMAPY_ALLOW_APPROXIMATE=1`). In 2.9 the operation's historical default backend still
+  `FLAMAPY_ALLOW_APPROXIMATE=1`), and plugins whose manifest names no calibration run are
+  ranked after the calibrated ones. In 2.9 the operation's historical default backend still
   gets a bonus so that `auto` reproduces today's routing on plain Boolean models; 3.0 drops
   the bonus and routes purely on the estimates. `last_result.planner` records the choice and
   its rationale.

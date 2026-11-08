@@ -19,8 +19,8 @@ All available operations could be read by running
 flamapy -h
 ```
 
-Operations implemented by several plugins take `--backend sat|bdd|z3|auto` (`auto` lets the
-query planner choose), `-v` prints which plugin produced the result, and `flamapy plan
+Operations implemented by several plugins take `--backend sat|bdd|z3|auto`, plus `sdd`,
+`sharpsat` or `dnnf` when installed (`auto` lets the query planner choose), `-v` prints which plugin produced the result, and `flamapy plan
 <operation> <model>` shows the planner's choice without running the operation. See
 [Choosing the backend (query planner)](/tool/choosing_backend).
 

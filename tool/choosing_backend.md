@@ -16,7 +16,8 @@ nav_order: 6
 {:toc}
 
 Most analysis operations are implemented by more than one plugin: `satisfiable` by the SAT,
-BDD, SDD and Z3 plugins, `configurations_number` by BDD, SDD, sharpSAT, SAT and Z3, and so on.
+BDD, SDD, d-DNNF and Z3 plugins, `configurations_number` by BDD, SDD, d-DNNF, sharpSAT, SAT and
+Z3, and so on.
 Every operation has a historical default (`satisfiable`, `core_features`, `dead_features`,
 `false_optional_features` and `satisfiable_configuration` run on SAT; `configurations_number`,
 `configurations` and `sampling` on BDD), and you can always name a backend yourself. The
@@ -52,7 +53,9 @@ flamapy satisfiable valid_model.uvl --backend auto   # or per CLI call
 
 A per-call `backend=` always wins over the model's setting, which wins over the environment
 variable. Operations that only one plugin implements (for example `explain_void_model`, which
-needs the diagnosis plugin) ignore the setting and run where they always did.
+needs the diagnosis plugin) ignore the setting and run where they always did. `atomic_sets` and
+`commonality`, which take `backend=` since 2.9, follow only a per-call `backend=` in 2.x, so a
+default set for the model or the process does not change their 2.8 results.
 
 ## Seeing what was chosen
 
@@ -85,6 +88,7 @@ $ flamapy plan configurations_number valid_model.uvl
 operation:            configurations_number
 chosen backend:       bdd_metamodel (extension 'bdd')
 transformation chain: fm -> bdd
+estimated cost:       12 ms (heuristic)
 rationale:            bdd: estimated 12 ms (transformation 11, operation 1), historical default backend
 alternatives:         sdd_metamodel, pysat_metamodel, z3_metamodel
 ```
@@ -107,35 +111,45 @@ planner:
    milliseconds measured on a calibration corpus (synthetic models of 20 to 10,000 features at
    two constraint densities, plus JHipster and busybox); they are worst cases, so the actual
    run is usually faster, and they only need to be right relative to each other.
-3. **Takes the cheapest**, with one concession in 2.9: the operation's historical default
-   backend gets a bonus of 150 ms, so that on small models `auto` reproduces the historical
-   routing. 3.0 drops the bonus.
+3. **Takes the cheapest**, with two rules in 2.9: plugins whose manifest names no calibration
+   run (the d-DNNF plugin, third-party plugins without measured costs) are only chosen when no
+   calibrated plugin qualifies, and the operation's historical default backend gets a bonus of
+   150 ms, so that on small models `auto` reproduces the historical routing. 3.0 drops the
+   bonus.
 
-Approximate implementations (sharpSAT counting and sampling, the structural `core_features` of
-the fm plugin that ignores cross-tree constraints, and the SAT sampler, which enumerates
-instead of sampling at random) are never chosen unless you allow them:
+Approximate implementations (sharpSAT counting and sampling, and the structural `core_features`
+and `atomic_sets` of the fm plugin, which ignore cross-tree constraints) are never chosen unless
+you allow them. `allow_approximate` has no effect with any other backend than `auto`:
 
 ```python
 fm.core_features(allow_approximate=True)                     # per call
 FLAMAFeatureModel(path, backend="auto", allow_approximate=True)   # per model
-# or FLAMAPY_ALLOW_APPROXIMATE=1 in the environment
+# or FLAMAPY_ALLOW_APPROXIMATE=1 in the environment; allow_approximate=False on the model
+# overrides the variable
 ```
 
 `fm.last_result.exact` is `False` when an approximate implementation produced the result.
 
 ## What you get in practice
 
-With the plugins of the `flamapy` distribution (SAT, BDD, Z3) and `auto`:
+With the plugins of the `flamapy` distribution (SAT, BDD, Z3) and `auto`, on the calibration
+models:
 
-| Model | satisfiable, core/dead, false-optional, satisfiable_configuration | configurations_number, configurations, sampling |
-|---|---|---|
-| Boolean, up to 1,000 features | SAT | BDD |
-| Boolean, more than 1,000 features | SAT | refused (no installed backend can finish) |
-| Typed attributes, strings, aggregates | Z3 | Z3 (`sampling`: refused) |
+| Model | satisfiable, core/dead, false-optional, satisfiable_configuration | configurations_number, commonality | configurations | sampling |
+|---|---|---|---|---|
+| Boolean, up to 150 features | SAT | BDD | BDD | BDD up to about 150 features, then SAT |
+| Boolean, 151 to 1,000 features | SAT | BDD | refused | SAT |
+| Boolean, more than 1,000 features | SAT | refused | refused | SAT |
+| Typed attributes, strings, aggregates | Z3 | counting: Z3 up to 30 features; commonality: refused | Z3 up to 30 features | refused |
 
-Installing `flamapy-sdd` adds a counter that scales further than the BDD on sparse models:
-counting moves to SDD from about 200 features on. `flamapy-sharpsat` adds approximate counting
-and sampling for the models nothing else can handle, on `allow_approximate=True`.
+`refused` means that no installed plugin declares that it finishes on a model of that size.
+The SAT sampler returns valid configurations but enumerates them in a fixed order instead of
+drawing them uniformly at random; pass `backend="bdd"` when you need a uniform sample.
+
+Installing `flamapy-sdd` adds a counter that scales further than the BDD on sparse models: the
+planner moves counting to SDD on many models from about 200 features on, and up to 2,000
+features. `flamapy-sharpsat` adds approximate counting and sampling for the models nothing else
+can handle, on `allow_approximate=True`.
 
 When no installed plugin can run the operation, the planner refuses with the reason for every
 candidate. In 2.9 the facade logs it and returns `None` (as it does for any operation error;
@@ -205,9 +219,11 @@ MANIFEST = PluginManifest(
 ```
 
 A cost curve is a tuple of `(features, milliseconds)` pairs: the cost applies up to that many
-features, and models beyond the last pair get its cost. An operation without an entry gets the
-plugin's `default_cost` and `max_features`; a plugin without a manifest gets a conservative one
-(Boolean level, exact, default costs). `exact=False` marks an approximate implementation, and
-`available=False` with `unavailable_reason` a plugin whose native dependency is missing. The
-calibration scripts that produced the numbers above are kept with the operations review in the
-flamapy workspace (`OPERATIONS-REVIEW-2026-11-06-proto/`).
+features, and beyond the last pair it grows in proportion to the size. An operation without an
+entry gets the plugin's `default_cost` and `max_features`; a plugin without a manifest gets a
+default one (Boolean level, exact, default costs) that the planner ranks last. `exact=False`
+marks an approximate implementation (declare `exact = False` on the operation class too, so the
+result envelope reports it), and `available=False` with `unavailable_reason` a plugin whose
+native dependency is missing. Set `calibration` to the date or name of the run your costs come
+from (`calibration='2026-11-06'` in the in-tree plugins): a manifest without it is ranked after
+every calibrated one, so estimates that were never measured cannot win.

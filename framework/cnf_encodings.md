@@ -39,7 +39,7 @@ while the Tseytin encoding of the same constraint stays in the low tens.
 
 {: .note }
 > `auto` is the default of every CNF consumer (`FmToPysat`, `FmToDiagPysat`, `FmToSDD`, `FmToSharpSAT`,
-> `FmToDNNF`), so it is what the Python facade and the CLI use. On typical models it produces exactly the
+> `FmToDDNNF`), so it is what the Python facade and the CLI use. On typical models it produces exactly the
 > distributive clauses: on the 1,538 models of the SoSyM benchmark it introduces auxiliary variables in
 > 129 (eCos and Linux style models with disjunctions of conjunctions), where it yields 12% fewer clauses
 > than the expansion, encodes 2.5 times faster and answers every operation identically. The two models
@@ -95,7 +95,7 @@ sat_model = FmToPysat(fm, cnf_method='tseytin').transform()
 The same `cnf_method` option is available on:
 
 - `FmToPysat` (`flamapy-sat`) and `FmToDiagPysat` (`flamapy-sat` diagnosis metamodel).
-- `FmToSDD` (`flamapy-sdd`), `FmToSharpSAT` (`flamapy-sharpsat`) and `FmToDNNF` (`flamapy-dnnf`), which
+- `FmToSDD` (`flamapy-sdd`), `FmToSharpSAT` (`flamapy-sharpsat`) and `FmToDDNNF` (`flamapy-dnnf`), which
   build their compilers from the same `ClauseSet`.
 - `FmToZ3` (`flamapy-z3`) — see the caveat below; its default is its own direct translation.
 
@@ -112,9 +112,10 @@ Z3 translation.
 - Keep the **default `auto`**: it is the distributive encoding wherever that is small, and only the
   constraints that would explode (long `XOR`/`⇔` chains, deeply nested disjunctions of conjunctions) get
   auxiliary variables.
-- Force **`distributive`** when you need a CNF over the feature variables only (for example to feed a tool
-  that does not project out auxiliary variables); the SAT translation of some large models may then
-  become slow or memory-hungry.
+- Force **`distributive`** when you need a CNF over the feature variables only (for example to convert it
+  back with `PysatToFM`, which refuses auxiliary variables, or to feed a tool that does not project them
+  out; `DimacsWriter` counts them in the header and names only the features); the SAT translation of some
+  large models may then become slow or memory-hungry.
 - Force **`tseytin`** to experiment with a linear-size encoding for every constraint; on the benchmark
   models it doubles the clause count and slows SAT queries by about 1.7–2x, which is why `auto` only
   applies it where it pays off.
