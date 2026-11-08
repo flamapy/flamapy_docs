@@ -55,7 +55,7 @@ A per-call `backend=` always wins over the model's setting, which wins over the 
 variable. Operations that only one plugin implements (for example `explain_void_model`, which
 needs the diagnosis plugin) ignore the setting and run where they always did. `atomic_sets` and
 `commonality`, which take `backend=` since 2.9, follow only a per-call `backend=` in 2.x, so a
-default set for the model or the process does not change their 2.8 results.
+default set for the model or the process does not change their 2.6 results.
 
 ## Seeing what was chosen
 

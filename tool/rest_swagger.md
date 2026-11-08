@@ -61,7 +61,7 @@ curl -i -X POST http://localhost:8000/api/v1/operations/configurations_number \
 
 `POST /api/v1/operations/<operation>/plan` returns the planner's decision without running the
 operation (the facade's `plan()`). A call that cannot run (an unknown backend, invalid inputs,
-or no installed plugin able to handle the model) answers `404` with the reason, as in 2.8; 3.0
+or no installed plugin able to handle the model) answers `404` with the reason, as in 2.6; 3.0
 will answer `422`. An unexpected error inside a plugin answers `500`. Setting `FLAMAPY_BACKEND=auto` in the server's environment makes `auto` the default
 for every call that does not name a backend.
 

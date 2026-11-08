@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release-day actions (2.7 / 3.0)
+title: Release-day actions (2.9 / 3.0)
 parent: Developing
 nav_order: 6
 ---
@@ -10,26 +10,33 @@ nav_order: 6
 Push-side and admin actions that are performed manually at release time (never by the
 in-repo development work). Maintainers: check items off as they are done.
 
-## 2.7.0 (bridge release)
+## 2.9.0 (bridge release)
+
+2.9.0 is the first release after 2.6.0: the 2.7 and 2.8 development lines were never published,
+so the release notes compare with 2.6.0. Every repository's develop branch carries
+`2.9.0.devN` with `~=2.9.0.devN` pins.
 
 - [ ] **Security (do first, independent of the release):** revoke the Google
       service-account key committed in `flamapy-stats` (`plasma-hope-*.json`) and purge it
       from the repository history.
-- [ ] Merge the `version2.7` branches (fw, fm, sat, bdd, z3, sharpsat, dnnf, sdd,
-      flamapy, docs) and tag.
-- [ ] Finalize versions `2.7.0.dev0` → `2.7.0` (and `~=2.7.0.dev0` pins → `~=2.7.0`)
-      across the nine packages.
-- [ ] Publish to PyPI in dependency order (fw → fm → sat/bdd/z3/sharpsat/dnnf/sdd →
-      flamapy), e.g. via `flamapy-dev`.
+- [ ] Optional dev release: `flamapy-dev version release 2.9.0.devN` tags develop in every
+      repo; each release workflow waits for its flamapy dependencies on PyPI before
+      publishing, so the tags go out back to back.
+- [ ] Stable release: `flamapy-dev version stabilize` drops the `.devN` suffix (versions and
+      pins → `2.9.0` / `~=2.9.0`), merges develop into each stable branch (`master` in fw,
+      fm, sat and bdd; `main` in the others) and tags `v2.9.0` there, in dependency order
+      (fw → fm → sat → bdd → z3 → sdd → dnnf → sharpsat → flamapy → rest).
 - [ ] Decide whether the IDE wheels bundle includes the optional solver extras
       (sharpsat/dnnf/sdd) — see the note in `flamapy/.github/workflows/build_wheels.sh`.
       Default: not included.
 - [ ] Regenerate the docs operation catalog (`bin/generate_operation_docs.py`) and fill
       the TODO prose in the stub pages (explain_dead_feature, explain_void_model,
       covering_array, coverage, sample_reduction, ...).
-- [ ] Release notes: entry-point discovery (namespace scan deprecated), capability
-      manifests, `last_result` provenance + CLI `-v`, optional solver extras, explanation
-      operations, SPL testing operations, 3.0 migration page.
+- [ ] Release notes, against 2.6.0: query planner (`backend='auto'`) and capability
+      manifests, entry-point discovery (namespace scan deprecated), `last_result`
+      provenance + CLI `-v`, optional solver extras, explanation and SPL testing operations,
+      the REST API generated from the facade, and the "Behaviour changes in 2.9" section of
+      the [3.0 migration page](/developing/migrating_to_v3).
 
 ## 3.0.0
 

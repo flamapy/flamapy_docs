@@ -7,14 +7,15 @@ nav_order: 5
 
 # Migrating to flamapy 3.0
 
-Flamapy 2.7 opened the **bridge releases**: every 2.x release keeps the calls of the previous
-one working and ships the groundwork for the 3.0 major release behind non-breaking seams. This
-page collects the changes 3.0 will make, so you can prepare while still on 2.x, and the results
-that 2.9 changes on purpose (bug fixes and one encoding default). It is updated as 3.0 lands.
+Flamapy 2.9 is the **bridge release** towards 3.0. It follows 2.6.0, the previous release (2.7 and
+2.8 were development lines that were never published), keeps the calls of 2.6 working, and ships
+the groundwork for the 3.0 major release behind non-breaking seams. This page collects the
+results that 2.9 changes on purpose (bug fixes and one encoding default) and the changes 3.0 will
+make, so you can prepare while still on 2.x. It is updated as 3.0 lands.
 
 ## Behaviour changes in 2.9
 
-No call that worked in 2.8 stops working, but these results or outputs differ:
+No call that worked in 2.6 stops working, but these results or outputs differ:
 
 ### Cross-tree constraints are encoded with `cnf_method='auto'`
 
@@ -26,27 +27,26 @@ blow up (129 of the 1,538 benchmark models). What this changes for code that rea
 
 - The CNF can hold variables that are not features. Use `PySATModel.feature_variables()` and
   `top_variable()` (new variables must start above it) instead of `len(variables) + 1`, or pass
-  `cnf_method='distributive'` to get the 2.8 clauses.
+  `cnf_method='distributive'` to get the 2.6 clauses.
 - `DimacsWriter` counts every variable in the `p cnf` header and names only the features;
   `DimacsReader` marks the unnamed variables of such a file as auxiliary.
 - `PysatToFM` refuses a SAT model with auxiliary variables and says how to build one it can
   convert.
-- `PySATModel.cnf_method` is `None` for models flamapy did not encode (e.g. read from DIMACS).
+- `PySATModel` records the encoding in a new `cnf_method` attribute, `None` for models flamapy did
+  not encode (e.g. read from DIMACS).
 
 ### Analysis results
 
 - **Commonality** of a configuration with several features is the fraction of products that
-  include all of them (the FLAME definition); 2.8 used the first feature only. A feature that is
+  include all of them (the FLAME definition); 2.6 used the first feature only. A feature that is
   not in the model is now an error.
-- **Diagnoses and conflicts** (HSDAG) follow the reference algorithm: 2.8 took different label
+- **Diagnoses and conflicts** (HSDAG) follow the reference algorithm: 2.6 took different label
   sets with the same sum for the same node, so it missed some diagnoses, and it reported some
   non-minimal ones.
-- **Covering arrays** for a given `seed` differ from 2.8; seeds are reproducible within a version.
 - **BDD build defaults** change the variable order (feature-tree pre-order, clause by clause, with
   reordering on CUDD). The set of configurations is the same, but the order of
-  `BDDConfigurations`, seeded samples, the DDDMP/JSON/graph exports and `get_expression()` differ,
-  and cached BDD artifacts are rebuilt. `FmToBDD(fm, build="monolithic", var_order="model",
-  reorder=False)` is the closest to 2.8. Invalid build options raise a `FlamaException` (still a
+  `BDDConfigurations`, seeded samples, the DDDMP/JSON/graph exports and `get_expression()` differ.
+  `FmToBDD(fm, build="monolithic", var_order="model", reorder=False)` is the closest to 2.6. Invalid build options raise a `FlamaException` (still a
   `ValueError`). `PLModel.variables` is a list in feature-tree pre-order instead of a set.
 - **Metrics** from a backend model report the metrics of every metamodel the model can reach, and
   skip (recording the reason in `Metrics.get_skipped()`) a metamodel whose plugin is unavailable
@@ -54,26 +54,16 @@ blow up (129 of the 1,538 benchmark models). What this changes for code that rea
 - **AFM writer**: XOR is written as `NOT (A IFF B)`, `read_relation` is an instance method and
   `read_attribute` returns `None` for attributes AFM cannot hold.
 
-### Planner and facade
+### Facade
 
-- Manifest costs are estimated milliseconds (2.8: relative weights), and a manifest names its
-  `calibration` run; the planner ranks manifests without one after the calibrated ones.
-  `exact=False` implementations are only chosen with `allow_approximate`; the SAT sampler is
-  one of them (its configurations are valid but not drawn uniformly) and its results report
-  `exact=False`. The BDD plugin declares `configurations` up to 50 features, measured on the
-  benchmark corpus (2.8: 150). `PlannerPolicy`'s
-  `artifact_bonus` is accepted but ignored (a cached artifact now waives the transformation cost)
-  and `Plan` gains `estimated_cost` (a heuristic from the calibration machine) as its last field.
 - `atomic_sets` and `commonality` accept `backend=`; in 2.x only a per-call `backend=` changes
-  them, not the model's default or `FLAMAPY_BACKEND`.
-- `allow_approximate` and `raise_errors` are keyword-only; `None` falls back to
-  `FLAMAPY_ALLOW_APPROXIMATE` and to the new `FLAMAPY_RAISE_ERRORS`, which the producers honour
-  too.
+  them, not the model's default backend or `FLAMAPY_BACKEND`, so code that sets a default keeps
+  its 2.6 results.
 
 ### REST API
 
-A failing operation still answers `404`, now with its reason instead of "Not valid result"; an
-unexpected error inside a plugin answers `500`. Responses carry the provenance of the result in
+A failing operation still answers `404`, as in 2.6, now with its reason instead of "Not valid
+result"; an unexpected error inside a plugin answers `500`. Responses carry the provenance of the result in
 `X-Flamapy-*` headers.
 
 ## Announced breaking changes (3.0)
@@ -94,7 +84,7 @@ result = fm.satisfiable()
 result = fm.satisfiable().value
 ```
 
-You can already see the envelope in 2.7: after any operation it is available as
+You can already see the envelope in 2.9: after any operation it is available as
 `fm.last_result`, and the CLI prints it with `flamapy -v <operation> <model>` (well,
 `flamapy <operation> <model> -v`).
 
@@ -110,8 +100,10 @@ The model's default backend and `FLAMAPY_BACKEND` will also apply to `atomic_set
 ### Operation errors raise instead of returning None
 
 In 2.x, a failing operation logs the error and returns `None`. From 3.0 the underlying
-`FlamaException` is raised. 2.7 emits a `DeprecationWarning` whenever the None-swallowing
-path triggers.
+`FlamaException` is raised. 2.9 emits a `DeprecationWarning` whenever the None-swallowing
+path triggers. Opt into the 3.0 contract today with `FLAMAFeatureModel(path, raise_errors=True)`, or
+process-wide with `FLAMAPY_RAISE_ERRORS=1` (which also covers the producers such as
+`generate_random_feature_model`); `raise_errors=False` on a model overrides the variable.
 
 ```python
 # 2.x
@@ -125,7 +117,7 @@ except FlamaException as error:
     ...
 ```
 
-## Deprecations already active in 2.7
+## Deprecations in 2.9
 
 ### Namespace-scan plugin discovery
 
@@ -136,7 +128,7 @@ Plugins should declare a `flamapy.plugins` entry point in their packaging metada
 myplugin = "flamapy.metamodels.myplugin_metamodel"
 ```
 
-Plugins found only through the legacy `flamapy.metamodels` namespace scan still work in 2.7
+Plugins found only through the legacy `flamapy.metamodels` namespace scan still work in 2.9
 (with a `DeprecationWarning`); the scan is removed in 3.0.
 
 ## New, non-breaking machinery you can adopt today
@@ -156,8 +148,11 @@ Plugins found only through the legacy `flamapy.metamodels` namespace scan still 
   as artifacts) plus the operation's cost at the model's size. Approximate implementations
   (sharpSAT counting and sampling, the structural `core_features` of the fm plugin) are only
   candidates with `allow_approximate=True` (per call, per model, or
-  `FLAMAPY_ALLOW_APPROXIMATE=1`), and plugins whose manifest names no calibration run are
-  ranked after the calibrated ones. In 2.9 the operation's historical default backend still
+  `FLAMAPY_ALLOW_APPROXIMATE=1`; an explicit `allow_approximate=False` on the model overrides
+  the variable). The SAT sampler is one of them: its configurations are valid but not drawn
+  uniformly, and its results report `exact=False`. Plugins whose manifest names no calibration
+  run are ranked after the calibrated ones, and the BDD plugin lists configurations only up to
+  50 features, measured on the benchmark corpus. In 2.9 the operation's historical default backend still
   gets a bonus so that `auto` reproduces today's routing on plain Boolean models; 3.0 drops
   the bonus and routes purely on the estimates. `last_result.planner` records the choice and
   its rationale.
