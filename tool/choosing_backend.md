@@ -117,9 +117,10 @@ planner:
    150 ms, so that on small models `auto` reproduces the historical routing. 3.0 drops the
    bonus.
 
-Approximate implementations (sharpSAT counting and sampling, and the structural `core_features`
-and `atomic_sets` of the fm plugin, which ignore cross-tree constraints) are never chosen unless
-you allow them. `allow_approximate` has no effect with any other backend than `auto`:
+Approximate implementations (sharpSAT counting and sampling, the structural `core_features`
+and `atomic_sets` of the fm plugin, which ignore cross-tree constraints, and the SAT sampler,
+which returns valid configurations in the solver's order instead of uniformly at random) are
+never chosen unless you allow them. `allow_approximate` has no effect with any other backend than `auto`:
 
 ```python
 fm.core_features(allow_approximate=True)                     # per call
@@ -137,14 +138,18 @@ models:
 
 | Model | satisfiable, core/dead, false-optional, satisfiable_configuration | configurations_number, commonality | configurations | sampling |
 |---|---|---|---|---|
-| Boolean, up to 150 features | SAT | BDD | BDD | BDD up to about 150 features, then SAT |
-| Boolean, 151 to 1,000 features | SAT | BDD | refused | SAT |
-| Boolean, more than 1,000 features | SAT | refused | refused | SAT |
+| Boolean, up to 50 features | SAT | BDD | BDD | BDD |
+| Boolean, 51 to 1,000 features | SAT | BDD | refused | BDD |
+| Boolean, more than 1,000 features | SAT | refused | refused | refused (SAT with `allow_approximate`) |
 | Typed attributes, strings, aggregates | Z3 | counting: Z3 up to 30 features; commonality: refused | Z3 up to 30 features | refused |
 
 `refused` means that no installed plugin declares that it finishes on a model of that size.
-The SAT sampler returns valid configurations but enumerates them in a fixed order instead of
-drawing them uniformly at random; pass `backend="bdd"` when you need a uniform sample.
+Listing every configuration is limited by how many there are rather than by the BDD: about
+1 KB and 3 µs per configuration, so a million already needs 1 GB. On the SoSyM benchmark
+corpus, 76% of the UVLHub models of 31 to 50 features have at most a million configurations
+and only 36% of those of 51 to 75, hence the 50-feature limit. With `allow_approximate=True`,
+sampling beyond the BDD's reach falls back to the SAT sampler, whose configurations are valid
+but not uniformly drawn (`last_result.exact` is `False`).
 
 Installing `flamapy-sdd` adds a counter that scales further than the BDD on sparse models: the
 planner moves counting to SDD on many models from about 200 features on, and up to 2,000

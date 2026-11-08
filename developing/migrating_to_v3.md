@@ -58,7 +58,10 @@ blow up (129 of the 1,538 benchmark models). What this changes for code that rea
 
 - Manifest costs are estimated milliseconds (2.8: relative weights), and a manifest names its
   `calibration` run; the planner ranks manifests without one after the calibrated ones.
-  `exact=False` implementations are only chosen with `allow_approximate`. `PlannerPolicy`'s
+  `exact=False` implementations are only chosen with `allow_approximate`; the SAT sampler is
+  one of them (its configurations are valid but not drawn uniformly) and its results report
+  `exact=False`. The BDD plugin declares `configurations` up to 50 features, measured on the
+  benchmark corpus (2.8: 150). `PlannerPolicy`'s
   `artifact_bonus` is accepted but ignored (a cached artifact now waives the transformation cost)
   and `Plan` gains `estimated_cost` (a heuristic from the calibration machine) as its last field.
 - `atomic_sets` and `commonality` accept `backend=`; in 2.x only a per-call `backend=` changes
